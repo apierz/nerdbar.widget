@@ -3,14 +3,24 @@ command: "ESC=`printf \"\e\"`; ps -A -o %cpu | awk '{s+=$1} END {printf(\"%.2f\"
 refreshFrequency: 2000 # ms
 
 render: (output) ->
-  "cpu <span>#{output}</span>"
+  """
+  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
+  <div class="cpu"
+    <span></span>
+    <span class="icon"></span>
+  </div>
+  """
+
+update: (output, el) ->
+    $(".cpu span:first-child", el).text("  #{output}")
+    $icon = $(".cpu span.icon", el)
+    $icon.removeClass().addClass("icon")
+    $icon.addClass("fa fa-spinner")
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #D5C4A1
-  font: 11px Osaka-Mono
-  right: 262px
+  color: #d5c4a1
+  font: 10px Input
+  right: 265px
   top: 6px
-  span
-    color: #7AAB7E
 """
