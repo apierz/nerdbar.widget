@@ -15,7 +15,7 @@ update: (output, el) ->
     $(".cpu span:first-child", el).text("  #{output}")
     $icon = $(".cpu span.icon", el)
     $icon.removeClass().addClass("icon")
-    $icon.addClass("fa fa-spinner")
+    $icon.addClass("fa fa-bar-chart")
 
 style: """
   -webkit-font-smoothing: antialiased
