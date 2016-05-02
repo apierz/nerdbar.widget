@@ -22,6 +22,8 @@ icon: (status) =>
         "fa-stop-circle-o"
     else if status.substring(0, 6) == "paused"
         "fa-pause-circle-o"
+    else if status.substring(0, 17) == "Connection failed"
+        "fa-times-circle-o"
     else
         "fa-play-circle-o"
 
