@@ -18,9 +18,9 @@ update: (output, el) ->
     $icon.addClass("fa #{@icon(output)}")
 
 icon: (status) =>
-    return if status.substring(0, 7) == "stopped"
+    return if status.substring(0, 9) == "[stopped]"
         "fa-stop-circle-o"
-    else if status.substring(0, 6) == "paused"
+    else if status.substring(0, 8) == "[paused]"
         "fa-pause-circle-o"
     else if status.substring(0, 17) == "Connection failed"
         "fa-times-circle-o"
