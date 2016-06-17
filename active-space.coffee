@@ -26,6 +26,8 @@ icon: (status) =>
         "fa-random"
     else if status.substring(0, 5) == "games"
         "fa-gamepad"
+    else if status.substring(0, 4) == "chat"
+        "fa-comments"
     else
         "fa-times"
 
