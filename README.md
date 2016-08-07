@@ -6,8 +6,8 @@ Originally created by [herrbischoff](https://github.com/herrbischoff).
 
 Further modifications were made by [koekeishiya](https://github.com/koekeishiya), whose version can be found [here](https://github.com/koekeishiya/nerdbar.widget).
 
-4
-![img](https://cloud.githubusercontent.com/assets/6175959/16150759/6822282e-3499-11e6-9a2e-5c61af2caba7.png)
+*Screen Shot:*
+![img](https://github.com/apierz/nerdbar.widget/blob/master/Screen%20Shot%202016-08-07%20at%208.07.09%20AM.png)
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).
 
