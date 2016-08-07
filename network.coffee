@@ -16,8 +16,8 @@ refreshFrequency: 3000
 style: """
     -webkit-font-smoothing: antialiased
     widget-align = center
-    left: 45%
-    width: 10%
+    left: 42.5%
+    width: 15%
     top: 5px
    
     color #f8f8f2
