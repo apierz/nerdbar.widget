@@ -8,6 +8,6 @@ style: """
   left: 0
   height: 25px
   width: 100%
-  background-color: #202020
+  background-color: #282a36
   z-index: -1
 """

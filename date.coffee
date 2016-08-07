@@ -1,26 +1,15 @@
-command: "date +\"%a %d %b\""
+command: "date +\"%d%b%y\""
 
 refreshFrequency: 10000
 
 render: (output) ->
-  """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
-  <div class="cal"
-    <span></span>
-    <span class="icon"></span>
-  </div>
-  """
-
-update: (output, el) ->
-    $(".cal span:first-child", el).text("  #{output}")
-    $icon = $(".cal span.icon", el)
-    $icon.removeClass().addClass("icon")
-    $icon.addClass("fa fa-calendar")
+  "#{output}"
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #d5c4a1
-  font: 10px Input
-  right: 70px
+  text-transform: lowercase
+  color: #ff79c6
+  font: 12px Hack
+  right: 60px
   top: 6px
 """

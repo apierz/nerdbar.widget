@@ -1,45 +1,18 @@
-command: "/usr/local/bin/kwmc query space active name"
+command: "echo $(/usr/local/bin/kwmc query window focused name)"
 
 refreshFrequency: 1000 # ms
 
 render: (output) ->
-  """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
-  <div class="ac"
-    <span></span>
-    <span class="icon"></span>
-  </div>
-  """
-
-update: (output, el) ->
-    $(".ac span:first-child", el).text("  #{output}")
-    $icon = $(".ac span.icon", el)
-    $icon.removeClass().addClass("icon")
-    $icon.addClass("fa #{@icon(output)}")
-
-icon: (status) =>
-    return if status.substring(0, 4) == "main"
-        "fa-home"
-    else if status.substring(0, 3) == "web"
-        "fa-safari"
-    else if status.substring(0, 3) == "rnd"
-        "fa-random"
-    else if status.substring(0, 5) == "games"
-        "fa-gamepad"
-    else if status.substring(0, 4) == "chat"
-        "fa-comments"
-    else
-        "fa-times"
+  "#{output}"
 
 style: """
   -webkit-font-smoothing: antialiased
-  text-align: right
-  color: #d5c4a1
-  font: 10px Input
+  color: #f8f8f2
+  font: 12px Hack
   height: 16px
+  left: 10px
   overflow: hidden
   text-overflow: ellipsis
-  right: 320px
   top: 6px
-  width: 50%
+  width: 500px
 """
