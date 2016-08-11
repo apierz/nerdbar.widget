@@ -7,7 +7,7 @@ Originally created by [herrbischoff](https://github.com/herrbischoff).
 Further modifications were made by [koekeishiya](https://github.com/koekeishiya), whose version can be found [here](https://github.com/koekeishiya/nerdbar.widget).
 
 *Screen Shot:*
-![img](https://github.com/apierz/nerdbar.widget/blob/master/Screen%20Shot%202016-08-07%20at%208.07.09%20AM.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot.png?raw=true)
 
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).

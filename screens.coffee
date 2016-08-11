@@ -15,5 +15,5 @@ style: """
   overflow: hidden
   text-overflow: ellipsis
   top: 6px
-  width: 500px
+  width: 700px
 """
