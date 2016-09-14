@@ -11,7 +11,7 @@ style: """
   font: 12px Hack
   right: 255px
   top: 6px
-  color: #f8f8f2
+  color: #eeeeee
   span
-    color: #50fa7b
+    color: #00b3ef
 """

@@ -10,7 +10,7 @@ style: """
   font: 12px Hack
   top: 6px
   right: 125px
-  color: #f8f8f2
+  color: #eeeeee
   span
-    color: #f1fa8c
+    color: #00b3ef
 """
