@@ -1,6 +1,6 @@
 # Bar
 
-Personal [Übersicht](http://tracesof.net/uebersicht/) system information bar for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed to look good with [Dracula Theme](http://github.com/dracula).
+Personal [Übersicht](http://tracesof.net/uebersicht/) system information bar for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed to look good with [Doom Theme](http://github.com/hlissner/emacs-doom-theme).
 
 Originally created by [herrbischoff](https://github.com/herrbischoff).
 
@@ -12,6 +12,13 @@ Further modifications were made by [koekeishiya](https://github.com/koekeishiya)
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).
 
+You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the kwm folder.
+
+## Added Features:
+
+* Battery indicator changes color (green -> yellow -> red) based on percentage left.
+* when looking at a file in Emacs, the file name will be highlighted white, while the rest shows in Doom Blue color
+
 ## Installation
 
 Make sure you have [Übersicht](http://tracesof.net/uebersicht/) installed.
@@ -21,3 +28,5 @@ Then clone this repository.
 ```bash
 git clone https://github.com/apierz/nerdbar.widget $HOME/Library/Application\ Support/Übersicht/widgets/nerdbar.widget
 ```
+
+I use [Hack](http://sourcefoundry.org/hack/) for the main text and [FontAwesome](http://fontawesome.io) for the little lightning bolt.
