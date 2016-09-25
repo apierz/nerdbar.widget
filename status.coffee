@@ -8,19 +8,19 @@ render: (output) ->
 style: """
   -webkit-font-smoothing: antialiased
   font: 12px Hack
+  text-transform: lowercase
   right: 10px
   top: 6px
   color: #00b3ef
   .white
-    color: #b5babf
-    text-transform: lowercase
+    color: #eeeeee
   .green
     color: #7bc275
   .yellow
     color: #ecbe7b
   .red
     color: #ff665c
-  .bolt
+  .icon
     font: 12px fontawesome
 """
 
@@ -32,11 +32,14 @@ update: (output, domEl) ->
   battery = values[2];
   batnum = parseInt(battery);
 
-  if batnum >= 50
-    $(domEl).find('.compstatus').html("<span class='green'><span class='bolt'></span>#{battery}</span>  <span class='white'> #{date} </span> #{time} </span>" )
+  if batnum >= 90
+    $(domEl).find('.compstatus').html("<span class='green'><span class='icon'> </span>#{battery}</span>  <span class='white'>  <span class='icon'></span> #{date} </span> <span class='icon'></span> #{time} </span>" )
+
+  if batnum >= 50 and batnum < 90
+    $(domEl).find('.compstatus').html("<span class='green'><span class='icon'> </span>#{battery}</span>  <span class='white'> <span class='icon'></span> #{date} </span> <span class='icon'></span> #{time} </span>" )
 
   if batnum < 50 and batnum >= 15
-    $(domEl).find('.compstatus').html("<span class='yellow'><span class='bolt'></span>#{battery}</span>  <span class='white'> #{date} </span> #{time} </span>" )
+    $(domEl).find('.compstatus').html("<span class='yellow'><span class='icon'> </span>#{battery}</span>  <span class='white'> <span class='icon'></span> #{date} </span> <span class='icon'></span> #{time} </span>" )
 
   if batnum < 15
-    $(domEl).find('.compstatus').html("<span class='red'><span class='bolt'></span>#{battery}</span>  <span class='white'> #{date} </span> #{time} </span>" )
+    $(domEl).find('.compstatus').html("<span class='red'><span class='icon'> </span>#{battery}</span>  <span class='white'> <span class='icon'></span> #{date} </span> <span class='icon'></span> #{time} </span>" )
