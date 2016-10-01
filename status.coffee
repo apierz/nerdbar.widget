@@ -45,23 +45,25 @@ update: (output, domEl) ->
   batnum = parseInt(battery);
 
   # Start htmlString with time and date
-  htmlString =  "<span class='white'>  <span class='icon'></span> #{date} </span> <span class='icon'></span> #{time} </span>"
+  htmlString = "<span class='white'><span class='icon'></span>#{date}</span> <span class='icon'></span>#{time}</span>"
 
   #add battery status to htmlString
   if batnum >= 90
-    htmlString = "<span class='green'><span class='icon'> </span>#{battery}</span> " + htmlString;
-
+    htmlString = "<span class='green'><span class='icon'>  </span>#{battery}</span> " + htmlString;
   if batnum >= 50 and batnum < 90
-    htmlString = "<span class='green'><span class='icon'> </span>#{battery}</span>  " + htmlString;
-
+    htmlString = "<span class='green'><span class='icon'>  </span>#{battery}</span> " + htmlString;
   if batnum < 50 and batnum >= 15
-    htmlString = "<span class='yellow'><span class='icon'> </span>#{battery}</span>  " + htmlString;
-
+    htmlString = "<span class='yellow'><span class='icon'>  </span>#{battery}</span> " + htmlString;
   if batnum < 15
-    htmlString = "<span class='red'><span class='icon'> </span>#{battery}</span>  " + htmlString;
+    htmlString = "<span class='red'><span class='icon'>  </span>#{battery}</span> " + htmlString;
+
+  #add wifi status to htmlString
+  if connum isnt 99
+    htmlString = "<span class='white icon'>&nbsp</span>" + htmlString;
+  if connum is 99
+    htmlString = "<span class='grey icon'>&nbsp</span>" + htmlString;
 
   #add temp to htmlString
-
   if tempnum >= 90
     htmlString = "<span class='red'> #{temp}° </span>" + htmlString;
   if tempnum < 90 and tempnum >= 65
