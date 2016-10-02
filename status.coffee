@@ -45,7 +45,7 @@ update: (output, domEl) ->
   batnum = parseInt(battery);
 
   # Start htmlString with time and date
-  htmlString = "<span class='white'><span class='icon'></span>#{date}</span> <span class='icon'></span>#{time}</span>"
+  htmlString = "<span class='white'><span class='icon'> </span>#{date}</span> <span class='icon'></span>#{time}</span>"
 
   #add battery status to htmlString
   if batnum >= 90
@@ -57,11 +57,6 @@ update: (output, domEl) ->
   if batnum < 15
     htmlString = "<span class='red'><span class='icon'>  </span>#{battery}</span> " + htmlString;
 
-  #add wifi status to htmlString
-  if connum isnt 99
-    htmlString = "<span class='white icon'>&nbsp</span>" + htmlString;
-  if connum is 99
-    htmlString = "<span class='grey icon'>&nbsp</span>" + htmlString;
 
   #add temp to htmlString
   if tempnum >= 90
@@ -158,5 +153,10 @@ update: (output, domEl) ->
   if connum == 47
     htmlString = "<span class='yellow weather'></span>" + htmlString;
 
+  #add wifi status to htmlString
+  if connum isnt 99
+    htmlString = "<span class='yellow icon'>&nbsp&nbsp</span>" + htmlString;
+  if connum is 99
+    htmlString = "<span class='grey icon'>&nbsp&nbsp</span>" + htmlString;
   
   $(domEl).find('.compstatus').html(htmlString)

@@ -19,6 +19,7 @@ You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dot
 * Battery indicator changes color (green -> yellow -> red) based on percentage left.
 * when looking at a file in Emacs, the file name will be highlighted white, while the rest shows in Doom Blue color
 * Now inclues a weather widget that tells you Temperature and Conditions for your location. Uses Yahoo weather API.
+* Network connection indicator widget
 
 ## Installation
 
@@ -30,4 +31,4 @@ Then clone this repository.
 git clone https://github.com/apierz/nerdbar.widget $HOME/Library/Application\ Support/Übersicht/widgets/nerdbar.widget
 ```
 
-I use [Hack](http://sourcefoundry.org/hack/) for the main text and [FontAwesome](http://fontawesome.io) for the little lightning bolt.
+I use [Hack](http://sourcefoundry.org/hack/) for the main text, [FontAwesome](http://fontawesome.io) for the icons and [All-the-icons](https://github.com/domtronn/all-the-icons.el) for the weather icons.
