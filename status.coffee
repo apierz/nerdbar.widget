@@ -60,9 +60,9 @@ update: (output, domEl) ->
 
   #add temp to htmlString
   if tempnum >= 90
-    htmlString = "<span class='red'> #{temp}° </span>" + htmlString;
+    htmlString = "<span class='red'>#{temp}° </span>" + htmlString;
   if tempnum < 90 and tempnum >= 65
-    htmlString = "<span class='yellow'> #{temp}° </span>" + htmlString;
+    htmlString = "<span class='yellow'>#{temp}° </span>" + htmlString;
   if tempnum < 65
     htmlString = "<span>#{temp}° </span>" + htmlString;
 
