@@ -11,25 +11,25 @@ style: """
   text-transform: lowercase
   right: 10px
   top: 6px
-  color: #00b3ef
+  color: #51afef
   .white
-    color: #eeeeee
+    color: #bbc2cf
   .green
-    color: #7bc275
+    color: #98be65
   .yellow
     color: #ecbe7b
   .red
-    color: #ff665c
+    color: #ff6c6b
   .icon
     font: 12px fontawesome
   .weather
     font: 12px WeatherIcons-Regular
   .blue
-    color: #00b3ef
+    color: #51afef
   .cyan
     color: #46d9ff
   .grey
-    color: #b5babf
+    color: #dfdfdf
 """
 
 update: (output, domEl) ->

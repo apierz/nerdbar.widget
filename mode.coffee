@@ -8,18 +8,18 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #00b3ef
-  background: #262c34
+  color: #51afef
+  background: #282c34
   font: 12px Hack
   left: 10px
   top: 6px
   width: 900px
   span2
-    color: #eeeeee
+    color: #dfdfdf
   .icon
     font 12px fontawesome
   .green
-    color: #7bc275
+    color: #98be65
 """
 
 update: (output, domEl) ->
