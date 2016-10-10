@@ -109,7 +109,7 @@ update: (output, domEl) ->
     htmlString = "<span class='grey weather'></span>" + htmlString;
   #partly cloudy (night)
   if connum == 29
-    htmlString = "<span class='cyan weather'>></span>" + htmlString;
+    htmlString = "<span class='cyan weather'></span>" + htmlString;
   #partly cloudy (day)
   if connum == 30
     htmlString = "<span class='grey weather'></span>" + htmlString;
@@ -155,7 +155,7 @@ update: (output, domEl) ->
 
   #add wifi status to htmlString
   if connum isnt 99
-    htmlString = "<span class='yellow icon'>&nbsp&nbsp</span>" + htmlString;
+    htmlString = "<span class='green icon'>&nbsp&nbsp</span>" + htmlString;
   if connum is 99
     htmlString = "<span class='grey icon'>&nbsp&nbsp</span>" + htmlString;
   
