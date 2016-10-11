@@ -12,14 +12,14 @@ style: """
   text-transform: lowercase
   right: 10px
   top: 6px
+  color: #51afef
   .weather_forecast
-    width: 100px
-    height: 100px
+    width: 8em
     background: #282c34
     top: 16px
     right: 100px
+    opacity: 0
     
-  color: #51afef
   .white
     color: #bbc2cf
   .green
@@ -40,140 +40,159 @@ style: """
     color: #dfdfdf
 """
 
+timeAndDate: (date, time) ->
+    return "<span class='white'><span class='icon'> </span>#{date}</span> <span class='icon'></span>#{time}</span>";
+
+batteryStatus: (battery) ->
+  batnum = parseInt(battery)
+  if batnum >= 90
+      return "<span class='green'><span class='icon'>  </span>#{battery}</span> ";
+  if batnum >= 50 and batnum < 90
+      return "<span class='green'><span class='icon'>  </span>#{battery}</span> ";
+  if batnum < 50 and batnum >= 15
+      return "<span class='yellow'><span class='icon'>  </span>#{battery}</span> ";
+  if batnum < 15
+      return "<span class='red'><span class='icon'>  </span>#{battery}</span> ";
+
+colorizeTemp: (temp) ->
+  tempnum = parseInt(temp);
+  if tempnum >= 90
+    return "<span class='red'>#{temp}° </span>";
+  if tempnum < 90 and tempnum >= 65
+    return "<span class='yellow'>#{temp}° </span>";
+  if tempnum < 65
+    return "<span>#{temp}° </span>";
+
+getWeatherIcon: (connum) ->
+   # Tornados and Hurricanes
+  if connum <= 2
+    return "<span class='red weather'></span>" ;
+  #Thunderstorms
+  if connum > 2 and connum <= 4
+    return "<span class='yellow weather'></span>" ;
+  #Freezing Rain / Sleet
+  if (connum >= 5 and connum <= 8) or connum == 10 or connum == 18
+    return "<span class='blue weather'></span>" ;
+  #Drizzle
+  if connum == 9
+    return "<span class='blue weather'></span>" ;
+  #Rain
+  if connum == 11 or connum == 12
+    return "<span class='blue weather'></span>" ;
+  #Snow
+  if connum >= 13 and connum <= 16
+    return "<span class='blue weather'></span>" ;
+  #Hail
+  if connum == 17
+    return "<span class='blue weather'></span>" ;
+  #Dust, fog, haze, etc
+  if connum >= 19 and connum <= 22 
+    return "<span class='cyan weather'></span>" ;
+  # Windy
+  if connum == 23 or connum == 24
+    return "<span class='grey weather'></span>" ;
+  #cold
+  if connum == 25
+    return "<span class='cyan weather'></span>" ;
+  #cloudy
+  if connum == 26
+    return "<span class='cyan weather'></span>" ;
+  #mostly cloudy (night)
+  if connum == 27
+    return "<span class='cyan weather'></span>" ;
+  #mostly cloudy (day)
+  if connum == 28
+    return "<span class='grey weather'></span>" ;
+  #partly cloudy (night)
+  if connum == 29
+    return "<span class='cyan weather'></span>" ;
+  #partly cloudy (day)
+  if connum == 30
+    return "<span class='grey weather'></span>" ;
+  # clear night
+  if connum == 31
+    return "<span class='yellow weather'></span>" ;
+  #Sunny
+  if connum == 32
+    return "<span class='yellow weather'></span>" ;
+  #Fair, night
+  if connum == 33
+    return "<span class='yellow weather'></span>" ;
+  #Fair, day
+  if connum == 34
+    return "<span class='yellow weather'></span>" ;
+  # mixed rain and hail
+  if connum == 35
+    return "<span class='blue weather'></span>" ;
+  #hot
+  if connum == 36
+    return "<span class='red weather'></span>" ;
+  #thunder storms
+  if connum >= 37 and connum <= 39
+    return "<span class='yellow weather'></span>" ;
+  #scattered showers
+  if connum == 40
+    return "<span class='cyan weather'></span>" ;
+  # snow
+  if connum >= 41 and connum <=43
+    return "<span class='cyan weather'></span>" ;
+  #partly cloudy
+  if connum == 44
+    return "<span class='grey weather'></span>" ;
+  #thunder showers
+  if connum == 45
+    return "<span class='cyan weather'></span>" ;
+  #snow showers
+  if connum == 46
+    return "<span class='cyan weather'></span>" ;
+  # isolated thundershowers
+  if connum == 47
+    return "<span class='yellow weather'></span>" ;
+
+getWifiStatus: (connum) ->
+  if connum isnt 99
+    return "<span class='green icon'>&nbsp&nbsp</span>";
+  if connum is 99
+    return "<span class='grey icon'>&nbsp&nbsp</span>";
+
+  
+
+
 update: (output, domEl) ->
 
-  values = output.split('@', 5);
+  values = output.split('@');
   time = values[0];
   date = values[1];
   battery = values[2];
   temp = values[3];
-  tempnum = parseInt(temp);
   condition = values[4];
   connum = parseInt(condition);
   batnum = parseInt(battery);
 
-  # Start htmlString with time and date
-  htmlString = "<span class='white'><span class='icon'> </span>#{date}</span> <span class='icon'></span>#{time}</span>"
+  # Five Day Forcast Parsing
+  day0 = [values[5], values[6], values[7], values[8].replace(/\s+/g,'').slice(0, -7)]
+  day1 = [values[9], values[10], values[11], values[12].replace(/\s+/g,'').slice(0, -7) ]
+  day2 = [values[13], values[14], values[15], values[16].replace(/\s+/g,'').slice(0, -7)  ]
+  day3 = [values[17], values[18], values[19], values[20].replace(/\s+/g,'').slice(0, -7)  ]
+  day4 = [values[21], values[22], values[23], values[24].replace(/\s+/g,'').slice(0, -7)  ]
 
-  #add battery status to htmlString
-  if batnum >= 90
-    htmlString = "<span class='green'><span class='icon'>  </span>#{battery}</span> " + htmlString;
-  if batnum >= 50 and batnum < 90
-    htmlString = "<span class='green'><span class='icon'>  </span>#{battery}</span> " + htmlString;
-  if batnum < 50 and batnum >= 15
-    htmlString = "<span class='yellow'><span class='icon'>  </span>#{battery}</span> " + htmlString;
-  if batnum < 15
-    htmlString = "<span class='red'><span class='icon'>  </span>#{battery}</span> " + htmlString;
+  days = [day0, day1, day2, day3, day4]
 
-  #add span tags for weather forecast
-  htmlstring = "</span>" + htmlString
 
-  #add temp to htmlString
-  if tempnum >= 90
-    htmlString = "<span class='red'>#{temp}° </span>" + htmlString;
-  if tempnum < 90 and tempnum >= 65
-    htmlString = "<span class='yellow'>#{temp}° </span>" + htmlString;
-  if tempnum < 65
-    htmlString = "<span>#{temp}° </span>" + htmlString;
-
-  #add weather status to htmlString
-
-  # Tornados and Hurricanes
-  if connum <= 2
-    htmlString = "<span class='red weather'></span>" + htmlString;
-  #Thunderstorms
-  if connum > 2 and connum <= 4
-    htmlString = "<span class='yellow weather'></span>" + htmlString;
-  #Freezing Rain / Sleet
-  if (connum >= 5 and connum <= 8) or connum == 10 or connum == 18
-    htmlString = "<span class='blue weather'></span>" + htmlString;
-  #Drizzle
-  if connum == 9
-    htmlString = "<span class='blue weather'></span>" + htmlString;
-  #Rain
-  if connum == 11 or connum == 12
-    htmlString = "<span class='blue weather'></span>" + htmlString;
-  #Snow
-  if connum >= 13 and connum <= 16
-    htmlString = "<span class='blue weather'></span>" + htmlString;
-  #Hail
-  if connum == 17
-    htmlString = "<span class='blue weather'></span>" + htmlString;
-  #Dust, fog, haze, etc
-  if connum >= 19 and connum <= 22 
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  # Windy
-  if connum == 23 or connum == 24
-    htmlString = "<span class='grey weather'></span>" + htmlString;
-  #cold
-  if connum == 25
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  #cloudy
-  if connum == 26
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  #mostly cloudy (night)
-  if connum == 27
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  #mostly cloudy (day)
-  if connum == 28
-    htmlString = "<span class='grey weather'></span>" + htmlString;
-  #partly cloudy (night)
-  if connum == 29
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  #partly cloudy (day)
-  if connum == 30
-    htmlString = "<span class='grey weather'></span>" + htmlString;
-  # clear night
-  if connum == 31
-    htmlString = "<span class='yellow weather'></span>" + htmlString;
-  #Sunny
-  if connum == 32
-    htmlString = "<span class='yellow weather'></span>" + htmlString;
-  #Fair, night
-  if connum == 33
-    htmlString = "<span class='yellow weather'></span>" + htmlString;
-  #Fair, day
-  if connum == 34
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  # mixed rain and hail
-  if connum == 35
-    htmlString = "<span class='blue weather'></span>" + htmlString;
-  #hot
-  if connum == 36
-    htmlString = "<span class='red weather'></span>" + htmlString;
-  #thunder storms
-  if connum >= 37 and connum <= 39
-    htmlString = "<span class='yellow weather'></span>" + htmlString;
-  #scattered showers
-  if connum == 40
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  # snow
-  if connum >= 41 and connum <=43
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  #partly cloudy
-  if connum == 44
-    htmlString = "<span class='grey weather'></span>" + htmlString;
-  #thunder showers
-  if connum == 45
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  #snow showers
-  if connum == 46
-    htmlString = "<span class='cyan weather'></span>" + htmlString;
-  # isolated thundershowers
-  if connum == 47
-    htmlString = "<span class='yellow weather'></span>" + htmlString;
-
-  #close weather forecast span tag
-  htmlString = "<span class='weather'>" + htmlString
-
-  #add wifi status to htmlString
-  if connum isnt 99
-    htmlString = "<span class='green icon'>&nbsp&nbsp</span>" + htmlString;
-  if connum is 99
-    htmlString = "<span class='grey icon'>&nbsp&nbsp</span>" + htmlString;
-
-  
+  # create an HTML string to be displayed by the widget
+  htmlString = @getWifiStatus(connum) + "<span class='weather'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @batteryStatus(battery) + @timeAndDate(date, time);
   $(domEl).find('.compstatus').html(htmlString)
+
+  # forecastString = "<table><tr><td>" + @getWeatherIcon(parseInt(days[0][2])) + "</td></tr></table>"
+
+  forecastString = "<table>";
+
+  for day in days
+    forecastString = forecastString + "<tr>" + "<td class='white'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
+
+  forecastString = forecastString + "</table>";
+  
+  $(domEl).find('.weather_forecast').html(forecastString)
 
   # weather forecast script
   isForecastVisable = false
@@ -181,9 +200,9 @@ update: (output, domEl) ->
   $(".weather").on "click", ->
     console.log("button clicked!")
     if isForecastVisable == false
-      $(".weather_forecast").css("background", "red");
+      $(".weather_forecast").css("opacity", "1");
       isForecastVisable = true;
     else
-      $(".weather_forecast").css("background", "#282c34");
+      $(".weather_forecast").css("opacity", "0");
       isForecastVisable = false;
   
