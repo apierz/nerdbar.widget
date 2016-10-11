@@ -3,7 +3,8 @@ command: "~/.kwm/scripts/compstatus"
 refreshFrequency: 10000 # ms
 
 render: (output) ->
-  "<div class='compstatus'></div>"
+  "<div class='compstatus'></div>
+   <div class='weather_forecast'></div>"
 
 style: """
   -webkit-font-smoothing: antialiased
@@ -11,6 +12,13 @@ style: """
   text-transform: lowercase
   right: 10px
   top: 6px
+  .weather_forecast
+    width: 100px
+    height: 100px
+    background: #282c34
+    top: 16px
+    right: 100px
+    
   color: #51afef
   .white
     color: #bbc2cf
@@ -57,6 +65,8 @@ update: (output, domEl) ->
   if batnum < 15
     htmlString = "<span class='red'><span class='icon'>  </span>#{battery}</span> " + htmlString;
 
+  #add span tags for weather forecast
+  htmlstring = "</span>" + htmlString
 
   #add temp to htmlString
   if tempnum >= 90
@@ -153,10 +163,27 @@ update: (output, domEl) ->
   if connum == 47
     htmlString = "<span class='yellow weather'></span>" + htmlString;
 
+  #close weather forecast span tag
+  htmlString = "<span class='weather'>" + htmlString
+
   #add wifi status to htmlString
   if connum isnt 99
     htmlString = "<span class='green icon'>&nbsp&nbsp</span>" + htmlString;
   if connum is 99
     htmlString = "<span class='grey icon'>&nbsp&nbsp</span>" + htmlString;
+
   
   $(domEl).find('.compstatus').html(htmlString)
+
+  # weather forecast script
+  isForecastVisable = false
+  
+  $(".weather").on "click", ->
+    console.log("button clicked!")
+    if isForecastVisable == false
+      $(".weather_forecast").css("background", "red");
+      isForecastVisable = true;
+    else
+      $(".weather_forecast").css("background", "#282c34");
+      isForecastVisable = false;
+  
