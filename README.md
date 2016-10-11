@@ -19,6 +19,7 @@ You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dot
 * Battery indicator changes color (green -> yellow -> red) based on percentage left.
 * when looking at a file in Emacs, the file name will be highlighted white, while the rest shows in Doom Blue color
 * Now inclues a weather widget that tells you Temperature and Conditions for your location. Uses Yahoo weather API.
+* Clicking on the temperature loads a five day forecast panel with date, condition, low and high. To use enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
 * Network connection indicator widget
 
 ## Installation
