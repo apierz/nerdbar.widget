@@ -19,7 +19,15 @@ style: """
     top: 16px
     right: 100px
     opacity: 0
-    
+  .wifi
+    font: 16px fontawesome
+  .charging
+    font: 12px fontawesome
+    color: #FFFFFF
+    position: relative
+    font: 8px fontawesome
+    top: -1px
+    right: -11px
   .white
     color: #bbc2cf
   .green
@@ -41,18 +49,29 @@ style: """
 """
 
 timeAndDate: (date, time) ->
-    return "<span class='white'><span class='icon'> </span>#{date}</span> <span class='icon'></span>#{time}</span>";
+  return "<span class='white'><span class='icon'>&nbsp&nbsp&nbsp </span>#{date}</span>   <span class='icon'></span>#{time}</span>";
 
-batteryStatus: (battery) ->
+batteryStatus: (battery, state) ->
   batnum = parseInt(battery)
-  if batnum >= 90
-      return "<span class='green'><span class='icon'>  </span>#{battery}</span> ";
-  if batnum >= 50 and batnum < 90
-      return "<span class='green'><span class='icon'>  </span>#{battery}</span> ";
-  if batnum < 50 and batnum >= 15
-      return "<span class='yellow'><span class='icon'>  </span>#{battery}</span> ";
-  if batnum < 15
-      return "<span class='red'><span class='icon'>  </span>#{battery}</span> ";
+  console.log(state + " " + battery)
+  
+  if state == 'AC' and batnum >= 90
+    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+  else if state == 'AC' and batnum >= 50 and batnum < 90
+    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+  else if state == 'AC' and batnum < 50 and batnum >= 15
+    return "<span class='charging'>  </span><span class='yellow'><span class='icon'>  </span>#{batnum}%</span>"
+  else if state == 'AC' and batnum < 15
+    return "<span class='charging'>  </span><span class='red'><span class='icon'>  </span>#{batnum}%</span>"
+  else if state != 'AC' and batnum >= 90
+    console.log('flag')
+    return "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+  else if batnum >= 50 and batnum < 90
+    return "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+  else if batnum < 50 and batnum >= 15
+    return "<span class='yellow'><span class='icon'>  </span>#{batnum}%</span>"
+  else if batnum < 15
+    return "<span class='red'><span class='icon'>  </span>#{batnum}%</span>"
 
 colorizeTemp: (temp) ->
   tempnum = parseInt(temp);
@@ -151,9 +170,9 @@ getWeatherIcon: (connum) ->
 
 getWifiStatus: (connum) ->
   if connum isnt 99
-    return "<span class='green icon'>&nbsp&nbsp</span>";
+    return "<span class='green wifi'>&nbsp&nbsp</span>";
   if connum is 99
-    return "<span class='grey icon'>&nbsp&nbsp</span>";
+    return "<span class='grey wifi'>&nbsp&nbsp</span>";
 
   
 
@@ -170,17 +189,19 @@ update: (output, domEl) ->
   batnum = parseInt(battery);
 
   # Five Day Forcast Parsing
-  day0 = [values[5], values[6], values[7], values[8].replace(/\s+/g,'').slice(0, -7)]
-  day1 = [values[9], values[10], values[11], values[12].replace(/\s+/g,'').slice(0, -7) ]
-  day2 = [values[13], values[14], values[15], values[16].replace(/\s+/g,'').slice(0, -7)  ]
-  day3 = [values[17], values[18], values[19], values[20].replace(/\s+/g,'').slice(0, -7)  ]
-  day4 = [values[21], values[22], values[23], values[24].replace(/\s+/g,'').slice(0, -7)  ]
+  day0 = [values[5], values[6], values[7], values[8]]
+  day1 = [values[9], values[10], values[11], values[12]]
+  day2 = [values[13], values[14], values[15], values[16]]
+  day3 = [values[17], values[18], values[19], values[20]]
+  day4 = [values[21], values[22], values[23], values[24]]
 
   days = [day0, day1, day2, day3, day4]
 
+  isCharging = values[25].trim()
+
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getWifiStatus(connum) + "<span class='weather'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @batteryStatus(battery) + @timeAndDate(date, time);
+  htmlString = @getWifiStatus(connum) + "<span class='weather'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
   $(domEl).find('.compstatus').html(htmlString)
 
   # forecastString = "<table><tr><td>" + @getWeatherIcon(parseInt(days[0][2])) + "</td></tr></table>"
@@ -205,4 +226,3 @@ update: (output, domEl) ->
     else
       $(".weather_forecast").css("opacity", "0");
       isForecastVisable = false;
-  
