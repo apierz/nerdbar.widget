@@ -21,6 +21,8 @@ style: """
     opacity: 0
   .wifi
     font: 16px fontawesome
+    top: 1px
+    position: relative
   .charging
     font: 12px fontawesome
     color: #FFFFFF
@@ -49,11 +51,13 @@ style: """
 """
 
 timeAndDate: (date, time) ->
+  # returns a formatted html string with the date and time
   return "<span class='white'><span class='icon'>&nbsp&nbsp&nbsp </span>#{date}</span>   <span class='icon'></span>#{time}</span>";
 
 batteryStatus: (battery, state) ->
+  #returns a formatted html string current battery percentage, a representative icon and adds a lighting bolt if the
+  # battery is plugged in and charging
   batnum = parseInt(battery)
-  console.log(state + " " + battery)
   
   if state == 'AC' and batnum >= 90
     return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
@@ -63,8 +67,7 @@ batteryStatus: (battery, state) ->
     return "<span class='charging'>  </span><span class='yellow'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 15
     return "<span class='charging'>  </span><span class='red'><span class='icon'>  </span>#{batnum}%</span>"
-  else if state != 'AC' and batnum >= 90
-    console.log('flag')
+  else if batnum >= 90
     return "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
     return "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
@@ -74,13 +77,15 @@ batteryStatus: (battery, state) ->
     return "<span class='red'><span class='icon'>  </span>#{batnum}%</span>"
 
 colorizeTemp: (temp) ->
+  #returns a formatted html string with the temperature colorized depending on
+  # whether it is hot, temperate or cold
   tempnum = parseInt(temp);
   if tempnum >= 90
-    return "<span class='red'>#{temp}° </span>";
+    return "<span class='red'>#{temp}°</span>";
   if tempnum < 90 and tempnum >= 65
-    return "<span class='yellow'>#{temp}° </span>";
+    return "<span class='yellow'>#{temp}°</span>";
   if tempnum < 65
-    return "<span>#{temp}° </span>";
+    return "<span>#{temp}°</span>";
 
 # Yahoo has horrible documentation for these codes, the ones on their website
 # are incorrect so I'm slowly fixing these by trial and error.
@@ -182,14 +187,15 @@ getWifiStatus: (connum) ->
 
 update: (output, domEl) ->
 
+  # split the output of the script
   values = output.split('@');
+  
   time = values[0];
   date = values[1];
   battery = values[2];
   temp = values[3];
   condition = values[4];
   connum = parseInt(condition);
-  batnum = parseInt(battery);
 
   # Five Day Forcast Parsing
   day0 = [values[5], values[6], values[7], values[8]]
@@ -204,11 +210,10 @@ update: (output, domEl) ->
 
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getWifiStatus(connum) + "<span class='weather'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
+  htmlString = @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
   $(domEl).find('.compstatus').html(htmlString)
 
-  # forecastString = "<table><tr><td>" + @getWeatherIcon(parseInt(days[0][2])) + "</td></tr></table>"
-
+  # create an HTML string for the forecast widget
   forecastString = "<table>";
 
   for day in days
@@ -221,7 +226,7 @@ update: (output, domEl) ->
   # weather forecast script
   isForecastVisable = false
   
-  $(".weather").on "click", ->
+  $(".clickable").on "click", ->
     console.log("button clicked!")
     if isForecastVisable == false
       $(".weather_forecast").css("opacity", "1");

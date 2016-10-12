@@ -21,6 +21,8 @@ style: """
     font 12px fontawesome
   .green
     color: #98be65
+  .yellow
+    color: #ECBE7B
 """
 
 update: (output, domEl) ->
@@ -46,6 +48,6 @@ update: (output, domEl) ->
     win += '/';
       
 
-  $(domEl).find('.kwmmode').html("<span>#{mode}  <span class='green'> #{screens}   </span> #{win}</span><span2>#{file}</span2>")
+  $(domEl).find('.kwmmode').html("<span>#{mode}  <span class='yellow'> #{screens}   </span> #{win}</span><span2>#{file}</span2>")
   
 

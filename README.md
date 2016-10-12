@@ -19,7 +19,7 @@ The original widget created by *herrbischoff* can be found [here](https://github
 
 [Übersicht](http://tracesof.net/uebersicht/) creates a webview and places it on your desktop, just above the wallpaper but behind everyting else. This means you can write widgets that sit on your desktop in coffeescript which can format elements with html, style them with css. For dynamic widgets, Ubersicht let's you run terminal commands and insert the output into html, so just about any language can be used to write scripts for widgets.
 
-You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/kwm) folder.
+You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/tree/master/kwm) folder.
 
 I find having a bunch of seperate widgets hard to align and keep consistent so I jam everything into two widgets. They each run a script that outputs a bunch of data seperated by @s which I can then split and manipulate in the .coffee files.
 
