@@ -16,6 +16,7 @@ style: """
   width: 900px
   span2
     color: #dfdfdf
+    text-overflow: ellipsis
   .icon
     font 12px fontawesome
   .green

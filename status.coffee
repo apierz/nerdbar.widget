@@ -82,6 +82,9 @@ colorizeTemp: (temp) ->
   if tempnum < 65
     return "<span>#{temp}° </span>";
 
+# Yahoo has horrible documentation for these codes, the ones on their website
+# are incorrect so I'm slowly fixing these by trial and error.
+# 
 getWeatherIcon: (connum) ->
    # Tornados and Hurricanes
   if connum <= 2
@@ -116,17 +119,17 @@ getWeatherIcon: (connum) ->
   #cloudy
   if connum == 26
     return "<span class='cyan weather'></span>" ;
-  #mostly cloudy (night)
+  #mostly cloudy (day) #fixed
   if connum == 27
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   #mostly cloudy (day)
   if connum == 28
-    return "<span class='grey weather'></span>" ;
-  #partly cloudy (night)
+    return "<span class='grey weather'></span>" ;
+  #partly cloudy (day) #fixed
   if connum == 29
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   #partly cloudy (day)
-  if connum == 30
+  if connum == 30 #fixed
     return "<span class='grey weather'></span>" ;
   # clear night
   if connum == 31
@@ -137,7 +140,7 @@ getWeatherIcon: (connum) ->
   #Fair, night
   if connum == 33
     return "<span class='yellow weather'></span>" ;
-  #Fair, day
+  #Mostly Sunny # Fixed
   if connum == 34
     return "<span class='yellow weather'></span>" ;
   # mixed rain and hail
@@ -147,10 +150,10 @@ getWeatherIcon: (connum) ->
   if connum == 36
     return "<span class='red weather'></span>" ;
   #thunder storms
-  if connum >= 37 and connum <= 39
+  if connum >= 37 and connum < 39
     return "<span class='yellow weather'></span>" ;
   #scattered showers
-  if connum == 40
+  if connum >= 39 and connum <= 40 #fixed
     return "<span class='cyan weather'></span>" ;
   # snow
   if connum >= 41 and connum <=43
@@ -197,7 +200,7 @@ update: (output, domEl) ->
 
   days = [day0, day1, day2, day3, day4]
 
-  isCharging = values[25].trim()
+  isCharging = values[25]
 
 
   # create an HTML string to be displayed by the widget

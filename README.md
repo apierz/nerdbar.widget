@@ -21,7 +21,7 @@ The original widget created by *herrbischoff* can be found [here](https://github
 
 You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/kwm) folder.
 
-I find having a bunch of seperate widgets hard to align and keep consistent so I jam everything into two widgets. They each run a script that outputs a bunch of data seperated by =@=s which I can then split and manipulate in the .coffee files.
+I find having a bunch of seperate widgets hard to align and keep consistent so I jam everything into two widgets. They each run a script that outputs a bunch of data seperated by @s which I can then split and manipulate in the .coffee files.
 
 ### background.coffee
 This is as simple as Ubersicht widgets get, it just makes a black bar at the top of the screen that the other widgets sit on top of.
