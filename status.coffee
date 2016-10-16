@@ -11,7 +11,7 @@ style: """
   font: 12px Hack
   text-transform: lowercase
   right: 10px
-  top: 6px
+  top: 4px
   color: #51afef
   .weather_forecast
     width: 8em
@@ -24,8 +24,8 @@ style: """
     top: 1px
     position: relative
   .charging
-    font: 12px fontawesome
-    color: #FFFFFF
+    font: 16px fontawesome
+    color: #ffffff
     position: relative
     font: 8px fontawesome
     top: -1px
@@ -39,9 +39,9 @@ style: """
   .red
     color: #ff6c6b
   .icon
-    font: 12px fontawesome
+    font: 13px fontawesome
   .weather
-    font: 12px WeatherIcons-Regular
+    font: 13px WeatherIcons-Regular
   .blue
     color: #51afef
   .cyan
@@ -60,13 +60,13 @@ batteryStatus: (battery, state) ->
   batnum = parseInt(battery)
   
   if state == 'AC' and batnum >= 90
-    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90
-    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 50 and batnum >= 15
-    return "<span class='charging'>  </span><span class='yellow'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 15
-    return "<span class='charging'>  </span><span class='red'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 90
     return "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
@@ -178,7 +178,7 @@ getWeatherIcon: (connum) ->
 
 getWifiStatus: (connum) ->
   if connum isnt 99
-    return "<span class='green wifi'>&nbsp&nbsp</span>";
+    return "<span class='blue wifi'>&nbsp&nbsp</span>";
   if connum is 99
     return "<span class='grey wifi'>&nbsp&nbsp</span>";
 

@@ -23,6 +23,10 @@ style: """
     color: #98be65
   .yellow
     color: #ECBE7B
+  .cyan
+    color: #46d9ff
+  .white
+    color: #dfdfdf
 """
 
 update: (output, domEl) ->
@@ -48,6 +52,6 @@ update: (output, domEl) ->
     win += '/';
       
 
-  $(domEl).find('.kwmmode').html("<span>#{mode}  <span class='yellow'> #{screens}   </span> #{win}</span><span2>#{file}</span2>")
+  $(domEl).find('.kwmmode').html("<span>#{mode}  <span class='white'> #{screens} </span>  #{win}</span><span2>#{file}</span2>")
   
 
