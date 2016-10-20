@@ -13,10 +13,13 @@ style: """
   font: 12px Hack
   left: 10px
   top: 6px
-  width: 900px
+  width: 800px
+  height: 14px
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: ellipsis
   span2
     color: #dfdfdf
-    text-overflow: ellipsis
   .icon
     font 12px fontawesome
   .green
