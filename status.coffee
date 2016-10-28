@@ -79,6 +79,9 @@ batteryStatus: (battery, state) ->
 colorizeTemp: (temp) ->
   #returns a formatted html string with the temperature colorized depending on
   # whether it is hot, temperate or cold
+  if temp == '--'
+    return "<span class='white'>--</span>";
+  
   tempnum = parseInt(temp);
   if tempnum >= 90
     return "<span class='red'>#{temp}°</span>";
@@ -175,6 +178,9 @@ getWeatherIcon: (connum) ->
   # isolated thundershowers
   if connum == 47
     return "<span class='yellow weather'></span>" ;
+  # no internet connection
+  if connum == 99
+    return "<span></span>";
 
 getWifiStatus: (connum) ->
   if connum isnt 99
