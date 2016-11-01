@@ -58,7 +58,7 @@ batteryStatus: (battery, state) ->
   #returns a formatted html string current battery percentage, a representative icon and adds a lighting bolt if the
   # battery is plugged in and charging
   batnum = parseInt(battery)
-  
+  # console.log(state)
   if state == 'AC' and batnum >= 90
     return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90

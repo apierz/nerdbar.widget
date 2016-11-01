@@ -4,10 +4,12 @@ render: (output) ->
   ""
 
 style: """
-  top: 0
-  left: 0
-  height: 25px
-  width: 100%
+  width: 99.5%;
+  top: 3px;
+  right: 2px;
+  left 4px;
+  border-radius: 4px;
+  height: 23px
   background-color: #282c34
   z-index: -1
 """
