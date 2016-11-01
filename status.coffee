@@ -199,20 +199,20 @@ update: (output, domEl) ->
   time = values[0];
   date = values[1];
   battery = values[2];
-  temp = values[3];
-  condition = values[4];
+  isCharging = values[3]
+  temp = values[4];
+  condition = values[5];
   connum = parseInt(condition);
 
   # Five Day Forcast Parsing
-  day0 = [values[5], values[6], values[7], values[8]]
-  day1 = [values[9], values[10], values[11], values[12]]
-  day2 = [values[13], values[14], values[15], values[16]]
-  day3 = [values[17], values[18], values[19], values[20]]
-  day4 = [values[21], values[22], values[23], values[24]]
+  day0 = [values[6], values[7], values[8], values[9]]
+  day1 = [values[10], values[11], values[12], values[13]]
+  day2 = [values[14], values[15], values[16], values[17]]
+  day3 = [values[18], values[19], values[20], values[21]]
+  day4 = [values[22], values[23], values[24], values[25]]
 
   days = [day0, day1, day2, day3, day4]
 
-  isCharging = values[27]
 
 
   # create an HTML string to be displayed by the widget
