@@ -58,7 +58,7 @@ batteryStatus: (battery, state) ->
   #returns a formatted html string current battery percentage, a representative icon and adds a lighting bolt if the
   # battery is plugged in and charging
   batnum = parseInt(battery)
-  # console.log(state)
+  console.log(state)
   if state == 'AC' and batnum >= 90
     return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90
@@ -212,7 +212,7 @@ update: (output, domEl) ->
 
   days = [day0, day1, day2, day3, day4]
 
-  isCharging = values[25]
+  isCharging = values[27]
 
 
   # create an HTML string to be displayed by the widget
