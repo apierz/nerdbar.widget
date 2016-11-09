@@ -10,6 +10,6 @@ style: """
   left 4px;
   border-radius: 4px;
   height: 23px
-  background-color: #282c34
+  background-color: #1d1f20
   z-index: -1
 """

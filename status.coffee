@@ -11,11 +11,11 @@ style: """
   font: 12px Hack
   text-transform: lowercase
   right: 10px
-  top: 4px
-  color: #51afef
+  top: 5px
+  color: #b6e63e
   .weather_forecast
     width: 8em
-    background: #282c34
+    background: #1d1f20
     top: 16px
     right: 100px
     opacity: 0
@@ -31,23 +31,23 @@ style: """
     top: -1px
     right: -11px
   .white
-    color: #bbc2cf
+    color: #d6d6d4
   .green
-    color: #98be65
+    color: #b6e63e
   .yellow
-    color: #ecbe7b
+    color: #e2c770
   .red
-    color: #ff6c6b
+    color: #e74c3c
   .icon
     font: 13px fontawesome
   .weather
     font: 13px WeatherIcons-Regular
   .blue
-    color: #51afef
+    color: #268bd2
   .cyan
-    color: #46d9ff
+    color: #66d9ef
   .grey
-    color: #dfdfdf
+    color: #c0c5cf
 """
 
 timeAndDate: (date, time) ->
@@ -60,13 +60,13 @@ batteryStatus: (battery, state) ->
   batnum = parseInt(battery)
   console.log(state)
   if state == 'AC' and batnum >= 90
-    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90
-    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 50 and batnum >= 15
-    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='yellow'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 15
-    return "<span class='charging'>  </span><span class='blue'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='red'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 90
     return "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
@@ -88,7 +88,7 @@ colorizeTemp: (temp) ->
   if tempnum < 90 and tempnum >= 65
     return "<span class='yellow'>#{temp}°</span>";
   if tempnum < 65
-    return "<span>#{temp}°</span>";
+    return "<span class='grey'>#{temp}°</span>";
 
 # Yahoo has horrible documentation for these codes, the ones on their website
 # are incorrect so I'm slowly fixing these by trial and error.
@@ -184,7 +184,7 @@ getWeatherIcon: (connum) ->
 
 getWifiStatus: (connum) ->
   if connum isnt 99
-    return "<span class='blue wifi'>&nbsp&nbsp</span>";
+    return "<span class='wifi'>&nbsp&nbsp</span>";
   if connum is 99
     return "<span class='grey wifi'>&nbsp&nbsp</span>";
 
