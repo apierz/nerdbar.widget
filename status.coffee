@@ -88,7 +88,7 @@ colorizeTemp: (temp) ->
   if tempnum < 90 and tempnum >= 65
     return "<span class='yellow'>#{temp}°</span>";
   if tempnum < 65
-    return "<span class='grey'>#{temp}°</span>";
+    return "<span class='blue'>#{temp}°</span>";
 
 # Yahoo has horrible documentation for these codes, the ones on their website
 # are incorrect so I'm slowly fixing these by trial and error.
