@@ -12,7 +12,7 @@ style: """
   text-transform: lowercase
   right: 10px
   top: 5px
-  color: #b6e63e
+  color: #9c91e4
   .weather_forecast
     width: 8em
     background: #1d1f20
@@ -60,7 +60,7 @@ batteryStatus: (battery, state) ->
   batnum = parseInt(battery)
   console.log(state)
   if state == 'AC' and batnum >= 90
-    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span ><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90
     return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 50 and batnum >= 15

@@ -8,7 +8,7 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: subpixel-antialiased
-  color: #b6e63e
+  color: #9c91e4
   font: 12px Hack
   left: 10px
   top: 7px
@@ -31,7 +31,7 @@ style: """
     color: #d6d6d4
   .active
     color: #1d1f20
-    background: #b6e63e
+    background: #9c91e4
   .inactive
     color: #1d1f20
     background: #c0c5cf
