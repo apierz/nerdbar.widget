@@ -12,10 +12,11 @@ style: """
   text-transform: lowercase
   right: 10px
   top: 5px
-  color: #9c91e4
+  color: #66d9ef
+  height: 13
   .weather_forecast
     width: 8em
-    background: #1d1f20
+    background: #272822
     top: 16px
     right: 100px
     opacity: 0
@@ -25,29 +26,31 @@ style: """
     position: relative
   .charging
     font: 16px fontawesome
-    color: #ffffff
+    color: #f8f8f2
     position: relative
     font: 8px fontawesome
     top: -1px
     right: -11px
   .white
-    color: #d6d6d4
+    color: #f8f8f2
   .green
-    color: #b6e63e
+    color: #a6e22e
   .yellow
-    color: #e2c770
+    color: #e6db74
   .red
-    color: #e74c3c
+    color: #f92672
   .icon
     font: 13px fontawesome
   .weather
     font: 13px WeatherIcons-Regular
   .blue
-    color: #268bd2
-  .cyan
     color: #66d9ef
+  .cyan
+    color: #a1efe4
   .grey
-    color: #c0c5cf
+    color: #64645e
+  .forecast
+    background: #272822
 """
 
 timeAndDate: (date, time) ->

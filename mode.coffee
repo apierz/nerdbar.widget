@@ -1,6 +1,6 @@
 command: "~/.kwm/scripts/screens"
 
-refreshFrequency: 1000 # ms
+refreshFrequency: 100 # ms
 
 render: (output) ->
   " <div class='kwmmode'></div>"
@@ -8,7 +8,7 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: subpixel-antialiased
-  color: #9c91e4
+  color: #66d9ef
   font: 12px Hack
   left: 10px
   top: 7px
@@ -18,23 +18,23 @@ style: """
   text-overflow: ellipsis
   overflow: ellipsis
   span2
-    color: #d6d6d4
+    color: #f8f8f2
   .icon
     font 12px fontawesome
   .green
-    color: #b6e63e
+    color: #a6e22e
   .yellow
-    color: #e2c770
+    color: #e6db74
   .cyan
-    color: #66d9ef
+    color: #a1efe4
   .white
-    color: #d6d6d4
+    color: #f8f8f2
   .active
-    color: #1d1f20
-    background: #9c91e4
+    color: #272822
+    background: #66d9ef
   .inactive
-    color: #1d1f20
-    background: #c0c5cf
+    color: #272822
+    background: #8f908a
 """
 
 update: (output, domEl) ->
