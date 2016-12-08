@@ -27,12 +27,12 @@ I find having a bunch of seperate widgets hard to align and keep consistent so I
 This is as simple as Ubersicht widgets get, it just makes a black bar at the top of the screen that the other widgets sit on top of.
 
 ### mode.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot3.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot2.png?raw=true)
 
 This widget is design to work with KWM. It shows the current KWM mode (bsp, float, monocle), the number of desktops and the current one, and the current selected window.
 
 ### status.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot2.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot3.png?raw=true)
 
 * This widget shows the current time and date.
 * Recently added back indicators for memory and cpu %.

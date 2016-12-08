@@ -192,7 +192,7 @@ getWifiStatus: (connum) ->
     return "<span class='grey wifi'>&nbsp&nbsp</span>";
 
 getCPU: (cpu) ->
-  cpuNum = parseFloat(cpu).toFixed(1)
+  cpuNum = parseFloat(cpu)
   cpuNum = cpuNum/4
   cpuNum = cpuNum.toFixed(1)
   return "<span class='green icon'>&nbsp</span><span class='green'>#{cpuNum}&nbsp</span>"
@@ -202,8 +202,6 @@ getMem: (mem) ->
   memNum = memNum/2
   memNum = memNum.toFixed(1)
   return "<span class='yellow icon'>&nbsp&nbsp</span><span class='yellow'>#{memNum}&nbsp</span>"
-
-  
 
 
 update: (output, domEl) ->
