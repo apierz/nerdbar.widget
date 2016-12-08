@@ -1,6 +1,6 @@
 command: "~/.kwm/scripts/compstatus"
 
-refreshFrequency: 10000 # ms
+refreshFrequency: 1000 # ms
 
 render: (output) ->
   "<div class='compstatus'></div>
@@ -191,6 +191,12 @@ getWifiStatus: (connum) ->
   if connum is 99
     return "<span class='grey wifi'>&nbsp&nbsp</span>";
 
+getCPU: (cpu) ->
+  return "<span class='green icon'>&nbsp</span><span class='green'>#{cpu}</span>"
+
+getMem: (mem) ->
+  return "<span class='yellow icon'>&nbsp&nbsp</span><span class='yellow'>#{mem}</span>"
+
   
 
 
@@ -216,10 +222,13 @@ update: (output, domEl) ->
 
   days = [day0, day1, day2, day3, day4]
 
+  cpu = values[26]
+  mem = values[27]
+
 
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
+  htmlString = @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @getMem(mem) + @getCPU(cpu) + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
   $(domEl).find('.compstatus').html(htmlString)
 
   # create an HTML string for the forecast widget

@@ -34,7 +34,7 @@ style: """
     background: #66d9ef
   .inactive
     color: #272822
-    background: #8f908a
+    background: lightgrey
 """
 
 update: (output, domEl) ->
