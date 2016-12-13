@@ -1,6 +1,6 @@
 command: "~/.kwm/scripts/compstatus"
 
-refreshFrequency: 1000 # ms
+refreshFrequency: 5000 # ms
 
 render: (output) ->
   "<div class='compstatus'></div>
@@ -193,15 +193,34 @@ getWifiStatus: (connum) ->
 
 getCPU: (cpu) ->
   cpuNum = parseFloat(cpu)
+  # I have four cores, so I divide my CPU percentage by four to get the proper number
   cpuNum = cpuNum/4
   cpuNum = cpuNum.toFixed(1)
   return "<span class='green icon'>&nbsp</span><span class='green'>#{cpuNum}&nbsp</span>"
 
 getMem: (mem) ->
   memNum = parseFloat(mem)
+  # I don't know why, but my memory percentage is given as consistently double what it should be
   memNum = memNum/2
   memNum = memNum.toFixed(1)
   return "<span class='yellow icon'>&nbsp&nbsp</span><span class='yellow'>#{memNum}&nbsp</span>"
+
+convertBytes: (bytes) ->
+  kb = bytes / 1024
+  return @usageFormat(kb)
+
+usageFormat: (kb) ->
+  # if kb > 1024
+    mb = kb / 1024
+    "#{parseFloat(mb.toFixed(2))}MB"
+  # else
+    # "#{parseFloat(kb.toFixed(3))} KB/s"
+
+getNetTraffic: (down, up) ->
+  downString = @convertBytes(parseInt(down))
+  upString = @convertBytes(parseInt(up))
+  return "<span class='icon blue'></span><span>#{downString}&nbsp&nbsp</span><span class='icon red'></span><span class='red'>#{upString}&nbsp</span> "
+
 
 
 update: (output, domEl) ->
@@ -216,6 +235,7 @@ update: (output, domEl) ->
   temp = values[4];
   condition = values[5];
   connum = parseInt(condition);
+  
 
   # Five Day Forcast Parsing
   day0 = [values[6], values[7], values[8], values[9]]
@@ -229,10 +249,13 @@ update: (output, domEl) ->
   cpu = values[26]
   mem = values[27]
 
+  down = values[28]
+  up   = values[29]
+
 
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @getMem(mem) + @getCPU(cpu) + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
+  htmlString = @getNetTraffic(down, up) + @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @getMem(mem) + @getCPU(cpu) + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
   $(domEl).find('.compstatus').html(htmlString)
 
   # create an HTML string for the forecast widget
