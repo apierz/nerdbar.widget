@@ -68,16 +68,14 @@ update: (output, domEl) ->
     else
       screenhtml += "<span class='inactive'>&nbsp;" + i.toString() + ':' + sseg + "&nbsp;</span><span>&nbsp;</span>";
 
-  i = 0;
-
+  console.log(wins)
   winseg = wins.split('/');
-  win = "";
   file = winseg[winseg.length - 1]
   j = winseg.length - 1
   flag = 0
   
   if j > 1
-    while j > 1
+    while j >= 1
       j -= 1;
       if (win + file).length >= 48
         win = '…/' + win
