@@ -73,22 +73,19 @@ update: (output, domEl) ->
   winseg = wins.split('/');
   win = "";
   file = winseg[winseg.length - 1]
-  j = winseg.length
+  j = winseg.length - 1
   flag = 0
   
   if j > 1
-    j -= 1
     while j > 1
       j -= 1;
-      if (win + file).length >= 55
-        win = '..' + win
-        win = win + '/'
+      if (win + file).length >= 48
+        win = '…/' + win
         break;
       else
-        win = winseg[j] + win;
-        win = '/' + win;
+        win = winseg[j] + '/' + win;
 
-   while file.length >= 55
+   while file.length >= 48
     file = file.slice(0, -1)
     flag = 1
 

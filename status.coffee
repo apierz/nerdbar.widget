@@ -204,8 +204,6 @@ getCPU: (cpu) ->
 
 getMem: (mem) ->
   memNum = parseFloat(mem)
-  # I don't know why, but my memory percentage is given as consistently double what it should be
-  memNum = memNum/2
   memNum = memNum.toFixed(1)
   return "<span class='yellow icon'>&nbsp&nbsp</span><span class='yellow'>#{memNum}&nbsp</span>"
 
