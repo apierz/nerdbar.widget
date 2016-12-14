@@ -12,7 +12,7 @@ style: """
   font: 12px Hack
   left: 10px
   top: 7px
-  width: 880px
+  width:850px
   height: 14px
   white-space: nowrap
   text-overflow: ellipsis
@@ -71,15 +71,32 @@ update: (output, domEl) ->
   i = 0;
 
   winseg = wins.split('/');
+  win = "";
+  file = winseg[winseg.length - 1]
+  j = winseg.length
+  flag = 0
   
-  for seg in winseg
-    i += 1;
-    if i == winseg.length
-      file += seg;
-      break;
-      
-    win += seg;
-    win += '/';
+  if j > 1
+    j -= 1
+    while j > 1
+      j -= 1;
+      if (win + file).length >= 55
+        win = '..' + win
+        win = win + '/'
+        break;
+      else
+        win = winseg[j] + win;
+        win = '/' + win;
+
+   while file.length >= 55
+    file = file.slice(0, -1)
+    flag = 1
+
+   if flag >= 1
+     file = file + '…';
+
+  
+    
       
 
   $(domEl).find('.kwmmode').html("<span>#{mode}  " + screenhtml + "</span>  #{win}</span><span2>#{file}</span2>")

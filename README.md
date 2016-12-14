@@ -1,6 +1,6 @@
 # Bar
 
-Personal [Übersicht](http://tracesof.net/uebersicht/) system information bar for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from Hlissner's [Doom Theme](http://github.com/hlissner/emacs-doom-theme).
+Personal [Übersicht](http://tracesof.net/uebersicht/) system information bar for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the classic Monokai theme.
 
 Originally created by [herrbischoff](https://github.com/herrbischoff).
 
@@ -17,7 +17,7 @@ The original widget created by *herrbischoff* can be found [here](https://github
 
 ## Ubersicht
 
-[Übersicht](http://tracesof.net/uebersicht/) creates a webview and places it on your desktop, just above the wallpaper but behind everyting else. This means you can write widgets that sit on your desktop in coffeescript which can format elements with html and style them with css. For dynamic widgets, Ubersicht let's you run terminal commands and insert the output into html, so just about any language can be used to write scripts for widgets.
+[Übersicht](http://tracesof.net/uebersicht/) creates a webview and places it on your desktop, just above the wallpaper but behind everyting else. Ubersicht widgets are written as .coffee files which let you format elements with html, style them with css and manipulate data with javascript and coffeescript. For dynamic widgets, Ubersicht let's you run terminal commands and insert the output into html, so just about any language can be used to write scripts for widgets.
 
 You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/tree/master/kwm) folder.
 
@@ -36,6 +36,7 @@ This widget is design to work with KWM. It shows the current KWM mode (bsp, floa
 
 * This widget shows the current time and date.
 * Recently added back indicators for memory and cpu %.
+* Network upload and download traffic, adapted from [dionmonk's](https://github.com/dionmunk) [ubersicht-network-throughput](https://github.com/dionmunk/ubersicht-network-throughput) widget.
 * The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
 * The weather widget tells the current temperature ( color is blue, yellow or red depending on temperature) and an icon showing the current weather status. Uses the Yahoo Weather API for forecast data and [ip-api](http://ip.api.com) to determine current location.
 * Clicking on the temperature loads a five day forecast panel with date, condition, and low and high temperatures for the day. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
