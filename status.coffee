@@ -49,6 +49,10 @@ style: """
     color: #a1efe4
   .grey
     color: #64645e
+  .purple
+    color: #fd5ff0
+  .orange
+    color: #fd971f
   .forecast
     background: #272822
 """
@@ -63,13 +67,13 @@ batteryStatus: (battery, state) ->
   batnum = parseInt(battery)
   console.log(state)
   if state == 'AC' and batnum >= 90
-    return "<span class='charging'>  </span><span ><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span ><span class='icon'> </span>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90
-    return "<span class='charging'>  </span><span class='green'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='green'><span class='icon'> </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 50 and batnum >= 15
-    return "<span class='charging'>  </span><span class='yellow'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='yellow'><span class='icon'> </span>#{batnum}%</span>"
   else if state == 'AC' and batnum < 15
-    return "<span class='charging'>  </span><span class='red'><span class='icon'>  </span>#{batnum}%</span>"
+    return "<span class='charging'>  </span><span class='red'><span class='icon'> </span>#{batnum}%</span>"
   else if batnum >= 90
     return "<span class='green'><span class='icon'>  </span>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
@@ -219,7 +223,7 @@ usageFormat: (kb) ->
 getNetTraffic: (down, up) ->
   downString = @convertBytes(parseInt(down))
   upString = @convertBytes(parseInt(up))
-  return "<span class='icon blue'></span><span>#{downString}&nbsp&nbsp</span><span class='icon red'></span><span class='red'>#{upString}&nbsp</span> "
+  return "<span class='icon cyan'>&nbsp&nbsp</span><span class='cyan'>#{downString}&nbsp</span><span class='icon orange'></span><span class='orange'>#{upString}</span> "
 
 
 
@@ -255,7 +259,7 @@ update: (output, domEl) ->
 
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getNetTraffic(down, up) + @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>" + @getMem(mem) + @getCPU(cpu) + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
+  htmlString = @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>"  + "<span> </span>" + @getNetTraffic(down, up) + @getMem(mem) + @getCPU(cpu) + "<span></span>" + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
   $(domEl).find('.compstatus').html(htmlString)
 
   # create an HTML string for the forecast widget
