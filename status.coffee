@@ -25,34 +25,48 @@ style: """
     top: 1px
     position: relative
   .charging
-    font: 16px fontawesome
+    font: 13px fontawesome
     color: #f8f8f2
     position: relative
-    font: 8px fontawesome
-    top: -1px
-    right: -11px
+    top: 1px
+    right: -16px
+    z-index: 1
   .white
     color: #f8f8f2
   .green
     color: #a6e22e
+  .greenbg
+    background: #a6e22e
+    color: #272822
   .yellow
     color: #e6db74
+  .yellowbg
+    background: #e6db74
+    color: #272822
   .red
     color: #f92672
   .icon
-    font: 13px fontawesome
+    position: relative
+    top: 1px
+    font: 14px fontawesome
   .weather
     font: 13px WeatherIcons-Regular
   .blue
     color: #66d9ef
   .cyan
     color: #a1efe4
+  .cyanbg
+    background: #a1efe4
+    color: #272822
   .grey
     color: #64645e
   .purple
     color: #fd5ff0
   .orange
     color: #fd971f
+  .orangebg
+    background: #fd971f
+    color: #272822
   .forecast
     background: #272822
 """
@@ -200,12 +214,12 @@ getCPU: (cpu) ->
   # I have four cores, so I divide my CPU percentage by four to get the proper number
   cpuNum = cpuNum/4
   cpuNum = cpuNum.toFixed(1)
-  return "<span class='green icon'>&nbsp</span><span class='green'>#{cpuNum}&nbsp</span>"
+  return "<span class='greenbg icon'>&nbsp</span><span class='greenbg'>#{cpuNum}%&nbsp</span><span>&nbsp</span>"
 
 getMem: (mem) ->
   memNum = parseFloat(mem)
   memNum = memNum.toFixed(1)
-  return "<span class='yellow icon'>&nbsp&nbsp</span><span class='yellow'>#{memNum}&nbsp</span>"
+  return "<span class='yellowbg icon'>&nbsp</span><span class='yellowbg'>#{memNum}%&nbsp</span><span>&nbsp</span>"
 
 convertBytes: (bytes) ->
   kb = bytes / 1024
@@ -221,7 +235,7 @@ usageFormat: (kb) ->
 getNetTraffic: (down, up) ->
   downString = @convertBytes(parseInt(down))
   upString = @convertBytes(parseInt(up))
-  return "<span class='icon cyan'>&nbsp&nbsp</span><span class='cyan'>#{downString}&nbsp</span><span class='icon orange'></span><span class='orange'>#{upString}</span> "
+  return "<span>&nbsp</span><span class='icon cyanbg'></span><span class='cyanbg'>#{downString}</span><span>&nbsp</span><span class='icon orangebg'></span><span class='orangebg'>#{upString}</span> "
 
 
 
