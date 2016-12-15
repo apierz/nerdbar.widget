@@ -38,41 +38,48 @@ def main():
     yql_query = 'SELECT * FROM weather.forecast where woeid in (SELECT woeid FROM geo.places(1) WHERE text="'+ city + ', ' + region + '")'
     yql_url = baseurl + urllib.parse.urlencode({'q':yql_query}) + "&format=json"
     try:
+        data = []
         result = urllib.request.urlopen(yql_url).read()
         data = json.loads(result.decode())
-        print(data['query']['results']['channel']['item']['condition']['temp'] + '@' +
-          data['query']['results']['channel']['item']['condition']['code'] +'@' +
-          data['query']['results']['channel']['item']['forecast'][0]['low'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][0]['high'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][0]['code'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][0]['day'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][1]['low'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][1]['high'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][1]['code'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][1]['day'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][2]['low'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][2]['high'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][2]['code'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][2]['day'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][3]['low'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][3]['high'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][3]['code'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][3]['day'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][4]['low'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][4]['high'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][4]['code'] + '@' +
-          data['query']['results']['channel']['item']['forecast'][4]['day'])
+        if data['query']['results']['channel']['item']['forecast'][4]['day'] != None:
+          print(data['query']['results']['channel']['item']['condition']['temp'] + '@' +
+            data['query']['results']['channel']['item']['condition']['code'] +'@' +
+            data['query']['results']['channel']['item']['forecast'][0]['low'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][0]['high'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][0]['code'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][0]['day'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][1]['low'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][1]['high'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][1]['code'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][1]['day'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][2]['low'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][2]['high'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][2]['code'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][2]['day'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][3]['low'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][3]['high'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][3]['code'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][3]['day'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][4]['low'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][4]['high'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][4]['code'] + '@' +
+            data['query']['results']['channel']['item']['forecast'][4]['day'])
+        else:
+          print("--@99")
+        return
     except HTTPError:
         print("--@99")
         return
     except URLError:
         print("--@99")
         return
+    except TypeError:
+        print("--@99")
+        return
     except timeout:
         print("--@99")
         return
     else:
-        # print("--@99")
         return
   else:
     print("--@99")
