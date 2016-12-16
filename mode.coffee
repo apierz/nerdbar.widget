@@ -13,14 +13,16 @@ style: """
   left: 10px
   top: 7px
   width:850px
-  height: 14px
+  height: 16px
   white-space: nowrap
   text-overflow: ellipsis
   overflow: ellipsis
   span2
     color: #f8f8f2
   .icon
-    font 12px fontawesome
+    font: 14px fontawesome
+    top: 1px
+    position relative
   .green
     color: #a6e22e
   .yellow
@@ -94,7 +96,7 @@ update: (output, domEl) ->
     
       
 
-  $(domEl).find('.kwmmode').html("<span>#{mode}  " + screenhtml + "</span>  #{win}</span><span2>#{file}</span2>")
+  $(domEl).find('.kwmmode').html("<span>#{mode}</span><span class='icon'> </span> " + screenhtml + "<span class='icon'> </span> <span>#{win}</span><span2>#{file}</span2>")
     
   
 

@@ -271,7 +271,7 @@ update: (output, domEl) ->
 
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>"  + "<span> </span>" + @getNetTraffic(down, up) + @getMem(mem) + @getCPU(cpu) + "<span></span>" + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
+  htmlString = @getWifiStatus(connum) + "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>"  + "<span class='icon'></span>" + @getNetTraffic(down, up) + @getMem(mem) + @getCPU(cpu) + "<span class='icon'></span>" + @batteryStatus(battery, isCharging) + @timeAndDate(date, time);
   $(domEl).find('.compstatus').html(htmlString)
 
   # create an HTML string for the forecast widget
