@@ -21,7 +21,7 @@ The original widget created by *herrbischoff* can be found [here](https://github
 
 You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/tree/master/kwm) folder.
 
-I find having a bunch of seperate widgets hard to align and keep consistent so I jam everything into two widgets. They each run a script that outputs a bunch of data seperated by @s which I can then split and manipulate in the .coffee files.
+I find having a bunch of seperate widgets hard to align and keep consistent so I jam everything into a few widgets. They each run a script that outputs a bunch of data seperated by @s which I can then split and manipulate in the .coffee files.
 
 ### background.coffee
 This is as simple as Ubersicht widgets get, it just makes a black bar at the top of the screen that the other widgets sit on top of.
@@ -38,9 +38,17 @@ This widget is design to work with KWM. It shows the current KWM mode (bsp, floa
 * Recently added back indicators for memory and cpu %.
 * Network upload and download traffic, adapted from [dionmonk's](https://github.com/dionmunk) [ubersicht-network-throughput](https://github.com/dionmunk/ubersicht-network-throughput) widget.
 * The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
+* Network connection indicator widget. Shows grey if no connection detected and blue if there's an active connection on Wi-Fi or LAN.
+
+## weather.coffee
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot4.png?raw=true)
+
+This used to be a part of status.coffee but since it uses an API call it was very inefficent to have it update every few seconds. It is now its own widget that updates every 10 minutes signifigantly reducing the resources used.
+
 * The weather widget tells the current temperature ( color is blue, yellow or red depending on temperature) and an icon showing the current weather status. Uses the Yahoo Weather API for forecast data and [ip-api](http://ip.api.com) to determine current location.
 * Clicking on the temperature loads a five day forecast panel with date, condition, and low and high temperatures for the day. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
-* Network connection indicator widget. Shows grey if no connection detected and green if there's an active connection.
+
+This 
 
 ## Installation
 
