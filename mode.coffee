@@ -52,7 +52,6 @@ update: (output, domEl) ->
   i = 0;
 
   screensegs = screens.split('(');
-  console.log(screens)
 
   for sseg in screensegs
     screensegs[i] = sseg.replace /^\s+|\s+$/g, ""
@@ -63,14 +62,12 @@ update: (output, domEl) ->
   i = 0;
 
   for sseg in screensegs
-    console.log(sseg)
     i+= 1;
     if sseg.slice(-1) == ")"
       screenhtml += "<span class='active'>&nbsp;" + i.toString() + ':' + sseg.slice(0, -1) + "&nbsp;</span><span>&nbsp;</span>" ;
     else
       screenhtml += "<span class='inactive'>&nbsp;" + i.toString() + ':' + sseg + "&nbsp;</span><span>&nbsp;</span>";
 
-  console.log(wins)
   winseg = wins.split('/');
   file = winseg[winseg.length - 1]
   j = winseg.length - 1
@@ -92,9 +89,6 @@ update: (output, domEl) ->
    if flag >= 1
      file = file + '…';
 
-  
-    
-      
 
   $(domEl).find('.kwmmode').html("<span>#{mode}</span><span class='icon'> </span> " + screenhtml + "<span class='icon'> </span> <span>#{win}</span><span2>#{file}</span2>")
     
