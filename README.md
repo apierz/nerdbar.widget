@@ -48,8 +48,6 @@ This used to be a part of status.coffee but since it uses an API call it was ver
 * The weather widget tells the current temperature ( color is blue, yellow or red depending on temperature) and an icon showing the current weather status. Uses the Yahoo Weather API for forecast data and [ip-api](http://ip.api.com) to determine current location.
 * Clicking on the temperature loads a five day forecast panel with date, condition, and low and high temperatures for the day. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
 
-This 
-
 ## Installation
 
 Make sure you have [Übersicht](http://tracesof.net/uebersicht/) installed.

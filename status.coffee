@@ -99,11 +99,11 @@ batteryStatus: (battery, state) ->
 getWifiStatus: (status) ->
   console.log(status)
   if status == "Wi-Fi"
-    return "<span class='wifi'>&nbsp&nbsp</span>";
+    return "<span class='wifi'>&nbsp</span>";
   if status == 'USB 10/100/1000 LAN' or status == 'Apple USB Ethernet Adapter'
-    return "<span class='wifi'>&nbsp&nbsp</span>";
+    return "<span class='wifi'></span>";
   else
-    return "<span class='grey wifi'>&nbsp&nbsp</span>";
+    return "<span class='grey wifi'>&nbsp</span>";
 
 getCPU: (cpu) ->
   cpuNum = parseFloat(cpu)
