@@ -322,3 +322,5 @@ update: (output, domEl) ->
     else
       $(".weather_forecast").css("opacity", "0");
       isForecastVisable = false;
+    if connum == 99
+      @update
