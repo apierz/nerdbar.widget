@@ -63,7 +63,8 @@ def main():
             data['query']['results']['channel']['item']['forecast'][4]['low'] + '@' +
             data['query']['results']['channel']['item']['forecast'][4]['high'] + '@' +
             data['query']['results']['channel']['item']['forecast'][4]['code'] + '@' +
-            data['query']['results']['channel']['item']['forecast'][4]['day'])
+            data['query']['results']['channel']['item']['forecast'][4]['day'] + '@' +
+            city + '@' + region)
         else:
           print("--@99")
         return

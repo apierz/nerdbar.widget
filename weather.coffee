@@ -239,7 +239,7 @@ getWeatherCon: (connum) ->
   if connum == 33
     return "<span class='white'>Fair</span>" ;
   if connum == 34
-    return "<span class='white'>Fair</span>" ;
+    return "<span class='white'>Mostly Sunny</span>" ;
   if connum == 35
     return "<span class='white'>Mixed Rain and Hail</span>" ;
   if connum == 36
@@ -249,7 +249,7 @@ getWeatherCon: (connum) ->
   if connum == 38
     return "<span class='white'>Sca. Thunder</span>" ;
   if connum == 39
-    return "<span class='white'>Sca. Thunder</span>" ;
+    return "<span class='white'>Sca. Showers</span>" ;
   if connum == 40
     return "<span class='white'>Sca. Showers</span>" ;
   if connum == 41
@@ -289,6 +289,9 @@ update: (output, domEl) ->
 
   days = [day0, day1, day2, day3, day4]
 
+  city = values[22]
+  region = values[23]
+
 
 
   # create an HTML string to be displayed by the widget
@@ -303,6 +306,9 @@ update: (output, domEl) ->
     for day in days
         forecastString = forecastString + "<tr>" + "<td class='white'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
 
+
+    forecastString = forecastString + "<tr class='center'><span class='yellow'>" + city + ', ' + region + "</span></tr>";
+  
     forecastString = forecastString + "<tr class='center'>" + @getWeatherCon(connum) + "</tr>";
 
     forecastString = forecastString + "</table>"
