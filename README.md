@@ -3,8 +3,8 @@
 Personal [Übersicht](http://tracesof.net/uebersicht/) system information bars for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the Gruvbox theme.
 
 *Screen Shots:*
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot1.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot2.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshotone.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshottwo.png?raw=true)
 
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).
@@ -26,12 +26,12 @@ My bar now is now a collection of widgets that are arranged around my screen.
 These are as simple as Ubersicht widgets get, they make black bars at the top, bottom left and bottom right of the screen that the other widgets sit on top of.
 
 ### mode.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot3.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshotthree.png?raw=true)
 
 This widget is design to work with KWM. It shows the current KWM mode (bsp, float, monocle) and the number of desktops and the current one. If enabled in the Ubersicht preferences menu, holding the interaction key and clicking on the mode will cycle through the KWM modes and clicking on desktop icons will change the current desktop to the one clicked on. 
 
 ### currentWindow.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot4.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshotfour.png?raw=true)
 
 This widget shows the currently selected window. If working on a file it can highlight the name of the file being worked on.
 
