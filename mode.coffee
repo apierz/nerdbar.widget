@@ -1,10 +1,12 @@
 command: "~/.kwm/scripts/screens"
 
-refreshFrequency: 100 # ms
+refreshFrequency: 3000 # ms
 
 render: (output) ->
-  " <div class='kwmmode'></div>"
-
+  """
+    <link rel="stylesheet" type="text/css" href="/nerdbar.widget/colors.css" />
+    <div class='kwmmode'></div>
+  """
 
 style: """
   -webkit-font-smoothing: antialiased
@@ -17,26 +19,6 @@ style: """
   white-space: nowrap
   text-overflow: ellipsis
   overflow: ellipsis
-  span2
-    color: #f8f8f2
-  .icon
-    font: 14px fontawesome
-    top: 1px
-    position relative
-  .green
-    color: #a6e22e
-  .yellow
-    color: #e6db74
-  .cyan
-    color: #a1efe4
-  .white
-    color: #f8f8f2
-  .active
-    color: #272822
-    background: #66d9ef
-  .inactive
-    color: #272822
-    background: lightgrey
 """
 
 update: (output, domEl) ->
@@ -61,36 +43,43 @@ update: (output, domEl) ->
 
   i = 0;
 
+  #apply a proper number tag so that space change controls can be added
   for sseg in screensegs
     i+= 1;
     if sseg.slice(-1) == ")"
-      screenhtml += "<span class='active'>&nbsp;" + i.toString() + ':' + sseg.slice(0, -1) + "&nbsp;</span><span>&nbsp;</span>" ;
+      if i == 1
+         screenhtml += "<span class='icon one'>&nbsp;&nbsp;&nbsp;</span>" ;
+      if i == 2
+         screenhtml += "<span class='icon two'>&nbsp;&nbsp;&nbsp;</span>" ;
+      if i == 3
+         screenhtml += "<span class='icon three'>&nbsp;&nbsp;&nbsp;</span>" ;
+      if i == 4
+         screenhtml += "<span class='icon four'>&nbsp;&nbsp;&nbsp;</span>" ;
     else
-      screenhtml += "<span class='inactive'>&nbsp;" + i.toString() + ':' + sseg + "&nbsp;</span><span>&nbsp;</span>";
+      if i == 1
+         screenhtml += "<span class='icon white one'>&nbsp;&nbsp;&nbsp;</span>" ;
+      if i == 2
+         screenhtml += "<span class='icon white two'>&nbsp;&nbsp;&nbsp;</span>" ;
+      if i == 3
+         screenhtml += "<span class='icon white three'>&nbsp;&nbsp;&nbsp;</span>" ;
+      if i == 4
+         screenhtml += "<span class='icon white four'>&nbsp;&nbsp;&nbsp;</span>" ;
 
-  winseg = wins.split('/');
-  file = winseg[winseg.length - 1]
-  j = winseg.length - 1
-  flag = 0
+  #display the html string
+  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
+
   
-  if j > 1
-    while j >= 1
-      j -= 1;
-      if (win + file).length >= 48
-        win = '…/' + win
-        break;
-      else
-        win = winseg[j] + '/' + win;
+  #add screen controls to screen icons
+  $(".one").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental one"
+  $(".two").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental two"
+  $(".three").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental three"
+  $(".four").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental four"
 
-   while file.length >= 48
-    file = file.slice(0, -1)
-    flag = 1
-
-   if flag >= 1
-     file = file + '…';
-
-
-  $(domEl).find('.kwmmode').html("<span>#{mode}</span><span class='icon'> </span> " + screenhtml + "<span class='icon'> </span> <span>#{win}</span><span2>#{file}</span2>")
-    
   
-
+  # cycle through KWM space modes by clicking on the mode icon or mode name
+  if mode == "[bsp] "
+    $(".tilingMode").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 1 using {control down, command down}'"
+  if mode == "[float] "
+    $(".tilingMode").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 0 using {control down, command down}'"
+  else
+    $(".tilingMode").on 'click', => @run "/usr/local/bin/kwmc space -t float"

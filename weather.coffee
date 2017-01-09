@@ -3,15 +3,18 @@ command: "/usr/local/bin/python3 ~/.kwm/scripts/weatherscript.py"
 refreshFrequency: 600000 # ms
 
 render: (output) ->
-  "<div class='compstatus'></div>
-   <div class='weather_forecast'></div>"
+  """
+    <link rel="stylesheet" type="text/css" href="/nerdbar.widget/colors.css" />
+    <div class='compstatus'></div>
+    <div class='weather_forecast'></div>
+  """
 
 style: """
   -webkit-font-smoothing: antialiased
   font: 12px Hack
   text-align: center
   text-transform: lowercase
-  right: -35px
+  right: -30px
   top: 5px
   color: #66d9ef
   height: 13
@@ -22,47 +25,13 @@ style: """
   .weather_forecast
     top: 1px
     width: 10em
-    background: #272822
+    background: #282828
     right: 40px
     opacity: 0
     position: relative
     border-radius: 4px
-  .wifi
-    font: 16px fontawesome
-    top: 1px
-    position: relative
-  .charging
-    font: 13px fontawesome
-    color: #f8f8f2
-    position: relative
-    top: 1px
-    right: -16px
-    z-index: 1
-  .white
-    color: #f8f8f2
-  .green
-    color: #a6e22e
-  .yellow
-    color: #e6db74
-  .red
-    color: #f92672
-  .icon
-    position: relative
-    top: 1px
-    font: 14px fontawesome
-  .weather
-    font: 13px WeatherIcons-Regular
-  .blue
-    color: #66d9ef
-  .cyan
-    color: #a1efe4
-  .grey
-    color: #64645e
-  .purple
-    color: #fd5ff0
-  .orange
-    color: #fd971f
 """
+
 colorizeTemp: (temp) ->
   #returns a formatted html string with the temperature colorized depending on
   # whether it is hot, temperate or cold
@@ -305,7 +274,6 @@ update: (output, domEl) ->
 
     for day in days
         forecastString = forecastString + "<tr>" + "<td class='white'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
-
 
     forecastString = forecastString + "<tr class='center'><span class='yellow'>" + city + ', ' + region + "</span></tr>";
   

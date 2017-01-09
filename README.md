@@ -1,16 +1,15 @@
 # Bar
 
-Personal [Übersicht](http://tracesof.net/uebersicht/) system information bar for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the classic Monokai theme.
+Personal [Übersicht](http://tracesof.net/uebersicht/) system information bars for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the Gruvbox theme.
 
-Originally created by [herrbischoff](https://github.com/herrbischoff).
-
-Further modifications were made by [koekeishiya](https://github.com/koekeishiya), whose version can be found [here](https://github.com/koekeishiya/nerdbar.widget).
-
-*Screen Shot:*
+*Screen Shots:*
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot1.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot2.png?raw=true)
 
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).
+
+Further modifications were made by [koekeishiya](https://github.com/koekeishiya), whose version can be found [here](https://github.com/koekeishiya/nerdbar.widget).
 
 
 # How it works:
@@ -21,32 +20,48 @@ The original widget created by *herrbischoff* can be found [here](https://github
 
 You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/tree/master/kwm) folder.
 
-I find having a bunch of seperate widgets hard to align and keep consistent so I jam everything into a few widgets. They each run a script that outputs a bunch of data seperated by @s which I can then split and manipulate in the .coffee files.
+My bar now is now a collection of widgets that are arranged around my screen.
 
-### background.coffee
-This is as simple as Ubersicht widgets get, it just makes a black bar at the top of the screen that the other widgets sit on top of.
+### Backgrounds
+These are as simple as Ubersicht widgets get, they make black bars at the top, bottom left and bottom right of the screen that the other widgets sit on top of.
 
 ### mode.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot2.png?raw=true)
-
-This widget is design to work with KWM. It shows the current KWM mode (bsp, float, monocle), the number of desktops and the current one, and the current selected window.
-
-### status.coffee
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot3.png?raw=true)
 
+This widget is design to work with KWM. It shows the current KWM mode (bsp, float, monocle) and the number of desktops and the current one. If enabled in the Ubersicht preferences menu, holding the interaction key and clicking on the mode will cycle through the KWM modes and clicking on desktop icons will change the current desktop to the one clicked on. 
+
+### currentWindow.coffee
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot4.png?raw=true)
+
+This widget shows the currently selected window. If working on a file it can highlight the name of the file being worked on.
+
+### status.coffee
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot5.png?raw=true)
+
 * This widget shows the current time and date.
-* Recently added back indicators for memory and cpu %.
-* Network upload and download traffic, adapted from [dionmonk's](https://github.com/dionmunk) [ubersicht-network-throughput](https://github.com/dionmunk/ubersicht-network-throughput) widget.
 * The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
 * Network connection indicator widget. Shows grey if no connection detected and blue if there's an active connection on Wi-Fi or LAN.
 
-## weather.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot4.png?raw=true)
+### weather.coffee
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot6.png?raw=true)
 
 This used to be a part of status.coffee but since it uses an API call it was very inefficent to have it update every few seconds. It is now its own widget that updates every 10 minutes signifigantly reducing the resources used.
 
 * The weather widget tells the current temperature ( color is blue, yellow or red depending on temperature) and an icon showing the current weather status. Uses the Yahoo Weather API for forecast data and [ip-api](http://ip.api.com) to determine current location.
 * Clicking on the temperature loads a five day forecast panel with date, condition, and low and high temperatures for the day. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
+
+### stats.coffee
+This widget shows a number of current system indicators.
+
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot7.png?raw=true)
+* Network upload and download traffic, adapted from [dionmonk's](https://github.com/dionmunk) [ubersicht-network-throughput](https://github.com/dionmunk/ubersicht-network-throughput) widget.
+* Current memory and CPU percentage
+* Current free HD space in gb
+
+### nowplaying.coffee
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot8.png?raw=true)
+
+This widget works with MPD and NCMPCPP. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
 
 ## Installation
 
