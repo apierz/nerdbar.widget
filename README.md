@@ -39,7 +39,7 @@ This widget shows the currently selected window. If working on a file it can hig
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot5.png?raw=true)
 
 * This widget shows the current time and date.
-* The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
+* The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt that will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
 * Network connection indicator widget. Shows grey if no connection detected and blue if there's an active connection on Wi-Fi or LAN.
 
 ### weather.coffee
@@ -60,8 +60,11 @@ This widget shows a number of current system indicators.
 
 ### nowplaying.coffee
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot8.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot9.png?raw=true)
 
-This widget works with MPD and NCMPCPP. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
+This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
+
+Clicking on the icon will toggle the widget between current MPD status and the current download progress of active torrents and the number of downloading / total.
 
 ## Installation
 
