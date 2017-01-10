@@ -12,7 +12,7 @@ style: """
   -webkit-font-smoothing: antialiased
   font: 12px Hack
   text-transform: lowercase
-  right: 10px
+  right: 18px
   bottom: 8px
   color: #66d9ef
   height: 13
@@ -43,7 +43,6 @@ convertBytes: (bytes) ->
   return @usageFormat(kb)
 
 usageFormat: (kb) ->
-  # if kb > 1024
     mb = kb / 1024
     "#{parseFloat(mb.toFixed(2))}MB"
 

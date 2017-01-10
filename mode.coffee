@@ -23,7 +23,7 @@ style: """
 
 update: (output, domEl) ->
 
-  values = output.split('@', 4);
+  values = output.split('@');
 
   file = "";
   screenhtml = "";
