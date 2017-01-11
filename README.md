@@ -26,24 +26,24 @@ My bar now is now a collection of widgets that are arranged around my screen.
 These are as simple as Ubersicht widgets get, they make black bars at the top, bottom left and bottom right of the screen that the other widgets sit on top of.
 
 ### mode.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshotthree.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotthree.png?raw=true)
 
 This widget is design to work with KWM. It shows the current KWM mode (bsp, float, monocle) and the number of desktops and the current one. If enabled in the Ubersicht preferences menu, holding the interaction key and clicking on the mode will cycle through the KWM modes and clicking on desktop icons will change the current desktop to the one clicked on. 
 
 ### currentWindow.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshotfour.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotfour.png?raw=true)
 
 This widget shows the currently selected window. If working on a file it can highlight the name of the file being worked on.
 
 ### status.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot5.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot5.png?raw=true)
 
 * This widget shows the current time and date.
 * The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt that will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
 * Network connection indicator widget. Shows grey if no connection detected and blue if there's an active connection on Wi-Fi or LAN.
 
 ### weather.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot6.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot6.png?raw=true)
 
 This used to be a part of status.coffee but since it uses an API call it was very inefficent to have it update every few seconds. It is now its own widget that updates every 10 minutes signifigantly reducing the resources used.
 
@@ -53,14 +53,14 @@ This used to be a part of status.coffee but since it uses an API call it was ver
 ### stats.coffee
 This widget shows a number of current system indicators.
 
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot7.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot7.png?raw=true)
 * Network upload and download traffic, adapted from [dionmonk's](https://github.com/dionmunk) [ubersicht-network-throughput](https://github.com/dionmunk/ubersicht-network-throughput) widget.
 * Current memory and CPU percentage
 * Current free HD space in gb
 
 ### nowplaying.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot8.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshot9.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot8.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
 
 This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
 

@@ -1,4 +1,4 @@
-command: "~/.kwm/scripts/screens"
+command: "/usr/local/bin/kwmc query window focused name"
 
 refreshFrequency: 2000 # ms
 
@@ -27,33 +27,12 @@ style: """
 
 update: (output, domEl) ->
 
-  values = output.split('@', 4);
 
   file = "";
   screenhtml = "";
-  mode = values[0];
-  screens = values[1];
-  wins = values[2];
+  wins = output;
   win = "";
   i = 0;
-
-  screensegs = screens.split('(');
-
-  for sseg in screensegs
-    screensegs[i] = sseg.replace /^\s+|\s+$/g, ""
-    i+=1;
-
-  screensegs = (x for x in screensegs  when x != '')
-
-  i = 0;
-
-  for sseg in screensegs
-    i+= 1;
-    if sseg.slice(-1) == ")"
-      screenhtml += "<span class='icon'>&nbsp;</span>" ;
-    else
-      screenhtml += "<span class='grey icon'>&nbsp;</span>" ;
-
   winseg = wins.split('/');
   file = winseg[winseg.length - 1]
   j = winseg.length - 1

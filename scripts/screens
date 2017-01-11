@@ -46,4 +46,4 @@ do
 	fi
 done
 
-echo "$($kwmc query space active mode) @ ${bbar[*]} @ $(/usr/local/bin/kwmc query window focused name)"
+echo "$($kwmc query space active mode) @ ${bbar[*]}"
