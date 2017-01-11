@@ -3,8 +3,8 @@
 Personal [Übersicht](http://tracesof.net/uebersicht/) system information bars for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the Gruvbox theme.
 
 *Screen Shots:*
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshotone.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screenshottwo.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotone.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshottwo.png?raw=true)
 
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).
