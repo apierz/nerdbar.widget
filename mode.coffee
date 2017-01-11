@@ -47,33 +47,19 @@ update: (output, domEl) ->
   for sseg in screensegs
     i+= 1;
     if sseg.slice(-1) == ")"
-      if i == 1
-         screenhtml += "<span class='icon one'>&nbsp;&nbsp;&nbsp;</span>" ;
-      if i == 2
-         screenhtml += "<span class='icon two'>&nbsp;&nbsp;&nbsp;</span>" ;
-      if i == 3
-         screenhtml += "<span class='icon three'>&nbsp;&nbsp;&nbsp;</span>" ;
-      if i == 4
-         screenhtml += "<span class='icon four'>&nbsp;&nbsp;&nbsp;</span>" ;
+      screenhtml += "<span class='icon screen#{String(i)}'>&nbsp;&nbsp;&nbsp;</span>" ;
     else
-      if i == 1
-         screenhtml += "<span class='icon white one'>&nbsp;&nbsp;&nbsp;</span>" ;
-      if i == 2
-         screenhtml += "<span class='icon white two'>&nbsp;&nbsp;&nbsp;</span>" ;
-      if i == 3
-         screenhtml += "<span class='icon white three'>&nbsp;&nbsp;&nbsp;</span>" ;
-      if i == 4
-         screenhtml += "<span class='icon white four'>&nbsp;&nbsp;&nbsp;</span>" ;
+      screenhtml += "<span class='icon white screen#{String(i)}'>&nbsp;&nbsp;&nbsp;</span>" ;
 
   #display the html string
   $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
 
   
   #add screen controls to screen icons
-  $(".one").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental one"
-  $(".two").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental two"
-  $(".three").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental three"
-  $(".four").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental four"
+  i = 0
+  for sseg in screensegs
+    i+=1;
+    $(".screen#{String(i)}").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental #{String(i)}"
 
   
   # cycle through KWM space modes by clicking on the mode icon or mode name
