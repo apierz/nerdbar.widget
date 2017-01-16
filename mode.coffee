@@ -32,6 +32,9 @@ update: (output, domEl) ->
   wins = values[2];
   win = "";
   i = 0;
+  console.log(mode)
+  console.log(/bsp/.test(mode))
+  
 
   screensegs = screens.split('(');
 
@@ -50,22 +53,19 @@ update: (output, domEl) ->
       screenhtml += "<span class='icon screen#{String(i)}'>&nbsp;&nbsp;&nbsp;</span>" ;
     else
       screenhtml += "<span class='icon white screen#{String(i)}'>&nbsp;&nbsp;&nbsp;</span>" ;
+    $(".screen#{String(i)}").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental screen#{String(i)}"
 
   #display the html string
   $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
 
   
-  #add screen controls to screen icons
-  i = 0
-  for sseg in screensegs
-    i+=1;
-    $(".screen#{String(i)}").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental #{String(i)}"
 
   
   # cycle through KWM space modes by clicking on the mode icon or mode name
-  if mode == "[bsp] "
-    $(".tilingMode").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 1 using {control down, command down}'"
-  if mode == "[float] "
-    $(".tilingMode").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 0 using {control down, command down}'"
-  else
+  if /bsp/.test(mode) == true
+    console.log("in bsp")
     $(".tilingMode").on 'click', => @run "/usr/local/bin/kwmc space -t float"
+  else if /float/.test(mode) == true
+    $(".tilingMode").on 'click', => @run "/usr/local/bin/kwmc space -t monocle"
+  else
+    $(".tilingMode").on 'click', => @run "/usr/local/bin/kwmc space -t bsp"
