@@ -44,7 +44,9 @@ convertBytes: (bytes) ->
 
 usageFormat: (kb) ->
     mb = kb / 1024
-    "#{parseFloat(mb.toFixed(2))}MB"
+    if mb < 0.01
+      return "0.00mb"
+    return "#{parseFloat(mb.toFixed(2))}MB"
 
 getNetTraffic: (down, up) ->
   downString = @convertBytes(parseInt(down))

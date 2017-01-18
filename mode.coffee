@@ -48,18 +48,20 @@ update: (output, domEl) ->
 
   #apply a proper number tag so that space change controls can be added
   for sseg in screensegs
-    i+= 1;
+    i += 1;
     if sseg.slice(-1) == ")"
-      screenhtml += "<span class='icon screen#{String(i)}'>&nbsp;&nbsp;&nbsp;</span>" ;
+      screenhtml += "<span class='icon screen#{i}'>&nbsp;&nbsp;&nbsp;</span>" ;
     else
-      screenhtml += "<span class='icon white screen#{String(i)}'>&nbsp;&nbsp;&nbsp;</span>" ;
-    $(".screen#{String(i)}").on 'click', => @run "/usr/local/bin/kwmc space -fExperimental screen#{String(i)}"
+      screenhtml += "<span class='icon white screen#{i}'>&nbsp;&nbsp;&nbsp;</span>" ;
+
 
   #display the html string
   $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
 
-  
-
+  $(".screen1").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 18 using control down'"
+  $(".screen2").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 19 using control down'"
+  $(".screen3").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 20 using control down'"
+  $(".screen4").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 21 using control down'"
   
   # cycle through KWM space modes by clicking on the mode icon or mode name
   if /bsp/.test(mode) == true

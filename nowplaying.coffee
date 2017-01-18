@@ -14,7 +14,7 @@ style: """
   color: #66d9ef
   font: 12px Hack
   left: 8px
-  bottom: 7px
+  bottom: 8px
   width:850px
   height: 16px
   .torrentStatus
@@ -28,38 +28,29 @@ update: (output, domEl) ->
    artist = values[0].replace /^\s+|\s+$/g, ""
    song = values[1].replace /^\s+|\s+$/g, ""
    elapsed = values[2]
-   length = values[3]
-   status = values[4].replace /^\s+|\s+$/g, ""
-   torrentPercentage = values[5]
-   torrentsPending = values[6]
-   torrentsComplete = values[7].replace /^\s+|\s+$/g, ""
-   trackCount = values[8].replace /^\s+|\s+$/g, ""
+   status = values[3].replace /^\s+|\s+$/g, ""
+   torrentPercentage = values[4]
+   torrentsPending = values[5]
+   torrentsComplete = values[6].replace /^\s+|\s+$/g, ""
+   trackCount = values[7].replace /^\s+|\s+$/g, ""
 
 
-   times  = elapsed.split(':');
-   elapsedMinutes = parseInt(times[0])
-   elapsedSeconds = parseInt(times[1])
-   elapsedTotal = 60 * elapsedMinutes + elapsedSeconds
+   if artist.length >= 12
+     artist = artist.substring(0,11)
+     artist = artist .replace /^\s+|\s+$/g, "" + "…"
 
-   console.log(elapsedTotal)
+   if song.length >= 17
+     song = song.substring(0,16)
+     song = song.replace /^\s+|\s+$/g, "" + "…"
 
-   times  = length.split(':');
-   lengthMinutes = parseInt(times[0])
-   lengthSeconds = parseInt(times[1])
-   lengthTotal = 60 * lengthMinutes + lengthSeconds
-
-   console.log(lengthTotal)
-
+   # Create mpdHtmlString
    mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp&nbsp</span>"
 
    emptySpace = (55 - artist.length - song.length) / 2
 
-   console.log(emptySpace)
-
-   elapsedCounter = parseInt(elapsedTotal / lengthTotal * emptySpace )
+   elapsedCounter = parseInt(elapsed * emptySpace / 100 )
    remainingCounter = emptySpace - elapsedCounter - 1
 
-   console.log(elapsedCounter)
 
 
    mpdHtmlString += "<span class='blue'>";
