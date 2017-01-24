@@ -1,6 +1,6 @@
 command: "sh ~/.kwm/scripts/mpd.sh"
 
-refreshFrequency: 3000 # ms
+refreshFrequency: '2s' # ms
 
 render: (output) ->
   """
@@ -37,7 +37,7 @@ update: (output, domEl) ->
 
    if artist.length >= 12
      artist = artist.substring(0,11)
-     artist = artist .replace /^\s+|\s+$/g, "" + "…"
+     artist = artist.replace /^\s+|\s+$/g, "" + "…"
 
    if song.length >= 17
      song = song.substring(0,16)
@@ -129,4 +129,7 @@ update: (output, domEl) ->
    $(".next").on "click", => @run "/usr/local/bin/mpc next";
    $(".prev").on "click", => @run "/usr/local/bin/mpc prev";
 
+afterRender: (domEl) ->
+   $(".torrentStatus").css("opacity", "0");
+   $(".torrentStatus").css("z-index", "-1");
 

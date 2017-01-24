@@ -1,4 +1,4 @@
-command: "~/.kwm/scripts/compstatus"
+command: "echo $(sh ~/.kwm/scripts/time_script)@$(sh ~/.kwm/scripts/date_script)@$(sh ~/.kwm/scripts/battery_percentage_script)%@$(sh ~/.kwm/scripts/battery_charging_script)@$(sh ~/.kwm/scripts/wifi_status_script)"
 
 refreshFrequency: 3000 # ms
 
@@ -9,9 +9,6 @@ render: (output) ->
   """
   
 style: """
-  -webkit-font-smoothing: antialiased
-  font: 12px Hack
-  text-transform: lowercase
   right: 55px
   top: 5px
   height: 13
@@ -61,9 +58,9 @@ batteryStatus: (battery, state) ->
 
 getWifiStatus: (status) ->
   if status == "Wi-Fi"
-    return "<span class='wifi'>&nbsp</span>";
+    return "<span class='wifi blue'>&nbsp</span>";
   if status == 'USB 10/100/1000 LAN' or status == 'Apple USB Ethernet Adapter'
-    return "<span class='wifi'></span>";
+    return "<span class='wifi blue'></span>";
   else
     return "<span class='grey wifi'>&nbsp</span>";
 
