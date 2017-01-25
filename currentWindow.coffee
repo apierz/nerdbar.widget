@@ -5,24 +5,18 @@ refreshFrequency: 2000 # ms
 render: (output) ->
   """
     <link rel="stylesheet" type="text/css" href="/nerdbar.widget/colors.css" />
-    <div class='kwmmode'></div>"
+    <div class='kwmmode'></div>
   """
 
 style: """
   -webkit-font-smoothing: antialiased
   color: #66d9ef
-  font: 12px Hack
   left: 25em
-  top: 7px
+  top: 5px
   width:850px
-  height: 16px
   white-space: nowrap
   text-overflow: ellipsis
   overflow: ellipsis
-  .icon
-    font: 14px fontawesome
-    top: 1px
-    position relative
   """
 
 update: (output, domEl) ->
@@ -55,6 +49,6 @@ update: (output, domEl) ->
      file = file + '…';
 
 
-  $(domEl).find('.kwmmode').html("<span class='icon'></span></span> <span>#{win}</span><span class='white'>#{file}</span>")
+  $(domEl).find('.kwmmode').html("<span class='icon'></span></span> <span>#{win}</span><span class='white'>#{file}</span>")
 
   

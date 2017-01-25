@@ -11,22 +11,22 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  font: 12px Hack
   text-align: center
   text-transform: lowercase
-  right: -30px
+  right: -35px
   top: 5px
   color: #66d9ef
   height: 13
   table
     margin: auto
+    font: 14px ProggyCleanTT
   .center
     text-align: center
   .weather_forecast
     top: 1px
-    width: 10em
+    width: 8em
     background: #282828
-    right: 40px
+    right: 50px
     opacity: 0
     position: relative
     border-radius: 4px

@@ -1,6 +1,6 @@
 span {
     color: #83a598;
-    font: 12px Hack;
+    font: 14px ProggyCleanTT;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
@@ -26,12 +26,12 @@ span {
 }
 .sicon {
     position: relative;
-    font: 12px fontawesome;
+    font: 12px SijiMedium;
 }
 .icon {
     position: relative;
     top: 1px;
-    font: 14px fontawesome;
+    font: 14px SijiMedium;
 }
 .weather {
     font: 13px WeatherIcons-Regular;

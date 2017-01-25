@@ -13,9 +13,8 @@ style: """
   color: #66d9ef
   font: 12px Hack
   left: 10px
-  top: 7px
+  top: 4px
   width:850px
-  height: 16px
   white-space: nowrap
   text-overflow: ellipsis
   overflow: ellipsis
@@ -50,13 +49,13 @@ update: (output, domEl) ->
   for sseg in screensegs
     i += 1;
     if sseg.slice(-1) == ")"
-      screenhtml += "<span class='icon screen#{i}'>&nbsp;&nbsp;&nbsp;</span>" ;
+      screenhtml += "<span class='icon screen#{i}'></span>" ;
     else
-      screenhtml += "<span class='icon white screen#{i}'>&nbsp;&nbsp;&nbsp;</span>" ;
+      screenhtml += "<span class='icon white screen#{i}'></span>" ;
 
 
   #display the html string
-  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
+  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
 
   $(".screen1").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 18 using control down'"
   $(".screen2").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 19 using control down'"

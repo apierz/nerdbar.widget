@@ -13,7 +13,7 @@ style: """
   font: 12px Hack
   text-transform: lowercase
   right: 18px
-  bottom: 8px
+  bottom: 4px
   color: #66d9ef
   height: 13
 """
@@ -27,7 +27,7 @@ getCPU: (cpu) ->
   cpuString = String(cpuNum)
   if cpuNum < 10
     cpuString = '0' + cpuString
-  return "<span class='green icon'>&nbsp</span><span class='white'>#{cpuString}%</span>"
+  return "<span class='green icon'>&nbsp</span><span class='white'>#{cpuString}%</span>"
 
 getMem: (mem) ->
   memNum = parseFloat(mem)
@@ -36,7 +36,7 @@ getMem: (mem) ->
   if memNum < 10
     memString = '0' + memString
 
-  return "<span class='yellow icon'>&nbsp</span><span class='white'>#{memString}%</span>"
+  return "<span class='yellow icon'>&nbsp</span><span class='white'>#{memString}%</span>"
 
 convertBytes: (bytes) ->
   kb = bytes / 1024
@@ -51,10 +51,10 @@ usageFormat: (kb) ->
 getNetTraffic: (down, up) ->
   downString = @convertBytes(parseInt(down))
   upString = @convertBytes(parseInt(up))
-  return "<span>&nbsp</span><span class='icon cyan'></span><span class='white'>#{downString} <span> ⎢</span> </span><span></span><span class='icon orange'></span><span class='white'>#{upString}</span>"
+  return "<span>&nbsp</span><span class='icon cyan'></span><span class='white'>#{downString} <span> ⎢</span> </span><span></span><span class='icon orange'></span><span class='white'>#{upString}</span>"
 
 getFreeSpace: (space) ->
-  return "<span class='violet icon'>&nbsp</span><span class='white'>#{space}gb</span>"
+  return "<span class='violet icon'></span><span class='white'>#{space}gb</span>"
 
 update: (output, domEl) ->
 

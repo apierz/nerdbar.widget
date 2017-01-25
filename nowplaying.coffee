@@ -19,7 +19,7 @@ style: """
   height: 16px
   .torrentStatus
     position: relative
-    bottom: 15px
+    bottom: 16px
 """
 
 update: (output, domEl) ->
@@ -41,10 +41,10 @@ update: (output, domEl) ->
 
    if song.length >= 17
      song = song.substring(0,16)
-     song = song.replace /^\s+|\s+$/g, "" + "…"
+     song = song.replace /^\s+|\s+$/g, "" + "..."
 
    # Create mpdHtmlString
-   mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp&nbsp</span>"
+   mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp&nbsp</span>"
 
    emptySpace = (55 - artist.length - song.length) / 2
 
@@ -53,54 +53,54 @@ update: (output, domEl) ->
 
 
 
-   mpdHtmlString += "<span class='blue'>";
+   mpdHtmlString += "<span class='sicon blue'>";
    i = 0
    while i <= elapsedCounter
      i += 1;
-     mpdHtmlString += " ●";
+     mpdHtmlString += "";
 
    mpdHtmlString += "</span>";
-   mpdHtmlString += "<span class='white'>";
+   mpdHtmlString += "<span class='sicon white'>";
 
    i = 0
    while i <= remainingCounter
      i += 1;
-     mpdHtmlString += " ●";
+     mpdHtmlString += "";
 
 
    mpdHtmlString += "</span>"
 
    if artist != ""
-     mpdHtmlString += "<span class='sicon prev'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>" + " "
+     mpdHtmlString += "<span class='icon prev'>&nbsp&nbsp</span>" + " "
 
      if status == "[playing]"
-        mpdHtmlString += "<span class='sicon pause'></span>" + " "
+        mpdHtmlString += "<span class='icon pause'></span>" + " "
      else
-        mpdHtmlString += "<span class='sicon play'></span>" + " "
+        mpdHtmlString += "<span class='icon play'></span>" + " "
 
-     mpdHtmlString += "<span class='sicon next'></span>"
+     mpdHtmlString += "<span class='icon next'></span>"
 
 
 
    completedCounter = parseInt(26 * (torrentPercentage / 100 ))
    remainingTorCounter = 25 - completedCounter
 
-   torrentString = "<span class='icon switch'>&nbsp</span><span class='white'>Torrent Status: </span><span class='blue'>";
+   torrentString = "<span class='icon switch'></span><span class='white'>Torrent Status: </span><span class='blue sicon'>";
 
    i = 0
    while i <= completedCounter
      i += 1;
-     torrentString += " ●";
+     torrentString += "";
 
    torrentString += "</span>";
-   torrentString += "<span class='white'>";
+   torrentString += "<span class='sicon white'>";
 
    i = 0
    while i <= remainingTorCounter
      i += 1;
-     torrentString += " ●";
+     torrentString += "";
 
-   torrentString += "&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
+   torrentString += "</span><span class='white'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
 
 
    $(domEl).find('.nowplaying').html(mpdHtmlString)
