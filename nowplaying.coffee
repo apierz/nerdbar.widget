@@ -10,7 +10,6 @@ render: (output) ->
   """
 
 style: """
-  -webkit-font-smoothing: antialiased
   color: #66d9ef
   font: 12px Hack
   left: 8px
@@ -39,14 +38,15 @@ update: (output, domEl) ->
      artist = artist.substring(0,11)
      artist = artist.replace /^\s+|\s+$/g, "" + "…"
 
-   if song.length >= 17
-     song = song.substring(0,16)
-     song = song.replace /^\s+|\s+$/g, "" + "..."
+   if song.length >= 12
+     song = song.substring(0,11)
+     song = song.replace /^\s+|\s+$/g, ""
+     song = song + "…"
 
    # Create mpdHtmlString
-   mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp&nbsp</span>"
+   mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp</span>"
 
-   emptySpace = (55 - artist.length - song.length) / 2
+   emptySpace = (80 - artist.length - song.length) / 2
 
    elapsedCounter = parseInt(elapsed * emptySpace / 100 )
    remainingCounter = emptySpace - elapsedCounter - 1
@@ -82,7 +82,7 @@ update: (output, domEl) ->
 
 
 
-   completedCounter = parseInt(26 * (torrentPercentage / 100 ))
+   completedCounter = parseInt(42 * (torrentPercentage / 100 ))
    remainingTorCounter = 25 - completedCounter
 
    torrentString = "<span class='icon switch'></span><span class='white'>Torrent Status: </span><span class='blue sicon'>";

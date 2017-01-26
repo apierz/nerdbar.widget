@@ -11,9 +11,8 @@ render: (output) ->
 style: """
   -webkit-font-smoothing: antialiased
   color: #66d9ef
-  font: 12px Hack
   left: 10px
-  top: 4px
+  top: 5px
   width:850px
   white-space: nowrap
   text-overflow: ellipsis

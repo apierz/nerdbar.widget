@@ -1,6 +1,6 @@
 span {
     color: #83a598;
-    font: 14px ProggyCleanTT;
+    font: 12px TerminusTTF;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
@@ -26,7 +26,7 @@ span {
 }
 .sicon {
     position: relative;
-    font: 12px SijiMedium;
+    font: 8px SijiMedium;
 }
 .icon {
     position: relative;
@@ -34,7 +34,9 @@ span {
     font: 14px SijiMedium;
 }
 .weather {
-    font: 13px WeatherIcons-Regular;
+    font: 16px SijiMedium;
+    position: relative;
+    top: 4px;
 }
 .blue {
     color: #458588;

@@ -48,6 +48,9 @@ update: (output, domEl) ->
    if flag >= 1
      file = file + '…';
 
+  if output == ""
+    win = "<span class='white'>…</span>"
+
 
   $(domEl).find('.kwmmode').html("<span class='icon'></span></span> <span>#{win}</span><span class='white'>#{file}</span>")
 
