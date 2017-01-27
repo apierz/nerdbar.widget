@@ -3,8 +3,8 @@
 Personal [Übersicht](http://tracesof.net/uebersicht/) system information bars for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the Gruvbox theme.
 
 *Screen Shots:*
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotone.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshottwo.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshotone.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshottwo.png?raw=true)
 
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).
@@ -18,30 +18,30 @@ Further modifications were made by [koekeishiya](https://github.com/koekeishiya)
 
 [Übersicht](http://tracesof.net/uebersicht/) creates a webview and places it on your desktop, just above the wallpaper but behind everyting else. Ubersicht widgets are written as .coffee files which let you format elements with html, style them with css and manipulate data with javascript and coffeescript. For dynamic widgets, Ubersicht let's you run terminal commands and insert the output into html, so just about any language can be used to write scripts for widgets. My scripts use bash, python and AppleScript.
 
-You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/tree/master/kwm) folder.
+You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/tree/bitmap-font-version/kwm) folder.
 
 ### Backgrounds
 These are as simple as Ubersicht widgets get, they make black bars at the top, bottom left and bottom right of the screen that the other widgets sit on top of.
 
 ### mode.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotthree.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshotthree.png?raw=true)
 
 This widget is designed to work with KWM. It shows the current KWM mode (bsp, float, monocle) and the number of desktops and the current one. If enabled in the Ubersicht preferences menu, holding the interaction key and clicking on the mode will cycle through the KWM modes and clicking on desktop icons will change the current desktop to the one clicked on. This works best if your interaction shortcut is ctrl.
 
 ### currentWindow.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotfour.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshotfour.png?raw=true)
 
 This widget shows the currently selected window. If working on a file, it can highlight the name of the file being worked on.
 
 ### status.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot5.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshot5.png?raw=true)
 
 * This widget shows the current time and date.
 * The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt that will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
 * Network connection indicator widget. Shows grey if no connection detected and blue if there's an active connection on Wi-Fi or Ethernet. Shows different icons for Wi-Fi and Ethernet.
 
 ### weather.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot6.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshot6.png?raw=true)
 
 This used to be a part of status.coffee but since it uses an API call it was very inefficent to have it update every few seconds. It is now its own widget that updates every 10 minutes signifigantly reducing the resources used.
 
@@ -49,7 +49,7 @@ This used to be a part of status.coffee but since it uses an API call it was ver
 * Clicking on the temperature loads a five day forecast panel with location, current condition, date, condition, and low and high temperatures for the week. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
 
 ### stats.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot7.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshot7.png?raw=true)
 
 This widget shows a number of current system indicators.
 
@@ -58,8 +58,8 @@ This widget shows a number of current system indicators.
 * Current free HD space in gb
 
 ### nowplaying.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot8.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshot8.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/bitmap-font-version/screens/screenshot9.png?raw=true)
 
 This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
 
