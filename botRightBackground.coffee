@@ -5,7 +5,7 @@ render: (output) ->
 
 style: """
   background: #282828
-  width: 24.5em;
+  width: 22.5em;
   bottom: 5px;
   right: 5px;
   border-radius: 4px;

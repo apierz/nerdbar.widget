@@ -49,21 +49,21 @@ batteryStatus: (battery, state) ->
   else if state == 'AC' and batnum < 15
     return "<span class='charging icon'> </span><span class='red icon'></span><span class='white'>#{batnum}%</span>"
   else if batnum >= 90
-    return "<span class='green icon'></span><span class='white'>#{batnum}%</span>"
+    return "<span class='green icon'>&nbsp&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
-    return "<span class='green icon'></span><span class='white'>#{batnum}%</span>"
+    return "<span class='green icon'>&nbsp&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum < 50 and batnum >= 15
-    return "<span class='yellow icon'></span><span class='white'>#{batnum}%</span>"
+    return "<span class='yellow icon'>&nbsp&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum < 15
-    return "<span class='red icon'></span><span class='white'>#{batnum}%</span>"
+    return "<span class='red icon'>&nbsp&nbsp</span><span class='white'>#{batnum}%</span>"
 
 getWifiStatus: (status) ->
   if status == "Wi-Fi"
     return "<span class='wifi blue'></span>";
   if status == 'USB 10/100/1000 LAN' or status == 'Apple USB Ethernet Adapter'
-    return "<span class='wifi blue'>&nbsp</span>";
+    return "<span class='wifi blue'></span>";
   else
-    return "<span class='grey wifi'>&nbsp</span>";
+    return "<span class='grey wifi'></span>";
 
 update: (output, domEl) ->
 

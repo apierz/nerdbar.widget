@@ -14,7 +14,7 @@ style: """
   text-align: center
   text-transform: lowercase
   right: -30px
-  top: 5px
+  top: 4px
   color: #66d9ef
   height: 13
   table
