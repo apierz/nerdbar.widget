@@ -18,89 +18,91 @@ style: """
   height: 16px
   .torrentStatus
     position: relative
-    bottom: 16px
+    bottom: 17.5px
 """
+
+cutBlackSpace: (text) ->
+  text.replace /^\s+|\s+$/g, ""
 
 update: (output, domEl) ->
 
    values = output.split('@');
-   artist = values[0].replace /^\s+|\s+$/g, ""
-   song = values[1].replace /^\s+|\s+$/g, ""
+   artist = @cutBlackSpace(values[0])
+   song = @cutBlackSpace(values[1])
    elapsed = values[2]
-   status = values[3].replace /^\s+|\s+$/g, ""
+   status = @cutBlackSpace(values[3])
    torrentPercentage = values[4]
    torrentsPending = values[5]
-   torrentsComplete = values[6].replace /^\s+|\s+$/g, ""
-   trackCount = values[7].replace /^\s+|\s+$/g, ""
+   torrentsComplete = @cutBlackSpace(values[6])
+   trackCount = @cutBlackSpace(values[7])
 
 
    if artist.length >= 12
      artist = artist.substring(0,11)
-     artist = artist.replace /^\s+|\s+$/g, "" + "…"
+     artist = @cutBlackSpace(artist)
 
    if song.length >= 12
      song = song.substring(0,11)
-     song = song.replace /^\s+|\s+$/g, ""
+     song = @cutBlackSpace(song)
      song = song + "…"
 
    # Create mpdHtmlString
-   mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp</span>"
+   mpdHtmlString = "<span class='icon switch'></span><span class='black'> (#{trackCount}) #{artist} - #{song}&nbsp</span>"
 
-   emptySpace = (80 - artist.length - song.length) / 2
+   emptySpace = (62 - artist.length - song.length - 3) / 2
 
    elapsedCounter = parseInt(elapsed * emptySpace / 100 )
    remainingCounter = emptySpace - elapsedCounter - 1
 
 
 
-   mpdHtmlString += "<span class='sicon blue'>";
+   mpdHtmlString += "<span>";
    i = 0
    while i <= elapsedCounter
      i += 1;
-     mpdHtmlString += "";
+     mpdHtmlString += " ● ";
 
    mpdHtmlString += "</span>";
-   mpdHtmlString += "<span class='sicon white'>";
+   mpdHtmlString += "<span class='grey'>";
 
    i = 0
    while i <= remainingCounter
      i += 1;
-     mpdHtmlString += "";
-
+     mpdHtmlString += " ● ";
 
    mpdHtmlString += "</span>"
 
    if artist != ""
-     mpdHtmlString += "<span class='icon prev'>&nbsp&nbsp</span>" + " "
+     mpdHtmlString += "<span class='sicon prev'>&nbsp&nbsp</span>" + " "
 
      if status == "[playing]"
-        mpdHtmlString += "<span class='icon pause'></span>" + " "
+        mpdHtmlString += "<span class='sicon pause'></span>" + " "
      else
-        mpdHtmlString += "<span class='icon play'></span>" + " "
+        mpdHtmlString += "<span class='sicon play'></span>" + " "
 
-     mpdHtmlString += "<span class='icon next'></span>"
+     mpdHtmlString += "<span class='sicon next'></span>"
 
 
 
-   completedCounter = parseInt(42 * (torrentPercentage / 100 ))
+   completedCounter = parseInt(26 * (torrentPercentage / 100 ))
    remainingTorCounter = 25 - completedCounter
 
-   torrentString = "<span class='icon switch'></span><span class='white'>Torrent Status: </span><span class='blue sicon'>";
+   torrentString = "<span class='icon switch'> </span><span class='black'>Torrent Status: </span><span>";
 
    i = 0
    while i <= completedCounter
      i += 1;
-     torrentString += "";
+     torrentString += " ● ";
 
    torrentString += "</span>";
-   torrentString += "<span class='sicon white'>";
+   torrentString += "<span class='grey'>";
 
    i = 0
    while i <= remainingTorCounter
      i += 1;
-     torrentString += "";
+     torrentString += " ● ";
 
-   torrentString += "</span><span class='white'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
+   torrentString += "</span><span class='black'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
 
 
    $(domEl).find('.nowplaying').html(mpdHtmlString)
@@ -125,9 +127,9 @@ update: (output, domEl) ->
 
 
    $(".pause").on "click", => @run "/usr/local/bin/mpc pause";
-   $(".play").on "click", => @run "/usr/local/bin/mpc play"
-   $(".next").on "click", => @run "/usr/local/bin/mpc next";
-   $(".prev").on "click", => @run "/usr/local/bin/mpc prev";
+   $(".play").on "click",  => @run "/usr/local/bin/mpc play"
+   $(".next").on "click",  => @run "/usr/local/bin/mpc next";
+   $(".prev").on "click",  => @run "/usr/local/bin/mpc prev";
 
 afterRender: (domEl) ->
    $(".torrentStatus").css("opacity", "0");

@@ -10,13 +10,9 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #66d9ef
   left: 10px
   top: 5px
   width:850px
-  white-space: nowrap
-  text-overflow: ellipsis
-  overflow: ellipsis
 """
 
 update: (output, domEl) ->
@@ -30,32 +26,33 @@ update: (output, domEl) ->
   wins = values[2];
   win = "";
   i = 0;
-  console.log(mode)
-  console.log(/bsp/.test(mode))
   
-
+  # The script ouputs the space names in parens so you can split them here. The
+  # script outputs the names of the screens, if you prefer to use those instead
+  # of generic indicators.
   screensegs = screens.split('(');
 
   for sseg in screensegs
     screensegs[i] = sseg.replace /^\s+|\s+$/g, ""
     i+=1;
 
-  screensegs = (x for x in screensegs  when x != '')
+  screensegs = (x for x in screensegs when x != '')
 
   i = 0;
 
   #apply a proper number tag so that space change controls can be added
   for sseg in screensegs
     i += 1;
+    # the active space has a closing paren aroound the name
     if sseg.slice(-1) == ")"
-      screenhtml += "<span class='icon screen#{i}'></span>" ;
+      screenhtml += "<span class='icon screen#{i}'>&nbsp&nbsp</span>" ;
     else
-      screenhtml += "<span class='icon white screen#{i}'></span>" ;
-
+      screenhtml += "<span class='icon grey screen#{i}'>&nbsp&nbsp</span>" ;
 
   #display the html string
-  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
+  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode black'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
 
+  # add screen changing controls to the screen icons
   $(".screen1").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 18 using control down'"
   $(".screen2").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 19 using control down'"
   $(".screen3").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 20 using control down'"

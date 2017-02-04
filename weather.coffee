@@ -10,22 +10,18 @@ render: (output) ->
   """
 
 style: """
-  -webkit-font-smoothing: antialiased
   text-align: center
-  text-transform: lowercase
-  right: -30px
-  top: 4px
-  color: #66d9ef
+  right: -32px
+  top: 1px
   height: 13
   table
     margin: auto
-    font: 14px ProggyCleanTT
   .center
     text-align: center
   .weather_forecast
-    top: 1px
+    top: 0px
     width: 8em
-    background: #282828
+    background: #ffffff
     right: 50px
     opacity: 0
     position: relative
@@ -36,7 +32,7 @@ colorizeTemp: (temp) ->
   #returns a formatted html string with the temperature colorized depending on
   # whether it is hot, temperate or cold
   if temp == '--'
-    return "<span class='white'>--</span>";
+    return "<span class='black'>--</span>";
   
   tempnum = parseInt(temp);
   if tempnum >= 90
@@ -52,189 +48,189 @@ colorizeTemp: (temp) ->
 getWeatherIcon: (connum) ->
    # Tornados and Hurricanes
   if connum <= 2
-    return "<span class='red weather'></span>" ;
+    return "<span class='red weather'></span>" ;
   #Thunderstorms
   if connum > 2 and connum <= 4
-    return "<span class='yellow weather'></span>" ;
+    return "<span class='yellow weather'></span>" ;
   #Freezing Rain / Sleet
   if (connum >= 5 and connum <= 8) or connum == 10 or connum == 18
-    return "<span class='blue weather'></span>" ;
+    return "<span class='blue weather'></span>" ;
   #Drizzle
   if connum == 9
-    return "<span class='blue weather'></span>" ;
+    return "<span class='blue weather'></span>" ;
   #Rain
   if connum == 11 or connum == 12
-    return "<span class='blue weather'></span>" ;
+    return "<span class='blue weather'></span>" ;
   #Snow
   if connum >= 13 and connum <= 16
-    return "<span class='blue weather'></span>" ;
+    return "<span class='blue weather'></span>" ;
   #Hail
   if connum == 17
-    return "<span class='blue weather'></span>" ;
+    return "<span class='blue weather'></span>" ;
   #Dust, fog, haze, etc
   if connum >= 19 and connum <= 22 
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='cyan weather'></span>" ;
   # Windy
   if connum == 23 or connum == 24
-    return "<span class='grey weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   #cold
   if connum == 25
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='cyan weather'></span>" ;
   #cloudy
   if connum == 26
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='cyan weather'></span>" ;
   #mostly cloudy (day) #fixed
   if connum == 27
-    return "<span class='grey weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   #mostly cloudy (day)
   if connum == 28
-    return "<span class='grey weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   #partly cloudy (day) #fixed
   if connum == 29
-    return "<span class='grey weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   #partly cloudy (day)
   if connum == 30 #fixed
-    return "<span class='grey weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   # clear night
   if connum == 31
-    return "<span class='yellow weather'></span>" ;
+    return "<span class='yellow weather'></span>" ;
   #Sunny
   if connum == 32
-    return "<span class='yellow weather'></span>" ;
+    return "<span class='yellow weather'></span>" ;
   #Fair, night
   if connum == 33
-    return "<span class='yellow weather'></span>" ;
+    return "<span class='yellow weather'></span>" ;
   #Mostly Sunny # Fixed
   if connum == 34
-    return "<span class='yellow weather'></span>" ;
+    return "<span class='yellow weather'></span>" ;
   # mixed rain and hail
   if connum == 35
-    return "<span class='blue weather'></span>" ;
+    return "<span class='blue weather'></span>" ;
   #hot
   if connum == 36
-    return "<span class='red weather'></span>" ;
+    return "<span class='red weather'></span>" ;
   #thunder storms
   if connum >= 37 and connum < 39
-    return "<span class='yellow weather'></span>" ;
+    return "<span class='yellow weather'></span>" ;
   #scattered showers
   if connum >= 39 and connum <= 40 #fixed
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='cyan weather'></span>" ;
   # snow
   if connum >= 41 and connum <=43
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='cyan weather'></span>" ;
   #partly cloudy
   if connum == 44
-    return "<span class='grey weather'></span>" ;
+    return "<span class='grey weather'></span>" ;
   #thunder showers
   if connum == 45
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='cyan weather'></span>" ;
   #snow showers
   if connum == 46
-    return "<span class='cyan weather'></span>" ;
+    return "<span class='cyan weather'></span>" ;
   # isolated thundershowers
   if connum == 47
-    return "<span class='yellow weather'></span>" ;
+    return "<span class='yellow weather'></span>" ;
   # no internet connection
   if connum == 99
     return "<span></span>";
 
 getWeatherCon: (connum) ->
   if connum == 0 
-    return "<span class='white'>Tornado</span>" ;
+    return "<span class='black'>Tornado</span>" ;
   if connum == 1 
-    return "<span class='white'>Tropical Storm</span>" ;
+    return "<span class='black'>Tropical Storm</span>" ;
   if connum == 2
-    return "<span class='white'>Hurricane</span>" ;
+    return "<span class='black'>Hurricane</span>" ;
   if connum == 3
-    return "<span class='white'>Severe Thunderstorms</span>" ;
+    return "<span class='black'>Severe Thunderstorms</span>" ;
   if connum == 4
-    return "<span class='white'>Thunderstorms</span>" ;
+    return "<span class='black'>Thunderstorms</span>" ;
   if connum == 5
-    return "<span class='white'>Mixed Rain and Snow</span>" ;
+    return "<span class='black'>Mixed Rain and Snow</span>" ;
   if connum == 6
-    return "<span class='white'>Mixed Rain and Sleet</span>" ;
+    return "<span class='black'>Mixed Rain and Sleet</span>" ;
   if connum == 7
-    return "<span class='white'>Mixed Snow and Sleet</span>" ;
+    return "<span class='black'>Mixed Snow and Sleet</span>" ;
   if connum == 8
-    return "<span class='white'>Freezing Drizzle</span>" ;
+    return "<span class='black'>Freezing Drizzle</span>" ;
   if connum == 9
-    return "<span class='white'>Drizzle</span>" ;
+    return "<span class='black'>Drizzle</span>" ;
   if connum == 10
-    return "<span class='white'>Freezing Rain</span>" ;
+    return "<span class='black'>Freezing Rain</span>" ;
   if connum == 11
-    return "<span class='white'>Showers</span>" ;
+    return "<span class='black'>Showers</span>" ;
   if connum == 12
-    return "<span class='white'>Showers</span>" ;
+    return "<span class='black'>Showers</span>" ;
   if connum == 13
-    return "<span class='white'>Snow Flurries</span>" ;
+    return "<span class='black'>Snow Flurries</span>" ;
   if connum == 14
-    return "<span class='white'>Light Snow Flurries</span>" ;
+    return "<span class='black'>Light Snow Flurries</span>" ;
   if connum == 15
-    return "<span class='white'>Blowing Snow</span>" ;
+    return "<span class='black'>Blowing Snow</span>" ;
   if connum == 16
-    return "<span class='white'>Snow</span>" ;
+    return "<span class='black'>Snow</span>" ;
   if connum == 17
-    return "<span class='white'>Hail</span>" ;
+    return "<span class='black'>Hail</span>" ;
   if connum == 18
-    return "<span class='white'>Sleet</span>" ;
+    return "<span class='black'>Sleet</span>" ;
   if connum == 19
-    return "<span class='white'>Dust</span>" ;
+    return "<span class='black'>Dust</span>" ;
   if connum == 20
-    return "<span class='white'>Foggy</span>" ;
+    return "<span class='black'>Foggy</span>" ;
   if connum == 21
-    return "<span class='white'>Haze</span>" ;
+    return "<span class='black'>Haze</span>" ;
   if connum == 22
-    return "<span class='white'>Smokey</span>" ;
+    return "<span class='black'>Smokey</span>" ;
   if connum == 23
-    return "<span class='white'>Blustery</span>" ;
+    return "<span class='black'>Blustery</span>" ;
   if connum == 24
-    return "<span class='white'>Windy</span>" ;
+    return "<span class='black'>Windy</span>" ;
   if connum == 25
-    return "<span class='white'>Cold</span>" ;
+    return "<span class='black'>Cold</span>" ;
   if connum == 26
-    return "<span class='white'>Cloudy</span>" ;
+    return "<span class='black'>Cloudy</span>" ;
   if connum == 27
-    return "<span class='white'>Mostly Cloudy</span>" ;
+    return "<span class='black'>Mostly Cloudy</span>" ;
   if connum == 28
-    return "<span class='white'>Mostly Cloudy</span>" ;
+    return "<span class='black'>Mostly Cloudy</span>" ;
   if connum == 29
-    return "<span class='white'>Partly Cloudy</span>" ;
+    return "<span class='black'>Partly Cloudy</span>" ;
   if connum == 30
-    return "<span class='white'>Partly Cloudy</span>" ;
+    return "<span class='black'>Partly Cloudy</span>" ;
   if connum == 31
-    return "<span class='white'>Clear</span>" ;
+    return "<span class='black'>Clear</span>" ;
   if connum == 32
-    return "<span class='white'>Sunny</span>" ;
+    return "<span class='black'>Sunny</span>" ;
   if connum == 33
-    return "<span class='white'>Fair</span>" ;
+    return "<span class='black'>Fair</span>" ;
   if connum == 34
-    return "<span class='white'>Mostly Sunny</span>" ;
+    return "<span class='black'>Mostly Sunny</span>" ;
   if connum == 35
-    return "<span class='white'>Mixed Rain and Hail</span>" ;
+    return "<span class='black'>Mixed Rain and Hail</span>" ;
   if connum == 36
-    return "<span class='white'>Hot</span>" ;
+    return "<span class='black'>Hot</span>" ;
   if connum == 37
-    return "<span class='white'>Iso. Thunder</span>" ;
+    return "<span class='black'>Iso. Thunder</span>" ;
   if connum == 38
-    return "<span class='white'>Sca. Thunder</span>" ;
+    return "<span class='black'>Sca. Thunder</span>" ;
   if connum == 39
-    return "<span class='white'>Sca. Showers</span>" ;
+    return "<span class='black'>Sca. Showers</span>" ;
   if connum == 40
-    return "<span class='white'>Sca. Showers</span>" ;
+    return "<span class='black'>Sca. Showers</span>" ;
   if connum == 41
-    return "<span class='white'>Heavy Snow</span>" ;
+    return "<span class='black'>Heavy Snow</span>" ;
   if connum == 42
-    return "<span class='white'>Partly Cloudy</span>" ;
+    return "<span class='black'>Partly Cloudy</span>" ;
   if connum == 43
-    return "<span class='white'>Heavy Snow</span>" ;
+    return "<span class='black'>Heavy Snow</span>" ;
   if connum == 44
-    return "<span class='white'>Partly Cloudy</span>" ;
+    return "<span class='black'>Partly Cloudy</span>" ;
   if connum == 45
-    return "<span class='white'>Thundershowers</span>" ;
+    return "<span class='black'>Thundershowers</span>" ;
   if connum == 46
-    return "<span class='white'>Snow Showers</span>" ;
+    return "<span class='black'>Snow Showers</span>" ;
   if connum == 47
-    return "<span class='white'>Iso. Thunder</span>" ;
+    return "<span class='black'>Iso. Thunder</span>" ;
   # no internet connection
   if connum == 99
     return "<span>"
@@ -273,15 +269,15 @@ update: (output, domEl) ->
     forecastString = "<table>";
 
     for day in days
-        forecastString = forecastString + "<tr>" + "<td class='white'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
+        forecastString = forecastString + "<tr>" + "<td class='black'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
 
     forecastString = forecastString + "<tr class='center'><span class='yellow'>" + city + ', ' + region + "<br></span></tr>";
   
-    forecastString = forecastString + "<tr class='center'><span class='white'>" + @getWeatherCon(connum) + "</span></tr>";
+    forecastString = forecastString + "<tr class='center'><span class='black'>" + @getWeatherCon(connum) + "</span></tr>";
 
     forecastString = forecastString + "</table>"
   else
-    forecastString = "<span class='center white'>--</span>"
+    forecastString = "<span class='center black'>--</span>"
   
   $(domEl).find('.weather_forecast').html(forecastString)
 

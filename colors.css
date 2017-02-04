@@ -1,66 +1,88 @@
-span {
-    color: #51afef;
-    font: 12px TerminusTTF;
+table, span {
+    color: #006daf;
+    font: 12px FiraMonoForPowerline-Regular;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #dfdfdf;
+    color: #eee8d5;
 }
-.green {
-    color: #98be65;
+
+.black {
+  color: #333333;
 }
-.greenbg {
-    background: #98be65;
-    color: #282c34;
+
+.background {
+    background: #ffffff;
 }
-.yellow {
-    color: #ecbe7b;
-}
-.yellowbg {
-    background: #ecbe7b;
-    color: #282c34;
-}
+
 .red {
-    color: #ff6c6b;
+    color: #dc322f;
 }
+
+.purple {
+    color: #6c6ec6;
+}
+
+.orange {
+    color: #eead0d;
+}
+.orangebg {
+    background: #eead0d;
+    color: #ffffff;
+}
+ 
+.yellow {
+    color: #b58901;
+}
+
+.yellowbg {
+    background: #b58901;
+    color: #ffffff;
+}
+
+.green {
+    color: #076104;
+}
+
+.greenbg {
+    background: #076104;
+    color: #ffffff;
+}
+
+.cyan {
+    color: #85ceeb;
+}
+
+.cyanbg {
+    background: #85ceeb;
+    color: #ffffff;
+}
+
+.blue {
+    color: #268bd2;
+}
+
+.teal {
+    color: #85ceeb;
+}
+
 .sicon {
     position: relative;
-    font: 8px SijiMedium;
+    font: 10px FontAwesome;
 }
 .icon {
     position: relative;
     top: 1px;
-    font: 14px SijiMedium;
+    font: 14px FontAwesome;
 }
 .weather {
-    font: 16px SijiMedium;
+    font: 16px WeatherIcons-Regular;
     position: relative;
-    top: 4px;
+    top: 2px;
 }
-.blue {
-    color: #51afef;
-}
-.cyan {
-    color: #46d9ff;
-}
-.cyanbg {
-    background: #46d9ff;
-    color: #282c34;
-}
+
 .grey {
-    color: #bbc2cf;
+    color: #a9a9a9;
 }
-.purple {
-    color: #a9a1e1;
-}
-.orange {
-    color: #da8548;
-}
-.orangebg {
-    background: #da8548;
-    color: #282c34;
-}
-.teal {
-    color: #4db5bd;
-}
+

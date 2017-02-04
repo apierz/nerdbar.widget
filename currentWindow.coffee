@@ -10,13 +10,9 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  color: #66d9ef
   left: 25em
   top: 5px
   width:850px
-  white-space: nowrap
-  text-overflow: ellipsis
-  overflow: ellipsis
   """
 
 update: (output, domEl) ->
@@ -41,17 +37,16 @@ update: (output, domEl) ->
       else
         win = winseg[j] + '/' + win;
 
-   while file.length >= 65
-    file = file.slice(0, -1)
-    flag = 1
+  while file.length >= 65
+   file = file.slice(0, -1)
+   flag = 1
 
-   if flag >= 1
-     file = file + '…';
+  if flag >= 1
+    file = file + '…';
 
   if output == ""
     win = "<span class='white'>…</span>"
 
 
-  $(domEl).find('.kwmmode').html("<span class='icon'></span></span> <span>#{win}</span><span class='white'>#{file}</span>")
-
-  
+  $(domEl).find('.kwmmode').html("<span class='icon'></span> " +
+                                 "<span>#{win}</span><span class='black'>#{file}</span>")
