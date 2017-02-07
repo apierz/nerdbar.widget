@@ -7,7 +7,7 @@ render: (output) ->
     <link rel="stylesheet" type="text/css" href="/nerdbar.widget/colors.css" />
     <div class="compstatus"></div>
   """
-  
+
 style: """
   right: 55px
   top: 5px
@@ -42,37 +42,38 @@ batteryStatus: (battery, state) ->
   else if state == 'AC' and batnum < 15
     return "<span class='charging icon'></span><span class='red icon'></span><span class='black'>#{batnum}%</span>"
   else if batnum >= 90
-    return "<span class='green icon'>&nbsp&nbsp</span><span class='black'>#{batnum}%</span>"
+    return "<span class='green icon'></span><span class='black'>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
-    return "<span class='green icon'>&nbsp&nbsp</span><span class='black'>#{batnum}%</span>"
+    return "<span class='green icon'></span><span class='black'>#{batnum}%</span>"
   else if batnum < 50 and batnum >= 15
-    return "<span class='yellow icon'>&nbsp&nbsp</span><span class='black'>#{batnum}%</span>"
+    return "<span class='yellow icon'></span><span class='black'>#{batnum}%</span>"
   else if batnum < 15
-    return "<span class='red icon'>&nbsp&nbsp</span><span class='black'>#{batnum}%</span>"
+    return "<span class='red icon'></span><span class='black'>#{batnum}%</span>"
 
-getWifiStatus: (status) ->
+getWifiStatus: (status, netName, netIP) ->
   if status == "Wi-Fi"
-    return "<span class='wifi '></span>";
+    return "<span class='wifi '></span><span class='black'>#{netName}</span>"
   if status == 'USB 10/100/1000 LAN' or status == 'Apple USB Ethernet Adapter'
-    return "<span class='wifi '></span>";
+    return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='black'>#{netIP}</span>"
   else
-    return "<span class='grey wifi'></span>";
+    return "<span class='grey wifi'></span>"
 
 update: (output, domEl) ->
 
   # split the output of the script
   values = output.split('@');
-  
+
   time = values[0].replace /^\s+|\s+$/g, ""
   date = values[1];
   battery = values[2];
   isCharging = values[3]
   netStatus = values[4].replace /^\s+|\s+$/g, ""
+  netName = values[5]
+  netIP = values[6]
 
   # create an HTML string to be displayed by the widget
-  htmlString = @getWifiStatus(netStatus) + "&nbsp&nbsp&nbsp" +
-               @batteryStatus(battery, isCharging) + "<span class=''>" + " ⎢" + "</span>" +
+  htmlString = @getWifiStatus(netStatus, netName, netIP) +
+               @batteryStatus(battery, isCharging) + "<span>" + " ⎢" + "</span>" +
                @timeAndDate(date,time) + "<span class=''> ⎢</span>"
 
   $(domEl).find('.compstatus').html(htmlString)
-   

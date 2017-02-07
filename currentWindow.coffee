@@ -18,31 +18,31 @@ style: """
 update: (output, domEl) ->
 
 
-  file = "";
-  screenhtml = "";
-  wins = output;
-  win = "";
-  i = 0;
-  winseg = wins.split('/');
+  file = ""
+  screenhtml = ""
+  wins = output
+  win = ""
+  i = 0
+  winseg = wins.split('/')
   file = winseg[winseg.length - 1]
   j = winseg.length - 1
   flag = 0
-  
+
   if j > 1
     while j >= 1
-      j -= 1;
+      j -= 1
       if (win + file).length >= 65
         win = '…/' + win
-        break;
+        break
       else
-        win = winseg[j] + '/' + win;
+        win = winseg[j] + '/' + win
 
   while file.length >= 65
    file = file.slice(0, -1)
    flag = 1
 
   if flag >= 1
-    file = file + '…';
+    file = file + '…'
 
   if output == ""
     win = "<span class='white'>…</span>"

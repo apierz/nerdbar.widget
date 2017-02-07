@@ -26,7 +26,7 @@ cutBlackSpace: (text) ->
 
 update: (output, domEl) ->
 
-   values = output.split('@');
+   values = output.split('@')
    artist = @cutBlackSpace(values[0])
    song = @cutBlackSpace(values[1])
    elapsed = values[2]
@@ -35,7 +35,6 @@ update: (output, domEl) ->
    torrentsPending = values[5]
    torrentsComplete = @cutBlackSpace(values[6])
    trackCount = @cutBlackSpace(values[7])
-
 
    if artist.length >= 12
      artist = artist.substring(0,11)
@@ -56,19 +55,19 @@ update: (output, domEl) ->
 
 
 
-   mpdHtmlString += "<span>";
+   mpdHtmlString += "<span>"
    i = 0
    while i <= elapsedCounter
-     i += 1;
-     mpdHtmlString += " ● ";
+     i += 1
+     mpdHtmlString += " ● "
 
-   mpdHtmlString += "</span>";
-   mpdHtmlString += "<span class='grey'>";
+   mpdHtmlString += "</span>"
+   mpdHtmlString += "<span class='grey'>"
 
    i = 0
    while i <= remainingCounter
-     i += 1;
-     mpdHtmlString += " ● ";
+     i += 1
+     mpdHtmlString += " ● "
 
    mpdHtmlString += "</span>"
 
@@ -87,20 +86,20 @@ update: (output, domEl) ->
    completedCounter = parseInt(26 * (torrentPercentage / 100 ))
    remainingTorCounter = 25 - completedCounter
 
-   torrentString = "<span class='icon switch'> </span><span class='black'>Torrent Status: </span><span>";
+   torrentString = "<span class='icon switch'> </span><span class='black'>Torrent Status: </span><span>"
 
    i = 0
    while i <= completedCounter
-     i += 1;
-     torrentString += " ● ";
+     i += 1
+     torrentString += " ● "
 
-   torrentString += "</span>";
-   torrentString += "<span class='grey'>";
+   torrentString += "</span>"
+   torrentString += "<span class='grey'>"
 
    i = 0
    while i <= remainingTorCounter
-     i += 1;
-     torrentString += " ● ";
+     i += 1
+     torrentString += " ● "
 
    torrentString += "</span><span class='black'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
 
@@ -113,25 +112,25 @@ update: (output, domEl) ->
    $(".switch").on "click", ->
      console.log("switch clicked!")
      if isNowPlayingVis == false
-       $(".nowplaying").css("opacity", "1");
-       $(".nowplaying").css("z-index", "3");
-       $(".torrentStatus").css("opacity", "0");
-       $(".torrentStatus").css("z-index", "-1");
-       isNowPlayingVis = true;
+       $(".nowplaying").css("opacity", "1")
+       $(".nowplaying").css("z-index", "3")
+       $(".torrentStatus").css("opacity", "0")
+       $(".torrentStatus").css("z-index", "-1")
+       isNowPlayingVis = true
      else
-       $(".nowplaying").css("opacity", "0");
-       $(".nowplaying").css("z-index", "-1");
-       $(".torrentStatus").css("opacity", "1");
-       $(".torrentStatus").css("z-index", "2");
-       isNowPlayingVis = false;
+       $(".nowplaying").css("opacity", "0")
+       $(".nowplaying").css("z-index", "-1")
+       $(".torrentStatus").css("opacity", "1")
+       $(".torrentStatus").css("z-index", "2")
+       isNowPlayingVis = false
 
 
-   $(".pause").on "click", => @run "/usr/local/bin/mpc pause";
+   $(".pause").on "click", => @run "/usr/local/bin/mpc pause"
    $(".play").on "click",  => @run "/usr/local/bin/mpc play"
-   $(".next").on "click",  => @run "/usr/local/bin/mpc next";
-   $(".prev").on "click",  => @run "/usr/local/bin/mpc prev";
+   $(".next").on "click",  => @run "/usr/local/bin/mpc next"
+   $(".prev").on "click",  => @run "/usr/local/bin/mpc prev"
 
 afterRender: (domEl) ->
-   $(".torrentStatus").css("opacity", "0");
-   $(".torrentStatus").css("z-index", "-1");
+   $(".torrentStatus").css("opacity", "0")
+   $(".torrentStatus").css("z-index", "-1")
 

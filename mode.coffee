@@ -17,37 +17,37 @@ style: """
 
 update: (output, domEl) ->
 
-  values = output.split('@');
+  values = output.split('@')
 
-  file = "";
-  screenhtml = "";
-  mode = values[0];
-  screens = values[1];
-  wins = values[2];
-  win = "";
-  i = 0;
-  
+  file = ""
+  screenhtml = ""
+  mode = values[0]
+  screens = values[1]
+  wins = values[2]
+  win = ""
+  i = 0
+
   # The script ouputs the space names in parens so you can split them here. The
   # script outputs the names of the screens, if you prefer to use those instead
   # of generic indicators.
-  screensegs = screens.split('(');
+  screensegs = screens.split('(')
 
   for sseg in screensegs
     screensegs[i] = sseg.replace /^\s+|\s+$/g, ""
-    i+=1;
+    i+=1
 
   screensegs = (x for x in screensegs when x != '')
 
-  i = 0;
+  i = 0
 
   #apply a proper number tag so that space change controls can be added
   for sseg in screensegs
-    i += 1;
+    i += 1
     # the active space has a closing paren aroound the name
     if sseg.slice(-1) == ")"
-      screenhtml += "<span class='icon screen#{i}'>&nbsp&nbsp</span>" ;
+      screenhtml += "<span class='icon screen#{i}'>&nbsp&nbsp</span>"
     else
-      screenhtml += "<span class='icon grey screen#{i}'>&nbsp&nbsp</span>" ;
+      screenhtml += "<span class='icon grey screen#{i}'>&nbsp&nbsp</span>"
 
   #display the html string
   $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode black'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
@@ -57,7 +57,7 @@ update: (output, domEl) ->
   $(".screen2").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 19 using control down'"
   $(".screen3").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 20 using control down'"
   $(".screen4").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 21 using control down'"
-  
+
   # cycle through KWM space modes by clicking on the mode icon or mode name
   if /bsp/.test(mode) == true
     console.log("in bsp")

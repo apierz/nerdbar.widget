@@ -33,7 +33,7 @@ colorizeTemp: (temp) ->
   # whether it is hot, temperate or cold
   if temp == '--'
     return "<span class='black'>--</span>";
-  
+
   tempnum = parseInt(temp);
   if tempnum >= 90
     return "<span class='red'>#{temp}°</span>";
@@ -44,7 +44,7 @@ colorizeTemp: (temp) ->
 
 # Yahoo has horrible documentation for these codes, the ones on their website
 # are incorrect so I'm slowly fixing these by trial and error.
-# 
+
 getWeatherIcon: (connum) ->
    # Tornados and Hurricanes
   if connum <= 2
@@ -68,7 +68,7 @@ getWeatherIcon: (connum) ->
   if connum == 17
     return "<span class='blue weather'></span>" ;
   #Dust, fog, haze, etc
-  if connum >= 19 and connum <= 22 
+  if connum >= 19 and connum <= 22
     return "<span class='cyan weather'></span>" ;
   # Windy
   if connum == 23 or connum == 24
@@ -278,12 +278,12 @@ update: (output, domEl) ->
     forecastString = forecastString + "</table>"
   else
     forecastString = "<span class='center black'>--</span>"
-  
+
   $(domEl).find('.weather_forecast').html(forecastString)
 
   # weather forecast script
   isForecastVisable = false
-  
+
   $(".clickable").on "click", ->
     console.log("button clicked!")
     if isForecastVisable == false
