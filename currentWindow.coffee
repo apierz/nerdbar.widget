@@ -49,4 +49,4 @@ update: (output, domEl) ->
 
 
   $(domEl).find('.kwmmode').html("<span class='icon'></span> " +
-                                 "<span>#{win}</span><span class='black'>#{file}</span>")
+                                 "<span>#{win}</span><span class='white'>#{file}</span>")

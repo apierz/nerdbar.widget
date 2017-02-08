@@ -1,70 +1,70 @@
 table, span {
-    color: #006daf;
-    font: 12px FiraMonoForPowerline-Regular;
+    color: #83a598;
+    font: 12px Hack;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #eee8d5;
+    color: #fdf4c1;
 }
 
 .black {
-  color: #333333;
+  color: #282828;
 }
 
 .background {
-    background: #ffffff;
+    background: #282828;
 }
 
 .red {
-    color: #dc322f;
+    color: #fb4933;
 }
 
 .purple {
-    color: #6c6ec6;
+    color: #d3869b;
 }
 
 .orange {
-    color: #eead0d;
+    color: #fe8019;
 }
 .orangebg {
-    background: #eead0d;
-    color: #ffffff;
+    background: #fe8019;
+    color: #282828;
 }
- 
+
 .yellow {
-    color: #b58901;
+    color: #fabd2f;
 }
 
 .yellowbg {
-    background: #b58901;
-    color: #ffffff;
+    background: #fabd2f;
+    color: #282828;
 }
 
 .green {
-    color: #076104;
+    color: #b8bb26;
 }
 
 .greenbg {
-    background: #076104;
-    color: #ffffff;
+    background: #b8bb26;
+    color: #282828;
 }
 
 .cyan {
-    color: #85ceeb;
+    color: #8ec07c;
 }
 
 .cyanbg {
-    background: #85ceeb;
-    color: #ffffff;
+    background: #8ec07c;
+    color: #282828;
 }
 
 .blue {
-    color: #268bd2;
+    color: #458588;
 }
 
 .teal {
-    color: #85ceeb;
+    color: #8ec07c;
 }
 
 .sicon {
@@ -83,6 +83,6 @@ table, span {
 }
 
 .grey {
-    color: #a9a9a9;
+    color: #7c6f64;
 }
 

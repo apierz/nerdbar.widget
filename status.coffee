@@ -19,7 +19,7 @@ style: """
     left: 10px
   .charging
     font: 12px FontAwesome
-    color: #333333
+    color: white
     position: relative
     top: 0px
     right: -11px
@@ -27,45 +27,45 @@ style: """
   """
 timeAndDate: (date, time) ->
   # returns a formatted html string with the date and time
-  return "<span class='black'><span class='icon'>&nbsp</span>#{date}&nbsp<span class='icon'></span>#{time}</span></span>";
+  return "<span class='white'><span class='icon'>&nbsp</span>#{date}&nbsp<span class='icon'></span>#{time}</span></span>";
 
 batteryStatus: (battery, state) ->
   #returns a formatted html string current battery percentage, a representative icon and adds a lighting bolt if the
   # battery is plugged in and charging
   batnum = parseInt(battery)
   if state == 'AC' and batnum >= 90
-    return "<span class='charging sicon'></span><span class='icon '></span><span class='black'>#{batnum}%</span>"
+    return "<span class='charging sicon'></span><span class='icon '></span><span class='white'>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90
-    return "<span class='charging icon'></span><span class='green icon'></span><span class='black'>#{batnum}%</span>"
+    return "<span class='charging icon'></span><span class='green icon'></span><span class='white'>#{batnum}%</span>"
   else if state == 'AC' and batnum < 50 and batnum >= 15
-    return "<span class='charging icon'></span><span class='yellow icon'></span><span class='black'>#{batnum}%</span>"
+    return "<span class='charging icon'></span><span class='yellow icon'></span><span class='white'>#{batnum}%</span>"
   else if state == 'AC' and batnum < 15
-    return "<span class='charging icon'></span><span class='red icon'></span><span class='black'>#{batnum}%</span>"
+    return "<span class='charging icon'></span><span class='red icon'></span><span class='white'>#{batnum}%</span>"
   else if batnum >= 90
-    return "<span class='green icon'></span><span class='black'>#{batnum}%</span>"
+    return "<span class='green icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
-    return "<span class='green icon'></span><span class='black'>#{batnum}%</span>"
+    return "<span class='green icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum < 50 and batnum >= 15
-    return "<span class='yellow icon'></span><span class='black'>#{batnum}%</span>"
+    return "<span class='yellow icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum < 15
-    return "<span class='red icon'></span><span class='black'>#{batnum}%</span>"
+    return "<span class='red icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
 
 getWifiStatus: (status, netName, netIP) ->
   if status == "Wi-Fi"
-    return "<span class='wifi '></span><span class='black'>#{netName}</span>"
+    return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='white'>#{netName}</span>"
   if status == 'USB 10/100/1000 LAN' or status == 'Apple USB Ethernet Adapter'
-    return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='black'>#{netIP}</span>"
+    return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='white'>#{netIP}</span>"
   else
-    return "<span class='grey wifi'></span>"
+    return "<span class='grey wifi'></span><span class='white'>--</span>"
 
 update: (output, domEl) ->
 
   # split the output of the script
-  values = output.split('@');
+  values = output.split('@')
 
   time = values[0].replace /^\s+|\s+$/g, ""
-  date = values[1];
-  battery = values[2];
+  date = values[1]
+  battery = values[2]
   isCharging = values[3]
   netStatus = values[4].replace /^\s+|\s+$/g, ""
   netName = values[5]
@@ -73,7 +73,7 @@ update: (output, domEl) ->
 
   # create an HTML string to be displayed by the widget
   htmlString = @getWifiStatus(netStatus, netName, netIP) +
-               @batteryStatus(battery, isCharging) + "<span>" + " ⎢" + "</span>" +
-               @timeAndDate(date,time) + "<span class=''> ⎢</span>"
+               @batteryStatus(battery, isCharging) + "<span class='blue'>" + " ⎢" + "</span>" +
+               @timeAndDate(date,time) + "<span class='blue' class=''> ⎢</span>"
 
   $(domEl).find('.compstatus').html(htmlString)

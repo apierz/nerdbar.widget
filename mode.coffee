@@ -47,10 +47,10 @@ update: (output, domEl) ->
     if sseg.slice(-1) == ")"
       screenhtml += "<span class='icon screen#{i}'>&nbsp&nbsp</span>"
     else
-      screenhtml += "<span class='icon grey screen#{i}'>&nbsp&nbsp</span>"
+      screenhtml += "<span class='icon white screen#{i}'>&nbsp&nbsp</span>"
 
   #display the html string
-  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode black'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
+  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
 
   # add screen changing controls to the screen icons
   $(".screen1").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 18 using control down'"

@@ -4,7 +4,7 @@ render: (output) ->
   ""
 
 style: """
-  background: #ffffff
+  background: #282828
   width: 25.5em;
   bottom: 6px;
   right: 5px;

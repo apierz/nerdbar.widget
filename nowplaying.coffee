@@ -21,32 +21,32 @@ style: """
     bottom: 17.5px
 """
 
-cutBlackSpace: (text) ->
+cutWhiteSpace: (text) ->
   text.replace /^\s+|\s+$/g, ""
 
 update: (output, domEl) ->
 
    values = output.split('@')
-   artist = @cutBlackSpace(values[0])
-   song = @cutBlackSpace(values[1])
+   artist = @cutWhiteSpace(values[0])
+   song = @cutWhiteSpace(values[1])
    elapsed = values[2]
-   status = @cutBlackSpace(values[3])
+   status = @cutWhiteSpace(values[3])
    torrentPercentage = values[4]
    torrentsPending = values[5]
-   torrentsComplete = @cutBlackSpace(values[6])
-   trackCount = @cutBlackSpace(values[7])
+   torrentsComplete = @cutWhiteSpace(values[6])
+   trackCount = @cutWhiteSpace(values[7])
 
    if artist.length >= 12
      artist = artist.substring(0,11)
-     artist = @cutBlackSpace(artist)
+     artist = @cutWhiteSpace(artist)
 
    if song.length >= 12
      song = song.substring(0,11)
-     song = @cutBlackSpace(song)
+     song = @cutWhiteSpace(song)
      song = song + "…"
 
    # Create mpdHtmlString
-   mpdHtmlString = "<span class='icon switch'></span><span class='black'> (#{trackCount}) #{artist} - #{song}&nbsp</span>"
+   mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp</span>"
 
    emptySpace = (62 - artist.length - song.length - 3) / 2
 
@@ -62,7 +62,7 @@ update: (output, domEl) ->
      mpdHtmlString += " ● "
 
    mpdHtmlString += "</span>"
-   mpdHtmlString += "<span class='grey'>"
+   mpdHtmlString += "<span class='white'>"
 
    i = 0
    while i <= remainingCounter
@@ -86,7 +86,7 @@ update: (output, domEl) ->
    completedCounter = parseInt(26 * (torrentPercentage / 100 ))
    remainingTorCounter = 25 - completedCounter
 
-   torrentString = "<span class='icon switch'> </span><span class='black'>Torrent Status: </span><span>"
+   torrentString = "<span class='icon switch'> </span><span class='white'>Torrent Status: </span><span>"
 
    i = 0
    while i <= completedCounter
@@ -94,14 +94,14 @@ update: (output, domEl) ->
      torrentString += " ● "
 
    torrentString += "</span>"
-   torrentString += "<span class='grey'>"
+   torrentString += "<span class='white'>"
 
    i = 0
    while i <= remainingTorCounter
      i += 1
      torrentString += " ● "
 
-   torrentString += "</span><span class='black'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
+   torrentString += "</span><span class='white'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
 
 
    $(domEl).find('.nowplaying').html(mpdHtmlString)

@@ -10,7 +10,7 @@ render: (output) ->
 
 style: """
   right: 18px
-  bottom: 6px
+  bottom: 8px
   color: #66d9ef
   height: 13
 """
@@ -25,7 +25,7 @@ getCPU: (cpu) ->
   if cpuNum < 10
     cpuString = '0' + cpuString
   return "<span class='icon'>&nbsp</span>" +
-         "<span class='black'>#{cpuString}%</span>"
+         "<span class='white'>#{cpuString}%</span>"
 
 getMem: (mem) ->
   memNum = parseFloat(mem)
@@ -34,7 +34,7 @@ getMem: (mem) ->
   if memNum < 10
     memString = '0' + memString
   return "<span class='icon'>&nbsp</span>" +
-         "<span class='black'>#{memString}%</span>"
+         "<span class='white'>#{memString}%</span>"
 
 convertBytes: (bytes) ->
   kb = bytes / 1024
@@ -50,13 +50,13 @@ getNetTraffic: (down, up) ->
   downString = @convertBytes(parseInt(down))
   upString = @convertBytes(parseInt(up))
   return "<span>&nbsp</span><span class='icon teal'></span>" +
-         "<span class='black'>#{downString} " + 
-         "<span> ⎢</span> <span> </span>" +
+         "<span class='white'>#{downString} " + 
+         "<span class='blue'> ⎢</span> <span> </span>" +
          "<span class='icon orange'></span>" +
-         "<span class='black'>#{upString}</span>"
+         "<span class='white'>#{upString}</span>"
 
 getFreeSpace: (space) ->
-  return "<span class='icon'></span><span class='black'>#{space}gb</span>"
+  return "<span class='icon'></span><span class='white'>#{space}gb</span>"
 
 update: (output, domEl) ->
 
@@ -70,9 +70,9 @@ update: (output, domEl) ->
   free = values[4].replace(/[^0-9]/g,'')
 
   # create an HTML string to be displayed by the widget
-  htmlString =  @getNetTraffic(down, up) + "<span>&nbsp⎢&nbsp</span>" +
-                @getMem(mem) + "<span>&nbsp⎢&nbsp</span>" + 
-                @getCPU(cpu) + "<span>&nbsp⎢&nbsp</span>" + 
+  htmlString =  @getNetTraffic(down, up) + "<span class='blue'>&nbsp⎢&nbsp</span>" +
+                @getMem(mem) + "<span class='blue'>&nbsp⎢&nbsp</span>" + 
+                @getCPU(cpu) + "<span class='blue'>&nbsp⎢&nbsp</span>" + 
                 @getFreeSpace(free)
 
   $(domEl).find('.stats').html(htmlString)
