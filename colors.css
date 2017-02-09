@@ -1,70 +1,69 @@
 table, span {
-    color: #83a598;
+    color: #81a1c1;
     font: 12px Hack;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #fdf4c1;
-}
+    color: #d8dee9;}
 
 .black {
-  color: #282828;
+  color: #2e3440;
 }
 
 .background {
-    background: #282828;
+    background-color: #2e3440;
 }
 
 .red {
-    color: #fb4933;
+    color: #bf616a;
 }
 
 .purple {
-    color: #d3869b;
+    color: #b48ead;
 }
 
 .orange {
-    color: #fe8019;
+    color: #d08770;
 }
 .orangebg {
-    background: #fe8019;
-    color: #282828;
+    background: #d08770;
+    color: #2e3440;
 }
 
 .yellow {
-    color: #fabd2f;
+    color: #ebcb8b;
 }
 
 .yellowbg {
-    background: #fabd2f;
-    color: #282828;
+    background: #ebcb8b;
+    color: #2e3440;
 }
 
 .green {
-    color: #b8bb26;
+    color: #a3be8c;
 }
 
 .greenbg {
-    background: #b8bb26;
-    color: #282828;
+    background: #a3be8c;
+    color: #2e3440;
 }
 
 .cyan {
-    color: #8ec07c;
+    color: #88c0d0;
 }
 
 .cyanbg {
-    background: #8ec07c;
-    color: #282828;
+    background: #88c0d0;
+    color: #2e3440;
 }
 
 .blue {
-    color: #458588;
+    color: #5e81ac;
 }
 
 .teal {
-    color: #8ec07c;
+    color: #8fbcbb;
 }
 
 .sicon {

@@ -22,11 +22,15 @@ update: (output, domEl) ->
   screenhtml = ""
   wins = output
   win = ""
-  i = 0
   winseg = wins.split('/')
   file = winseg[winseg.length - 1]
   j = winseg.length - 1
-  flag = 0
+  flag1 = 0
+  flag2 = 0
+
+  while file.length >= 65
+   file = file.slice(0, -1)
+   flag1 = 1
 
   if j > 1
     while j >= 1
@@ -37,12 +41,15 @@ update: (output, domEl) ->
       else
         win = winseg[j] + '/' + win
 
-  while file.length >= 65
-   file = file.slice(0, -1)
-   flag = 1
+  while win.length >= 65
+    win = win.slice(1)
+    flag2 = 1
 
-  if flag >= 1
+  if flag1 >= 1
     file = file + '…'
+
+  if flag2 >= 1
+    win = '…' + win
 
   if output == ""
     win = "<span class='white'>…</span>"
