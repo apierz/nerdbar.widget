@@ -110,7 +110,6 @@ update: (output, domEl) ->
    isNowPlayingVis = true
 
    $(".switch").on "click", ->
-     console.log("switch clicked!")
      if isNowPlayingVis == false
        $(".nowplaying").css("opacity", "1")
        $(".nowplaying").css("z-index", "3")

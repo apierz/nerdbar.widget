@@ -50,7 +50,10 @@ update: (output, domEl) ->
       screenhtml += "<span class='icon white screen#{i}'>&nbsp&nbsp</span>"
 
   #display the html string
-  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span><span class='tilingMode white'>#{mode} <span class='blue'> ⎢ </span></span>" + screenhtml)
+  $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span>" +
+                                 "<span class='tilingMode white'>#{mode} " +
+                                 "<span class='blue'> ⎢ </span></span>" +
+                                 screenhtml)
 
   # add screen changing controls to the screen icons
   $(".screen1").on 'click', => @run "osascript -e 'tell application \"System Events\" to key code 18 using control down'"
@@ -60,7 +63,6 @@ update: (output, domEl) ->
 
   # cycle through KWM space modes by clicking on the mode icon or mode name
   if /bsp/.test(mode) == true
-    console.log("in bsp")
     $(".tilingMode").on 'click', => @run "/usr/local/bin/kwmc space -t float"
   else if /float/.test(mode) == true
     $(".tilingMode").on 'click', => @run "/usr/local/bin/kwmc space -t monocle"

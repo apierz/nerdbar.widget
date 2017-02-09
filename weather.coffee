@@ -277,7 +277,6 @@ update: (output, domEl) ->
   isForecastVisable = false
 
   $(".clickable").on "click", ->
-    console.log("button clicked!")
     if isForecastVisable == false
       $(".weather_forecast").css("opacity", "1");
       isForecastVisable = true;
