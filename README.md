@@ -4,7 +4,7 @@ Personal [Übersicht](http://tracesof.net/uebersicht/) system information bars f
 
 *Screen Shots:*
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotone.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshottwo.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshottwo.ong.png?raw=true)
 
 
 The original widget created by *herrbischoff* can be found [here](https://github.com/herrbischoff/nerdbar.widget).
@@ -25,12 +25,12 @@ These are as simple as Ubersicht widgets get, they make black bars at the top, b
 
 
 ### mode.coffee
-![img](https://github.com/nerdbar.widget/blob/master/screens/screenshotthree.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotthree.png?raw=true)
 
 This widget is designed to work with KWM. It shows the current KWM mode (bsp, float, monocle) and the number of desktops and the current one. If enabled in the Ubersicht preferences menu, holding the interaction key and clicking on the mode will cycle through the KWM modes and clicking on desktop icons will change the current desktop to the one clicked on. This works best if your interaction shortcut is ctrl.
 
 ### currentWindow.coffee
-![img](https://github.com/nerdbar.widget/blob/master/screens/screenshotfour.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotfour.png?raw=true)
 
 This widget shows the currently selected window. If working on a file, it can highlight the name of the file being worked on.
 
