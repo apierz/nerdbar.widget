@@ -50,7 +50,7 @@ This used to be a part of status.coffee but since it uses an API call it was ver
 * Clicking on the temperature loads a five day forecast panel with location, current condition, date, condition, and low and high temperatures for the week. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
 
 ### stats.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot7.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
 
 This widget shows a number of current system indicators.
 
@@ -59,8 +59,8 @@ This widget shows a number of current system indicators.
 * Current free HD space in gb
 
 ### nowplaying.coffee
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot7.png?raw=true)
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot8.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
 
 This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
 
