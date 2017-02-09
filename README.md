@@ -23,7 +23,6 @@ You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dot
 ### Backgrounds
 These are as simple as Ubersicht widgets get, they make black bars at the top, bottom left and bottom right of the screen that the other widgets sit on top of.
 
-https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshotone.png?raw=true
 
 ### mode.coffee
 ![img](https://github.com/nerdbar.widget/blob/master/screens/screenshotthree.png?raw=true)
@@ -36,14 +35,14 @@ This widget is designed to work with KWM. It shows the current KWM mode (bsp, fl
 This widget shows the currently selected window. If working on a file, it can highlight the name of the file being worked on.
 
 ### status.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/masterscreens/screenshot5.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot5.png?raw=true)
 
 * This widget shows the current time and date.
 * The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt that will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
 * Network connection indicator widget. Shows grey if no connection detected and blue if there's an active connection on Wi-Fi or Ethernet. Shows different icons for Wi-Fi and Ethernet and will show your IP or current wifi network name.
 
 ### weather.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/masterscreens/screenshot6.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot6.png?raw=true)
 
 This used to be a part of status.coffee but since it uses an API call it was very inefficent to have it update every few seconds. It is now its own widget that updates every 10 minutes signifigantly reducing the resources used.
 
@@ -51,7 +50,7 @@ This used to be a part of status.coffee but since it uses an API call it was ver
 * Clicking on the temperature loads a five day forecast panel with location, current condition, date, condition, and low and high temperatures for the week. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
 
 ### stats.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/masterscreens/screenshot7.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot7.png?raw=true)
 
 This widget shows a number of current system indicators.
 
@@ -60,8 +59,8 @@ This widget shows a number of current system indicators.
 * Current free HD space in gb
 
 ### nowplaying.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/masterscreens/screenshot8.png?raw=true)
-![img](https://github.com/apierz/nerdbar.widget/blob/masterscreens/screenshot9.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot8.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
 
 This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
 
