@@ -273,10 +273,12 @@ update: (output, domEl) ->
 
     forecastString = forecastString + "<tr class='center'><span class='yellow'>" + city + ', ' + region
 
+  $(domEl).find('.weather_forecast').html(forecastString)
   # weather forecast script
   isForecastVisable = false
 
   $(".clickable").on "click", ->
+    console.log("button clicked!")
     if isForecastVisable == false
       $(".weather_forecast").css("opacity", "1");
       isForecastVisable = true;

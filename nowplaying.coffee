@@ -18,7 +18,7 @@ style: """
   height: 16px
   .torrentStatus
     position: relative
-    bottom: 17.5px
+    bottom: 14.5px
 """
 
 cutWhiteSpace: (text) ->

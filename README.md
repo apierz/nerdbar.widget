@@ -1,6 +1,6 @@
 # Bars
 
-Personal [Übersicht](http://tracesof.net/uebersicht/) system information bars for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the Gruvbox theme.
+Personal [Übersicht](http://tracesof.net/uebersicht/) system information bars for use with [Kwm](https://github.com/koekeishiya/kwm) window manager and designed with colors from the [Nord](https://github.com/arcticicestudio/nord) theme.
 
 *Screen Shots:*
 ![img](https://raw.githubusercontent.com/apierz/nerdbar.widget/bitmap_font_version/screens/screenshotone.png?raw=true)
