@@ -55,7 +55,7 @@ getWifiStatus: (status, netName, netIP) ->
   if status == 'USB 10/100/1000 LAN' or status == 'Apple USB Ethernet Adapter'
     return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='white'>#{netIP}</span>"
   else
-    return "<span class='grey wifi'></span><span class='white'>--</span>"
+    return "<span class='grey wifi'>&nbsp&nbsp&nbsp</span><span class='white'>--&nbsp&nbsp&nbsp</span>"
 
 update: (output, domEl) ->
 
