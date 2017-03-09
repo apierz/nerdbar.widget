@@ -4,9 +4,9 @@ render: (output) ->
   ""
 
 style: """
-  background: #2e3440
+  background: #fbf8ef
   width: 25.5em;
-  bottom: 6px;
+  bottom: 8px;
   right: 5px;
   border-radius: 4px;
   height: 20px

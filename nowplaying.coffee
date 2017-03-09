@@ -13,12 +13,12 @@ style: """
   color: #66d9ef
   font: 12px Hack
   left: 8px
-  bottom: 8px
+  bottom: 10.5px
   width:850px
   height: 16px
   .torrentStatus
     position: relative
-    bottom: 14.5px
+    bottom: 15px
 """
 
 cutWhiteSpace: (text) ->
@@ -62,7 +62,7 @@ update: (output, domEl) ->
      mpdHtmlString += " ● "
 
    mpdHtmlString += "</span>"
-   mpdHtmlString += "<span class='white'>"
+   mpdHtmlString += "<span class='grey'>"
 
    i = 0
    while i <= remainingCounter
@@ -94,7 +94,7 @@ update: (output, domEl) ->
      torrentString += " ● "
 
    torrentString += "</span>"
-   torrentString += "<span class='white'>"
+   torrentString += "<span class='grey'>"
 
    i = 0
    while i <= remainingTorCounter
@@ -122,7 +122,6 @@ update: (output, domEl) ->
        $(".torrentStatus").css("opacity", "1")
        $(".torrentStatus").css("z-index", "2")
        isNowPlayingVis = false
-
 
    $(".pause").on "click", => @run "/usr/local/bin/mpc pause"
    $(".play").on "click",  => @run "/usr/local/bin/mpc play"

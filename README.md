@@ -75,5 +75,12 @@ Then clone this repository.
 ```bash
 git clone https://github.com/apierz/nerdbar.widget $HOME/Library/Application\ Support/Übersicht/widgets/nerdbar.widget
 ```
+By default, the widgets will look for the scripts in ~/.kwm/scripts but the scripts can be stored anywhere provided they and the widget files are edited to look someplace else. They may require installing some additional packages, such as Python, but all are available via homebrew.
 
-I use [Hack](http://sourcefoundry.org/hack/) for the main text, [FontAwesome](http://fontawesome.io) for the icons and [All-the-icons](https://github.com/domtronn/all-the-icons.el) for the weather icons.
+
+The icons require the use of extra fonts:
+
+* [FontAwesome](http://fontawesome.io) for the icons
+* [All-the-icons](https://github.com/domtronn/all-the-icons.el) for the weather icons.
+
+That have to be installed system wide. You can drag the files into FontBook.app to do this.

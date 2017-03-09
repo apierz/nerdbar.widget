@@ -33,7 +33,7 @@ batteryStatus: (battery, state) ->
   # battery is plugged in and charging
   batnum = parseInt(battery)
   if state == 'AC' and batnum >= 90
-    return "<span class='charging white sicon'></span><span class='icon '></span><span class='white'>#{batnum}%</span>"
+    return "<span class='charging white sicon'></span><span class='green icon '></span><span class='white'>#{batnum}%</span>"
   else if state == 'AC' and batnum >= 50 and batnum < 90
     return "<span class='charging white icon'></span><span class='green icon'></span><span class='white'>#{batnum}%</span>"
   else if state == 'AC' and batnum < 50 and batnum >= 15
@@ -53,7 +53,7 @@ getWifiStatus: (status, netName, netIP) ->
   if status == "Wi-Fi"
     return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='white'>#{netName}&nbsp</span>"
   if status == 'USB 10/100/1000 LAN' or status == 'Apple USB Ethernet Adapter'
-    return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='white'>#{netIP}&nbsp</span>"
+    return "<span class='wifi '>&nbsp&nbsp&nbsp</span><span class='white'>#{netIP}</span>"
   else
     return "<span class='grey wifi'></span><span class='white'>--</span>"
 
