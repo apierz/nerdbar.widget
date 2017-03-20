@@ -1,4 +1,5 @@
-command: "~/.kwm/scripts/stats.sh"
+command: "./scripts/stats.sh"
+  
 
 refreshFrequency: 3000 # ms
 

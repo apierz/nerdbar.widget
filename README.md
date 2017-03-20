@@ -18,7 +18,7 @@ Further modifications were made by [koekeishiya](https://github.com/koekeishiya)
 
 [Übersicht](http://tracesof.net/uebersicht/) creates a webview and places it on your desktop, just above the wallpaper but behind everyting else. Ubersicht widgets are written as .coffee files which let you format elements with html, style them with css and manipulate data with javascript and coffeescript. For dynamic widgets, Ubersicht let's you run terminal commands and insert the output into html, so just about any language can be used to write scripts for widgets. My scripts use bash, python and AppleScript.
 
-You can find the necessary scripts in my [Dotfiles](http://github.com/apierz/dotfiles) directory in the [kwm](http://github.com/apierz/dotfiles/tree/master/kwm) folder.
+You can find the necessary scripts in scripts directory.
 
 ### Backgrounds
 These are as simple as Ubersicht widgets get, they make black bars at the top, bottom left and bottom right of the screen that the other widgets sit on top of.
@@ -50,7 +50,7 @@ This used to be a part of status.coffee but since it uses an API call it was ver
 * Clicking on the temperature loads a five day forecast panel with location, current condition, date, condition, and low and high temperatures for the week. To use, enable an interaction shortcut in the Übersicht preference menu and hold down that key while clicking on the temperature.
 
 ### stats.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot7.png?raw=true)
 
 This widget shows a number of current system indicators.
 
@@ -59,12 +59,16 @@ This widget shows a number of current system indicators.
 * Current free HD space in gb
 
 ### nowplaying.coffee
-![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot7.png?raw=true)
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot8.png?raw=true)
 
 This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
 
 Clicking on the icon while holding the interaction key will toggle the widget between current MPD status and the current download progress of active torrents and the number of downloading / total.
+
+There is also a Spotify widget included but you must
+`brew install shpotify
+first
 
 ## Installation
 
@@ -75,7 +79,9 @@ Then clone this repository.
 ```bash
 git clone https://github.com/apierz/nerdbar.widget $HOME/Library/Application\ Support/Übersicht/widgets/nerdbar.widget
 ```
-By default, the widgets will look for the scripts in ~/.kwm/scripts but the scripts can be stored anywhere provided they and the widget files are edited to look someplace else. They may require installing some additional packages, such as Python, but all are available via homebrew.
+
+or to your current widget directory if you have changed it.
+The scripts may require installing some additional packages, such as Python, but all are available via homebrew.
 
 
 The icons require the use of extra fonts:

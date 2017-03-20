@@ -1,4 +1,4 @@
-command: "sh ~/.kwm/scripts/mpd.sh"
+command: "sh ./scripts/mpd.sh"
 
 refreshFrequency: '2s' # ms
 
@@ -102,7 +102,6 @@ update: (output, domEl) ->
      torrentString += " ● "
 
    torrentString += "</span><span class='white'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
-
 
    $(domEl).find('.nowplaying').html(mpdHtmlString)
    $(domEl).find('.torrentStatus').html(torrentString)

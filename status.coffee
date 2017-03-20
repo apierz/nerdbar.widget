@@ -1,4 +1,4 @@
-command: "echo $(sh ~/.kwm/scripts/time_script)@$(sh ~/.kwm/scripts/date_script)@$(sh ~/.kwm/scripts/battery_percentage_script)%@$(sh ~/.kwm/scripts/battery_charging_script)@$(sh ~/.kwm/scripts/wifi_status_script)"
+command: "echo $(sh ./scripts/time_script)@$(sh ./scripts/date_script)@$(sh ./scripts/battery_percentage_script)%@$(sh ./scripts/battery_charging_script)@$(sh ./scripts/wifi_status_script)"
 
 refreshFrequency: 3000 # ms
 

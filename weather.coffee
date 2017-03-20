@@ -1,4 +1,4 @@
-command: "/usr/local/bin/python3 ~/.kwm/scripts/weatherscript.py"
+command: "/usr/local/bin/python3 ./scripts/weatherscript.py"
 
 refreshFrequency: 600000 # ms
 

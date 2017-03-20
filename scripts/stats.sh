@@ -1,1 +1,1 @@
-echo "$(sh ~/.kwm/scripts/cpu_script)@$(sh ~/.kwm/scripts/mem_script)@$(sh ~/.kwm/scripts/networktraffic)@$(sh ~/.kwm/scripts/hd_script)"
+echo "$(sh ./scripts/cpu_script)@$(sh ./scripts/mem_script)@$(sh ./scripts/networktraffic)@$(sh ./scripts/hd_script)"
