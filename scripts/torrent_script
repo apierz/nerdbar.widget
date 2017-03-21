@@ -12,7 +12,7 @@ done
 
 if [ $COUNTER == 0 ];
 then
-  echo "no torrents downloading/seeding"
+  echo "no torrents downloading/seeding@@@"
   exit 0
 fi
 

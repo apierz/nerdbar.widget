@@ -1,4 +1,4 @@
-command: "sh ./scripts/mpd.sh"
+command: "sh ./scripts/mpd.sh && sh ./scripts/torrent_script"
 
 refreshFrequency: '2s' # ms
 
@@ -31,10 +31,11 @@ update: (output, domEl) ->
    song = @cutWhiteSpace(values[1])
    elapsed = values[2]
    status = @cutWhiteSpace(values[3])
-   torrentPercentage = values[4]
-   torrentsPending = values[5]
-   torrentsComplete = @cutWhiteSpace(values[6])
-   trackCount = @cutWhiteSpace(values[7])
+   trackCount = @cutWhiteSpace(values[4])
+   if torrentsPending != ""
+     torrentPercentage = values[5]
+     torrentsPending = values[6]
+     torrentsComplete = @cutWhiteSpace(values[7])
 
    if artist.length >= 12
      artist = artist.substring(0,11)
