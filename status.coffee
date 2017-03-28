@@ -4,7 +4,7 @@ refreshFrequency: 3000 # ms
 
 render: (output) ->
   """
-    <link rel="stylesheet" type="text/css" href="/nerdbar.widget/colors.css" />
+    <link rel="stylesheet" type="text/css" href="./colors.css" />
     <div class="compstatus"></div>
   """
 
@@ -44,7 +44,9 @@ batteryStatus: (battery, state) ->
     return "<span class='green icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum >= 50 and batnum < 90
     return "<span class='green icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
-  else if batnum < 50 and batnum >= 15
+  else if batnum < 50 and batnum >= 25
+    return "<span class='yellow icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
+  else if batnum < 25 and batnum >= 15
     return "<span class='yellow icon'>&nbsp</span><span class='white'>#{batnum}%</span>"
   else if batnum < 15
     return "<span class='red icon'>&nbsp</span><span class='white'>#{batnum}%</span>"

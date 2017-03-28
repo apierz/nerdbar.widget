@@ -4,7 +4,7 @@ refreshFrequency: 600000 # ms
 
 render: (output) ->
   """
-    <link rel="stylesheet" type="text/css" href="/nerdbar.widget/colors.css" />
+    <link rel="stylesheet" type="text/css" href="./colors.css" />
     <div class='compstatus'></div>
     <div class='weather_forecast'></div>
   """

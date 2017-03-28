@@ -4,7 +4,7 @@ refreshFrequency: 3000 # ms
 
 render: (output) ->
   """
-    <link rel="stylesheet" type="text/css" href="../colors.css" />
+    <link rel="stylesheet" type="text/css" href="./colors.css" />
     <div class='kwmmode'></div>
   """
 
