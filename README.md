@@ -68,7 +68,7 @@ Clicking on the icon while holding the interaction key will toggle the widget be
 
 There is also a Spotify widget included but you must
 `brew install shpotify`
-first
+a command line spotify utility by [hnarayanan](https://github.com/hnarayanan) first
 
 ## Installation
 
