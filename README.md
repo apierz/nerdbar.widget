@@ -67,7 +67,7 @@ This widget works with MPD and NCMPCPP and the Transmission cli torrent client. 
 Clicking on the icon while holding the interaction key will toggle the widget between current MPD status and the current download progress of active torrents and the number of downloading / total.
 
 There is also a Spotify widget included but you must
-`brew install shpotify`
+`brew install spotify`
 first
 
 ## Installation
