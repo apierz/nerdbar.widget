@@ -257,8 +257,6 @@ update: (output, domEl) ->
   city = values[22]
   region = values[23]
 
-
-
   # create an HTML string to be displayed by the widget
   htmlString = "<span class='clickable'>" + @getWeatherIcon(connum) + @colorizeTemp(temp) + "</span>";
   $(domEl).find('.compstatus').html(htmlString)
@@ -271,7 +269,7 @@ update: (output, domEl) ->
     for day in days
         forecastString = forecastString + "<tr>" + "<td class='white'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
 
-    forecastString = forecastString + "<tr class='center'><span class='yellow'>" + city + ', ' + region
+    forecastString = forecastString + "<tr class='center'><span class='green'>" + city + ', ' + region
 
   $(domEl).find('.weather_forecast').html(forecastString)
   # weather forecast script
