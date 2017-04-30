@@ -1,5 +1,4 @@
 command: "sh ./scripts/stats.sh"
-  
 
 refreshFrequency: 3000 # ms
 
@@ -51,7 +50,7 @@ getNetTraffic: (down, up) ->
   downString = @convertBytes(parseInt(down))
   upString = @convertBytes(parseInt(up))
   return "<span>&nbsp</span><span class='icon teal'></span>" +
-         "<span class='white'>#{downString} " + 
+         "<span class='white'>#{downString} " +
          "<span class='blue'> ⎢</span> <span> </span>" +
          "<span class='icon orange'></span>" +
          "<span class='white'>#{upString}</span>"
@@ -62,7 +61,7 @@ getFreeSpace: (space) ->
 update: (output, domEl) ->
 
   # split the output of the script
-  values = output.split('@');
+  values = output.split('@')
 
   cpu = values[0]
   mem = values[1]
@@ -72,8 +71,8 @@ update: (output, domEl) ->
 
   # create an HTML string to be displayed by the widget
   htmlString =  @getNetTraffic(down, up) + "<span class='blue'>&nbsp⎢&nbsp</span>" +
-                @getMem(mem) + "<span class='blue'>&nbsp⎢&nbsp</span>" + 
-                @getCPU(cpu) + "<span class='blue'>&nbsp⎢&nbsp</span>" + 
+                @getMem(mem) + "<span class='blue'>&nbsp⎢&nbsp</span>" +
+                @getCPU(cpu) + "<span class='blue'>&nbsp⎢&nbsp</span>" +
                 @getFreeSpace(free)
 
   $(domEl).find('.stats').html(htmlString)
