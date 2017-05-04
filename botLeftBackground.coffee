@@ -4,7 +4,7 @@ render: (output) ->
   ""
 
 style: """
-  width: 38.5em;
+  width: 45.5em;
   bottom: 8px;
   right: 2px;
   left 4px;

@@ -37,19 +37,19 @@ update: (output, domEl) ->
      torrentsPending = values[6]
      torrentsComplete = @cutWhiteSpace(values[7])
 
-   if artist.length >= 12
-     artist = artist.substring(0,11)
+   if artist.length >= 50
+     artist = artist.substring(0,49)
      artist = @cutWhiteSpace(artist)
 
-   if song.length >= 12
-     song = song.substring(0,11)
+   if song.length >= 50
+     song = song.substring(0,49)
      song = @cutWhiteSpace(song)
      song = song + "…"
 
    # Create mpdHtmlString
    mpdHtmlString = "<span class='icon switch'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp</span>"
 
-   emptySpace = (62 - artist.length - song.length - 3) / 2
+   emptySpace = (80 - artist.length - song.length - 3)
 
    elapsedCounter = parseInt(elapsed * emptySpace / 100 )
    remainingCounter = emptySpace - elapsedCounter - 1
@@ -60,7 +60,7 @@ update: (output, domEl) ->
    i = 0
    while i <= elapsedCounter
      i += 1
-     mpdHtmlString += " ● "
+     mpdHtmlString += "●"
 
    mpdHtmlString += "</span>"
    mpdHtmlString += "<span class='grey'>"
@@ -68,7 +68,7 @@ update: (output, domEl) ->
    i = 0
    while i <= remainingCounter
      i += 1
-     mpdHtmlString += " ● "
+     mpdHtmlString += "●"
 
    mpdHtmlString += "</span>"
 
