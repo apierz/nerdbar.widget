@@ -13,7 +13,7 @@ style: """
   color: #66d9ef
   font: 12px Hack
   left: 8px
-  bottom: 10.5px
+  bottom: 12px
   width:850px
   height: 16px
   .torrentStatus
@@ -63,7 +63,7 @@ update: (output, domEl) ->
      mpdHtmlString += "●"
 
    mpdHtmlString += "</span>"
-   mpdHtmlString += "<span class='grey'>"
+   mpdHtmlString += "<span class='white'>"
 
    i = 0
    while i <= remainingCounter
@@ -84,23 +84,23 @@ update: (output, domEl) ->
 
 
 
-   completedCounter = parseInt(26 * (torrentPercentage / 100 ))
-   remainingTorCounter = 25 - completedCounter
+   completedCounter = parseInt(70 * (torrentPercentage / 100 ))
+   remainingTorCounter = 69 - completedCounter
 
    torrentString = "<span class='icon switch'> </span><span class='white'>Torrent Status: </span><span>"
 
    i = 0
    while i <= completedCounter
      i += 1
-     torrentString += " ● "
+     torrentString += "●"
 
    torrentString += "</span>"
-   torrentString += "<span class='grey'>"
+   torrentString += "<span class='white'>"
 
    i = 0
    while i <= remainingTorCounter
      i += 1
-     torrentString += " ● "
+     torrentString += "●"
 
    torrentString += "</span><span class='white'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
 

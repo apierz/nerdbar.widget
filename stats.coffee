@@ -10,7 +10,7 @@ render: (output) ->
 
 style: """
   right: 18px
-  bottom: 9px
+  bottom: 11px
   color: #66d9ef
   height: 13
 """
@@ -51,7 +51,7 @@ getNetTraffic: (down, up) ->
   upString = @convertBytes(parseInt(up))
   return "<span>&nbsp</span><span class='icon teal'></span>" +
          "<span class='white'>#{downString} " +
-         "<span class='blue'> ⎢</span> <span> </span>" +
+         "<span class='cyan'> ⎢</span> <span> </span>" +
          "<span class='icon orange'></span>" +
          "<span class='white'>#{upString}</span>"
 
@@ -70,9 +70,9 @@ update: (output, domEl) ->
   free = values[4].replace(/[^0-9]/g,'')
 
   # create an HTML string to be displayed by the widget
-  htmlString =  @getNetTraffic(down, up) + "<span class='blue'>&nbsp⎢&nbsp</span>" +
-                @getMem(mem) + "<span class='blue'>&nbsp⎢&nbsp</span>" +
-                @getCPU(cpu) + "<span class='blue'>&nbsp⎢&nbsp</span>" +
+  htmlString =  @getNetTraffic(down, up) + "<span class='cyan'>&nbsp⎢&nbsp</span>" +
+                @getMem(mem) + "<span class='cyan'>&nbsp⎢&nbsp</span>" +
+                @getCPU(cpu) + "<span class='cyan'>&nbsp⎢&nbsp</span>" +
                 @getFreeSpace(free)
 
   $(domEl).find('.stats').html(htmlString)
