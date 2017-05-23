@@ -37,12 +37,12 @@ update: (output, domEl) ->
      torrentsPending = values[6]
      torrentsComplete = @cutWhiteSpace(values[7])
 
-   if artist.length >= 50
-     artist = artist.substring(0,49)
+   if artist.length >= 25
+     artist = artist.substring(0,24)
      artist = @cutWhiteSpace(artist)
 
-   if song.length >= 50
-     song = song.substring(0,49)
+   if song.length >= 25
+     song = song.substring(0,24)
      song = @cutWhiteSpace(song)
      song = song + "…"
 
