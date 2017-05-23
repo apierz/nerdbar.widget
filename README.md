@@ -70,6 +70,11 @@ There is also a Spotify widget included but you must
 `brew install shpotify`
 a command line spotify utility by [hnarayanan](https://github.com/hnarayanan) first
 
+### volume.coffee
+![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot10.png?raw=true)
+
+You can slide the range control to adjust volume. Icon changes with volume level.
+
 ## Installation
 
 Make sure you have [Übersicht](http://tracesof.net/uebersicht/) installed.
