@@ -21,7 +21,7 @@ style: """
   .weather_forecast
     top: 0px
     width: 8em
-    background: #292b2e
+    background: #191935
     right: 50px
     opacity: 0
     position: relative
@@ -269,7 +269,7 @@ update: (output, domEl) ->
     for day in days
         forecastString = forecastString + "<tr>" + "<td class='white'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
 
-    forecastString = forecastString + "<tr class='center'><span class='green'>" + city + ', ' + region
+    forecastString = forecastString + "<tr class='center'><span>" + city + ', ' + region
 
   $(domEl).find('.weather_forecast').html(forecastString)
   # weather forecast script
