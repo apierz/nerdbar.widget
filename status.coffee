@@ -1,6 +1,6 @@
-command: "echo $(sh ./scripts/time_script)@$(sh ./scripts/date_script)@$(sh ./scripts/battery_percentage_script)%@$(sh ./scripts/battery_charging_script)@$(sh ./scripts/wifi_status_script)"
+command: "echo $(sh ./scripts/time_script)@$(sh ./scripts/date_script)@$(sh ./scripts/battery_percentage_script)%@$(sh ./scripts/battery_charging_script)@$(sh ./scripts/wifi_status_script)@$(/usr/local/bin/python3 ./scripts/mail.py)@$(sh ./scripts/reminders.sh)"
 
-refreshFrequency: 3000 # ms
+refreshFrequency: 10000 # ms
 
 render: (output) ->
   """
@@ -59,6 +59,13 @@ getWifiStatus: (status, netName, netIP) ->
   else
     return "<span class='grey wifi'>&nbsp&nbsp&nbsp</span><span class='white'>--&nbsp&nbsp&nbsp</span>"
 
+getMailCount: (count) ->
+  return "<span class='icon'></span><span class=white>#{count}</span>"
+
+getReminders: (reminders) ->
+  return "<span class='reminders'><span class='icon'></span></span><span class='white'>#{reminders}&nbsp</span>"
+  
+
 update: (output, domEl) ->
 
   # split the output of the script
@@ -71,10 +78,14 @@ update: (output, domEl) ->
   netStatus = values[4].replace /^\s+|\s+$/g, ""
   netName = values[5]
   netIP = values[6]
+  mail = values[7]
+  reminders = values[8].replace /^\s+|\s+$/g, ""
 
   # create an HTML string to be displayed by the widget
   htmlString = @getWifiStatus(netStatus, netName, netIP) +
-               @batteryStatus(battery, isCharging) + "<span>" + " ⎢" + "</span>" +
+               @batteryStatus(battery, isCharging) + "<span>" + " ⎢ " + "</span>" +
+               @getMailCount(mail) + "&nbsp&nbsp" +
+               @getReminders(reminders) + "<span>⎢</span>" +
                @timeAndDate(date,time) + "<span> ⎢</span>"
 
   $(domEl).find('.compstatus').html(htmlString)
