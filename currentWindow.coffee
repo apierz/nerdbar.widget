@@ -10,7 +10,7 @@ render: (output) ->
 
 style: """
   -webkit-font-smoothing: antialiased
-  left: 25em
+  left: 20em
   top: 5px
   width:850px
   """
