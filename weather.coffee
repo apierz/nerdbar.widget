@@ -269,7 +269,8 @@ update: (output, domEl) ->
     for day in days
         forecastString = forecastString + "<tr>" + "<td class='white'>#{day[3]}</td>" + "<td>" + @getWeatherIcon(parseInt(day[2])) + "</td>" + "<td>" + @colorizeTemp(day[0]) + "</td>" + "<td>" + @colorizeTemp(day[1]) + "</td>" + "</tr>";
 
-    forecastString = forecastString + "<tr class='center'><span>" + city + ', ' + region
+    forecastString = forecastString + "<tr class='center'><span>" + city + ', ' + region + "</span></tr>"
+    forecastString = forecastString + "<tr class='center'>" + @getWeatherCon(connum) + "</tr></table>"
 
   $(domEl).find('.weather_forecast').html(forecastString)
   # weather forecast script
