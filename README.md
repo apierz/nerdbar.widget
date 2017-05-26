@@ -40,6 +40,9 @@ This widget shows the currently selected window. If working on a file, it can hi
 * This widget shows the current time and date.
 * The battery widget changes color from green to yellow to red as battery percentage changes. Now has a little lightning bolt that will appear when the computer is plugged in (taken from [Mizzazz](https://github.com/Mizzazz/Betterbar)).
 * Network connection indicator widget. Shows grey if no connection detected and blue if there's an active connection on Wi-Fi or Ethernet. Shows different icons for Wi-Fi and Ethernet and will show your IP or current wifi network name.
+* Mail indicator shows number of new messages in your inbox. Works with Maildir
+  style email storage.
+* Reminders indicator shows number of uncompleted reminders in Apple's reminders app.
 
 ### weather.coffee
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot6.png?raw=true)
@@ -62,7 +65,7 @@ This widget shows a number of current system indicators.
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot9.png?raw=true)
 ![img](https://github.com/apierz/nerdbar.widget/blob/master/screens/screenshot8.png?raw=true)
 
-This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls. Will probably add volume controls in the future.
+This widget works with MPD and NCMPCPP and the Transmission cli torrent client. It shows the current track and artist, the position in current track and has some simple play controls.
 
 Clicking on the icon while holding the interaction key will toggle the widget between current MPD status and the current download progress of active torrents and the number of downloading / total.
 
