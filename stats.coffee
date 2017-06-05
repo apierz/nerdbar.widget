@@ -1,4 +1,4 @@
-command: "sh ./scripts/stats.sh"
+command: "sh ../nerdbar.widget/scripts/stats.sh"
 
 refreshFrequency: 3000 # ms
 
@@ -49,7 +49,7 @@ usageFormat: (kb) ->
 getNetTraffic: (down, up) ->
   downString = @convertBytes(parseInt(down))
   upString = @convertBytes(parseInt(up))
-  return "<span>&nbsp</span><span class='icon teal'></span>" +
+  return "<span>&nbsp</span><span class='icon blue'></span>" +
          "<span class='white'>#{downString} " +
          "<span class='cyan'> ⎢</span> <span> </span>" +
          "<span class='icon orange'></span>" +

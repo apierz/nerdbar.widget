@@ -1,69 +1,74 @@
 table, span {
-    color: #98fb98;
+    color: #3a81c3;
     font: 12px SFMono-Medium;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #f5deb3;}
+    color: #655370;}
 
 .black {
-  color: #20213e;
+  color: #fbf8ef;
 }
 
 .background {
-    background-color: #20213e;
+    background-color: #fbf8ef;
 }
 
 .red {
-    color: #db7093;
+    color: #f2241f;
 }
 
 .purple {
-    color: #483d8b;
+    color: #9380b2;
 }
 
 .orange {
-    color: orange;
+    color: #dc752f;
 }
 .orangebg {
-    background: orange;
-    color: #20213e;
+    background: #dc752f;
+    color: #fbf8ef;
 }
 
 .yellow {
-    color: #eedd82;
+    color: #b1951d;
 }
 
 .yellowbg {
-    background: #eedd82;
-    color: #20213e;
+    background: #b1951d;
+    color: #fbf8ef;
 }
 
 .green {
-    color: lime;
+    color: #67b11d;
 }
 
 .greenbg {
-    background: LawnGreen;
-    color: #20213e;
+    background: #67b11d;
+    color: #fbf8ef;
+}
+
+.bluebg {
+    background: #3a81c3;
+    color: #fef8ef;
 }
 
 .cyan {
-    color: #98fb98;
+    color: #2d9574;
 }
 
 .cyanbg {
-    background: #98fb98;
-    color: #20213e;
+    background: #2d9574;
+    color: #fbf8ef;
 }
 
 .blue {
-    color: #00c4ff;
+    color: #3a81c3;
 }
 
 .teal {
-    color: seagreen;
+    color: #2aa1ae;
 }
 
 .sicon {
@@ -75,16 +80,17 @@ table, span {
     top: 1px;
     font: 14px FontAwesome;
 }
-.vol_icon {
-   position: relative;
-   font: 18px FontAwesome;
-}
 .weather {
     font: 16px WeatherIcons-Regular;
     position: relative;
     top: 2px;
 }
 
+.vol_icon {
+   position: relative;
+   font: 18px FontAwesome;
+}
+
 .grey {
-    color: #838b83;
+    color: #b3b9be;
 }
