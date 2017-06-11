@@ -11,13 +11,13 @@ render: (output) ->
 style: 
   """
   bottom: 10px
-  left 750px
+  left 773px
   """
 
 update: (output, domEl) ->
   values = output.split('@')
-  volume = parseInt(values[1])
-  muted = values[2].replace /^\s+|\s+$/g, ""
+  volume = parseInt(values[2])
+  muted = values[3].replace /^\s+|\s+$/g, ""
 
   htmlstring = "<span class='vol_icon'>"
 

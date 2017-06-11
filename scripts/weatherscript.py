@@ -6,6 +6,7 @@ import socket
 from socket import AF_INET, SOCK_STREAM, timeout
 from urllib.error import URLError, HTTPError
 
+
 def check_connectivity(host="8.8.8.8", port=53, timeout=10):
     """
     Host: 8.8.8.8 (google-public-dns-a.google.com)
@@ -22,6 +23,7 @@ def check_connectivity(host="8.8.8.8", port=53, timeout=10):
         return False
     else:
         return False
+
 
 def main():
   if check_connectivity() == True:
@@ -48,6 +50,9 @@ def main():
         print("--@99")
         return
     except timeout:
+        print("--@99")
+        return
+    except:
         print("--@99")
         return
 
@@ -100,4 +105,3 @@ def main():
     print("--@99")
 
 main()
-

@@ -16,6 +16,7 @@ style: """
   bottom: 12px
   width:850px
   height: 16px
+  cursor: pointer;
   .torrentStatus
     position: relative
     bottom: 15px
@@ -68,7 +69,7 @@ update: (output, domEl) ->
    i = 0
    while i <= remainingCounter
      i += 1
-     mpdHtmlString += "●"
+     mpdHtmlString += "◦"
 
    mpdHtmlString += "</span>"
 
@@ -100,7 +101,7 @@ update: (output, domEl) ->
    i = 0
    while i <= remainingTorCounter
      i += 1
-     torrentString += "●"
+     torrentString += "◦"
 
    torrentString += "</span><span class='white'>&nbsp&nbsp(#{torrentsPending} / #{torrentsComplete}) </span>"
 

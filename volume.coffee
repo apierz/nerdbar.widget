@@ -5,12 +5,12 @@ refreshFrequency: 2000 # ms
 render: (output) ->
   """
     <link rel="stylesheet" type="text/css" href="./colors.css" />
-    <input class="bluebg"  id="volume" type="range" min="0" max="100" step="5" color="green"/>
+    <input class="greenbg"  id="volume" type="range" min="0" max="100" step="5" color="green"/>
   """
 
 style: """
   -webkit-font-smoothing: antialiased
-  left: 770px
+  left: 790px
   bottom: 13px
   width: 850px
   input[type=range]
@@ -25,8 +25,7 @@ style: """
     height: 16px;
     width: 16px;
     border-radius: 8px;
-    background: #fbf8ef;
-    border: #655370
+    background: #e1e2e7;
     cursor: pointer;
     margin-top: -4.5px;
   input[type=range]::-webkit-slider-runnable-track
@@ -38,13 +37,14 @@ style: """
 update: (output, domEl) ->
   values = output.split('@')
   oldvol = parseInt(values[0])
-  newvol = parseInt(values[1])
-  muted = values[2].replace /^\s+|\s+$/g, ""
+  oldmute = values[1]
+  newvol = parseInt(values[2])
+  muted = values[3].replace /^\s+|\s+$/g, ""
 
 
-  if oldvol != newvol
-    $("#volume").val(values[1])
+  if oldvol != newvol or oldmute != muted
+    $("#volume").val(values[2])
 
-  else
+  if oldvol == newvol
     slidvol = $("#volume").val()
     @run "osascript -e 'set volume output volume #{slidvol}'"

@@ -10,4 +10,4 @@ do
 done <"$file"
 
 rm /tmp/volume.txt
-echo $compvol >> /tmp/volume.txt
+echo $compvol@$muted >> /tmp/volume.txt

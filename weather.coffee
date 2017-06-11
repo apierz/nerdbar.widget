@@ -14,6 +14,7 @@ style: """
   right: -32px
   top: 1px
   height: 13
+  cursor: pointer;
   table
     margin: auto
   .center
@@ -21,7 +22,7 @@ style: """
   .weather_forecast
     top: 0px
     width: 8em
-    background: #fbf8ef
+    background: #1f2029
     right: 50px
     opacity: 0
     position: relative
