@@ -25,7 +25,7 @@ style: """
     height: 16px;
     width: 16px;
     border-radius: 8px;
-    background: #e1e2e7;
+    background: white;
     cursor: pointer;
     margin-top: -4.5px;
   input[type=range]::-webkit-slider-runnable-track
