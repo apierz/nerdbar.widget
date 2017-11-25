@@ -1,70 +1,71 @@
 table, span {
-    color: #32cf72;
-    font: 12px FiraCode-Retina;
+    color: #9d9d9d;
+    font: 12px FiraMonoForPowerline-Regular;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #e1e2e7;}
+    color: #f9f9f9;
+}
 
 .black {
-  color: #1f2029;
+  color: #161616;
 }
 
 .background {
-    background-color: #1f2029;
+    background-color: #161616;
 }
 
 .red {
-    color: #d3232e;
+    color: #3c3c3c;
 }
 
 .purple {
-    color: #746db0;
+    color: #d9d9d9;
 }
 
 .orange {
-    color: #c77a4b;
+    color: #9d9d9d;
 }
 .orangebg {
-    background: #c77a4b;
-    color: #e1e2e7;
+    background: #9d9d9d;
+    color: #161616;
 }
 
 .yellow {
-    color: #c77a4b;
+    color: #9d9d9d;
 }
 
 .yellowbg {
-    background: #c77a4b;
-    color: #e1e2e7;
+    background: #9d9d9d;
+    color: #161616;
 }
 
 .green {
-    color: #32cf72;
+    color: #616161;
 }
 
 .greenbg {
-    background: #32cf72;
-    color: #e1e2e7;
+    background: #616161;
+    color: #161616;
 }
 
 .bluebg {
-    background: #5124e3;
-    color: #e1e2e7;
+    background: #c2c2c2;
+    color: #161616;
 }
 
 .cyan {
-    color: #1da9a2;
+    color: #e8e8e8;
 }
 
 .cyanbg {
-    background: #1da9a2;
-    color: #e1e2e7;
+    background: #e8e8e8;
+    color: #161616;
 }
 
 .blue {
-    color: #1da9a2;
+    color: #e8e8e8;
 }
 
 .teal {
@@ -92,5 +93,5 @@ table, span {
 }
 
 .grey {
-    color: #b3b9be;
+    color: #c2c2c2;
 }
