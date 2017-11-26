@@ -1,74 +1,69 @@
 table, span {
-    color: #32cf72;
-    font: 12px FiraCode-Retina;
+    color: #98fb98;
+    font: 12px SFMono-Medium;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #e1e2e7;}
+    color: #f5deb3;}
 
 .black {
-  color: #1f2029;
+  color: #20213e;
 }
 
 .background {
-    background-color: #1f2029;
+    background-color: #20213e;
 }
 
 .red {
-    color: #d3232e;
+    color: #db7093;
 }
 
 .purple {
-    color: #746db0;
+    color: #483d8b;
 }
 
 .orange {
-    color: #c77a4b;
+    color: orange;
 }
 .orangebg {
-    background: #c77a4b;
-    color: #e1e2e7;
+    background: orange;
+    color: #20213e;
 }
 
 .yellow {
-    color: #c77a4b;
+    color: #eedd82;
 }
 
 .yellowbg {
-    background: #c77a4b;
-    color: #e1e2e7;
+    background: #eedd82;
+    color: #20213e;
 }
 
 .green {
-    color: #32cf72;
+    color: lime;
 }
 
 .greenbg {
-    background: #32cf72;
-    color: #e1e2e7;
-}
-
-.bluebg {
-    background: #5124e3;
-    color: #e1e2e7;
+    background: LawnGreen;
+    color: #20213e;
 }
 
 .cyan {
-    color: #1da9a2;
+    color: #98fb98;
 }
 
 .cyanbg {
-    background: #1da9a2;
-    color: #e1e2e7;
+    background: #98fb98;
+    color: #20213e;
 }
 
 .blue {
-    color: #1da9a2;
+    color: #00c4ff;
 }
 
 .teal {
-    color: #149c92;
+    color: seagreen;
 }
 
 .sicon {
@@ -80,17 +75,16 @@ table, span {
     top: 1px;
     font: 14px FontAwesome;
 }
+.vol_icon {
+   position: relative;
+   font: 18px FontAwesome;
+}
 .weather {
     font: 16px WeatherIcons-Regular;
     position: relative;
     top: 2px;
 }
 
-.vol_icon {
-   position: relative;
-   font: 18px FontAwesome;
-}
-
 .grey {
-    color: #b3b9be;
+    color: #838b83;
 }
