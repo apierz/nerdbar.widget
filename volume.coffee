@@ -5,7 +5,7 @@ refreshFrequency: 2000 # ms
 render: (output) ->
   """
     <link rel="stylesheet" type="text/css" href="./colors.css" />
-    <input class="greenbg"  id="volume" type="range" min="0" max="100" step="5" color="green"/>
+    <input class="greybg"  id="volume" type="range" min="0" max="100" step="5" color="green"/>
   """
 
 style: """
@@ -25,7 +25,7 @@ style: """
     height: 16px;
     width: 16px;
     border-radius: 8px;
-    background: white;
+    background: #3c89cf;
     cursor: pointer;
     margin-top: -4.5px;
   input[type=range]::-webkit-slider-runnable-track
