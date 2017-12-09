@@ -5,33 +5,14 @@ refreshFrequency: 2000 # ms
 render: (output) ->
   """
     <link rel="stylesheet" type="text/css" href="./colors.css" />
-    <input class="greybg"  id="volume" type="range" min="0" max="100" step="5" color="green"/>
+    <input id="volume" type="range" min="0" max="100" step="5" />
   """
 
 style: """
   -webkit-font-smoothing: antialiased
   left: 790px
-  bottom: 13px
+  bottom: 11px
   width: 850px
-  input[type=range]
-    -webkit-appearance: none
-  input[type=range]::-webkit-slider-thumb
-    -webkit-appearance: none
-  input[type=range]:focus
-    outline: none
-  input[type=range]::-webkit-slider-thumb
-    -webkit-appearance: none;
-    top: 10px
-    height: 16px;
-    width: 16px;
-    border-radius: 8px;
-    background: #3c89cf;
-    cursor: pointer;
-    margin-top: -4.5px;
-  input[type=range]::-webkit-slider-runnable-track
-    width: 100%;
-    height: 6px;
-    cursor: pointer;
 """
 
 update: (output, domEl) ->
