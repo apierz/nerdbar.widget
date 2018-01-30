@@ -1,74 +1,69 @@
 table, span {
-    color: #51afef;
+    color: #22b86f;
     font: 12px SFMono-Medium;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #bbc2cf;}
+    color: #fdfed2;}
 
 .black {
-  color: #1f2029;
+  color: #4a3857;
 }
 
 .background {
-    background-color: #1f2029;
+    background-color: #4a3857;
 }
 
 .red {
-    color: #d3232e;
+    color: #ff5549;
 }
 
 .purple {
-    color: #746db0;
+    color: #ee4fc9;
 }
 
 .orange {
-    color: #e69055;
+    color: #ef883b;
 }
 .orangebg {
-    background: #e69055;
-    color: #bbc2cf;
+    background: #ef883b;
+    color: #4a3857;
 }
 
 .yellow {
-    color: #ecbe7b;
+    color: #e19758;
 }
 
 .yellowbg {
-    background: #ecbe7b;
-    color: #bbc2cf;
+    background: #e19758;
+    color: #4a3857;
 }
 
 .green {
-    color: #98be65;
+    color: #22b86f;
 }
 
 .greenbg {
-    background: #98be65;
-    color: #bbc2cf;
-}
-
-.bluebg {
-    background: #51afef;
-    color: #bbc2cf;
+    background: #22b86f;
+    color: #4a3857;
 }
 
 .cyan {
-    color: #46d9ff;
+    color: #6fc6a1;
 }
 
 .cyanbg {
-    background: #46d9ff;
-    color: #bbc2cf;
+    background: #6fc6a1;
+    color: #4a3857;
 }
 
 .blue {
-    color: #51afef;
+    color: #7afdff;
 }
 
 .teal {
-    color: #4db5bd;
+    color: #6fc6a1;
 }
 
 .sicon {
@@ -80,27 +75,31 @@ table, span {
     top: 1px;
     font: 14px FontAwesome;
 }
+.vol_icon {
+   position: relative;
+   font: 18px FontAwesome;
+}
 .weather {
     font: 16px WeatherIcons-Regular;
     position: relative;
     top: 2px;
 }
 
-.vol_icon {
-   position: relative;
-   font: 18px FontAwesome;
+.grey {
+    color: #999999;
 }
 
-.grey {
-    color: #5B6268";
+.greybg {
+    background: #999999;
 }
+
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
       overflow: hidden;
        width: 140px;
       -webkit-appearance: none;
-      background-color: #5b6268;
+      background-color: #999999;
     }
     input[type='range']::-webkit-slider-thumb {
       overflow: visible;
@@ -110,9 +109,9 @@ table, span {
       /* border-radius: 8px; */
       top: 10px
       cursor: ew-resize;
-      background: #e1e2e7;
+      background: #fdfed2;
       box-shadow: -140px 0 0 140px;
-      color: #51afef;
+      color: #22b86f;
       margin-top: -4.5px;
       z-index: 99;
     }
@@ -126,4 +125,3 @@ table, span {
       cursor: ew-resize;
 }
 }
-

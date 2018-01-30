@@ -22,7 +22,7 @@ style: """
   .weather_forecast
     top: 0px
     width: 8em
-    background: #4a3857
+    background-color: #282c34;
     right: 50px
     opacity: 0
     position: relative
