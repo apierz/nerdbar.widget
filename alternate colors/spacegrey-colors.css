@@ -1,74 +1,74 @@
 table, span {
-    color: #268bd2;
+    color: #d08770;
     font: 12px SFMono-Medium;
     text-transform: lowercase;
     -webkit-font-smoothing: antialiased;
 }
 .white {
-    color: #7B8787;}
+    color: #c0c5ce;}
 
 .black {
-  color: #fff7e4;
+  color: #2f3841;
 }
 
 .background {
-    background-color: #fff7e4;
+    background-color: #2f3841;
 }
 
 .red {
-    color: #dc322f;
+    color: #bf616A;
 }
 
 .purple {
-    color: #6c71c4;
+    color: #b48ead;
 }
 
 .orange {
-    color: #cb4b16;
+    color: #d08770;
 }
 .orangebg {
-    background: #cb4b16;
-    color: #7B8787;
+    background: #d08770;
+    color: #c0c5ce;
 }
 
 .yellow {
-    color: #b58900;
+    color: #ecbe7b;
 }
 
 .yellowbg {
-    background: #b58900;
-    color: #7B8787;
+    background: #ecbe7b;
+    color: #c0c5ce;
 }
 
 .green {
-    color: #859900;
+    color: #a3be8c;
 }
 
 .greenbg {
-    background: #859900;
-    color: #7B8787;
+    background: #a3be8c;
+    color: #c0c5ce;
 }
 
 .bluebg {
-    background: #268bd2;
-    color: #7B8787;
+    background: #8fa1b3;
+    color: #c0c5ce;
 }
 
 .cyan {
-    color: #2aa198;
+    color: #46d9ff;
 }
 
 .cyanbg {
-    background: #2aa198;
-    color: #7B8787;
+    background: #46d9ff;
+    color: #c0c5ce;
 }
 
 .blue {
-    color: #268bd2;
+    color: #8fa1b3;
 }
 
 .teal {
-    color: #5699af;
+    color: #4db5db;
 }
 
 .sicon {
@@ -92,7 +92,7 @@ table, span {
 }
 
 .grey {
-    color: #7b8787";
+    color: #4F5B66";
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -100,7 +100,7 @@ table, span {
       overflow: hidden;
        width: 140px;
       -webkit-appearance: none;
-      background-color: #e8d8ca;
+      background-color: #4f5b66;
     }
     input[type='range']::-webkit-slider-thumb {
       overflow: visible;
@@ -110,9 +110,9 @@ table, span {
       /* border-radius: 8px; */
       top: 10px
       cursor: ew-resize;
-      background: #7B8787;
+      background: #c0c5ce;
       box-shadow: -140px 0 0 140px;
-      color: #268bd2;
+      color: #d08770;
       margin-top: -4.5px;
       z-index: 99;
     }

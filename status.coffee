@@ -83,9 +83,9 @@ update: (output, domEl) ->
 
   # create an HTML string to be displayed by the widget
   htmlString = @getWifiStatus(netStatus, netName, netIP) +
-               @batteryStatus(battery, isCharging) + "<span>" + " ⎢ " + "</span>" +
+               @batteryStatus(battery, isCharging) + "<span class='cyan'>" + " ⎢ " + "</span>" +
                @getMailCount(mail) + "&nbsp&nbsp" +
-               @getReminders(reminders) + "<span>⎢</span>" +
-               @timeAndDate(date,time) + "<span> ⎢</span>"
+               @getReminders(reminders) + "<span class='cyan'>⎢</span>" +
+               @timeAndDate(date,time) + "<span class ='cyan'> ⎢</span>"
 
   $(domEl).find('.compstatus').html(htmlString)

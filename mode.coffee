@@ -53,7 +53,7 @@ update: (output, domEl) ->
   #display the html string
   $(domEl).find('.kwmmode').html("<span class='tilingMode icon'></span>" +
                                  "<span class='tilingMode white'>#{mode} " +
-                                 "<span> ⎢ </span></span>" +
+                                 "<span class='cyan'> ⎢ </span></span>" +
                                  screenhtml)
 
   # add screen changing controls to the screen icons
