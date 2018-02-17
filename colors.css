@@ -92,7 +92,7 @@ table, span {
 }
 
 .grey {
-    color: #7b8787";
+    color: #7b8787;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -100,7 +100,7 @@ table, span {
       overflow: hidden;
        width: 140px;
       -webkit-appearance: none;
-      background-color: #e8d8ca;
+      background-color: #7b8787;
     }
     input[type='range']::-webkit-slider-thumb {
       overflow: visible;
@@ -110,7 +110,7 @@ table, span {
       /* border-radius: 8px; */
       top: 10px
       cursor: ew-resize;
-      background: #7B8787;
+      background: #e8d8ca;
       box-shadow: -140px 0 0 140px;
       color: #268bd2;
       margin-top: -4.5px;
